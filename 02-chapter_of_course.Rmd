@@ -273,7 +273,14 @@ clo2@MGQQR2YQRT9 west % ls -l clam_?.txt
 -rw-r--r--  1 clo2  staff  0 Aug 28 13:21 clam_4.txt
 ```
 
-## Applying what we just learned: running bioinformatics software
+## Using a text editor in CLI
+
+A commonly used task in CLI is to edit text files. `nano`, `vim`, and `emacs` are the three most popular ones, in increasing learning curve but also complexity in the tasks you can perform. We will start with `nano` today.
+
+Pick a file of interest, and run `nano [filename]`. You will see a new screen of the `filename`'s contents. You can move around via the letter keys and make edits as needed. On the bottom of the screen are commands you use to manage the file, such as saving, opening, and quitting. The `^` symbol refers to the `Control` key on your keyboard. To quit, hit `Ctrl-x`, and you may have to hit `y` to confirm. You should get comfortable using a text editor in CLI as it is a common task.
+
+
+## Optional: Applying what we just learned: running bioinformatics software
 
 0.  Go to `cmd_exercises/bioinformatics/`.
 
@@ -291,7 +298,7 @@ To check that you installed bwa correctly, run the software:
 ./bwa
 ```
 
-The appendix describes why we used `./bwa` instead of `bwa` to run the software.
+This [discussion](https://unix.stackexchange.com/questions/4430/why-do-we-use-dot-slash-to-execute-a-file-in-linux-unix) describes why we used `./bwa` instead of `bwa` to run the software.
 
 2.  Go to `downloaded_from_sequencing/` and take a look at the `.fastq` file using the commands `cat`, `less`, `head`, and `tail`. This is a high-throughput sequencing file, containing unaligned DNA sequences. Don't worry about that the files don't make sense to you. The point is that you can explore the text files using these commands.
 
@@ -313,7 +320,7 @@ HWI-ST745_0098:1:1101:11685:2579#0	4	*	0	0	*	*	0	0	ATCTGAGGGGACGAGAGGGTAAGATGATT
 
 Nice job!
 
-## Bonus: Redirects and Pipes
+## Optional: Redirects and Pipes
 
 The `./bwa mem` command seems pretty messy - it just dumps an aligned sequencing file in your command line console - what do you do with it? If you look at its manual, there is no option or argument to specify an output file name, which is a bit not user-friendly at first. 
 
@@ -353,9 +360,7 @@ This encourages the development of modular, flexible programs that can be connec
 
 -   `~` the home directory.
 
-## Appendix: Why do we run some programs using `./`?
 
-## Appendix: using a text editor in CLI
 
 
 ## Session info
@@ -363,7 +368,5 @@ This encourages the development of modular, flexible programs that can be connec
 You should print out session info when you have code for [reproducibility purposes](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/managing-package-versions.html).
 
 ```{r}
-devtools::session_info()
+#devtools::session_info()
 ```
-
-[many links]: https://github.com/jhudsl/OTTR_Template
