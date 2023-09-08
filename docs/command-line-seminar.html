@@ -162,12 +162,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.5.1" data-path="command-line-seminar.html"><a href="command-line-seminar.html#wildcards-to-access-multiple-files"><i class="fa fa-check"></i><b>2.5.1</b> Wildcards to access multiple files</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="command-line-seminar.html"><a href="command-line-seminar.html#applying-what-we-just-learned-running-bioinformatics-software"><i class="fa fa-check"></i><b>2.6</b> Applying what we just learned: running bioinformatics software</a></li>
-<li class="chapter" data-level="2.7" data-path="command-line-seminar.html"><a href="command-line-seminar.html#bonus-redirects-and-pipes"><i class="fa fa-check"></i><b>2.7</b> Bonus: Redirects and Pipes</a></li>
-<li class="chapter" data-level="2.8" data-path="command-line-seminar.html"><a href="command-line-seminar.html#appendix-special-symbols-for-directories"><i class="fa fa-check"></i><b>2.8</b> Appendix: Special symbols for directories:</a></li>
-<li class="chapter" data-level="2.9" data-path="command-line-seminar.html"><a href="command-line-seminar.html#appendix-why-do-we-run-some-programs-using-."><i class="fa fa-check"></i><b>2.9</b> Appendix: Why do we run some programs using <code>./</code>?</a></li>
-<li class="chapter" data-level="2.10" data-path="command-line-seminar.html"><a href="command-line-seminar.html#appendix-using-a-text-editor-in-cli"><i class="fa fa-check"></i><b>2.10</b> Appendix: using a text editor in CLI</a></li>
-<li class="chapter" data-level="2.11" data-path="command-line-seminar.html"><a href="command-line-seminar.html#session-info"><i class="fa fa-check"></i><b>2.11</b> Session info</a></li>
+<li class="chapter" data-level="2.6" data-path="command-line-seminar.html"><a href="command-line-seminar.html#using-a-text-editor-in-cli"><i class="fa fa-check"></i><b>2.6</b> Using a text editor in CLI</a></li>
+<li class="chapter" data-level="2.7" data-path="command-line-seminar.html"><a href="command-line-seminar.html#optional-applying-what-we-just-learned-running-bioinformatics-software"><i class="fa fa-check"></i><b>2.7</b> Optional: Applying what we just learned: running bioinformatics software</a></li>
+<li class="chapter" data-level="2.8" data-path="command-line-seminar.html"><a href="command-line-seminar.html#optional-redirects-and-pipes"><i class="fa fa-check"></i><b>2.8</b> Optional: Redirects and Pipes</a></li>
+<li class="chapter" data-level="2.9" data-path="command-line-seminar.html"><a href="command-line-seminar.html#appendix-special-symbols-for-directories"><i class="fa fa-check"></i><b>2.9</b> Appendix: Special symbols for directories:</a></li>
+<li class="chapter" data-level="2.10" data-path="command-line-seminar.html"><a href="command-line-seminar.html#session-info"><i class="fa fa-check"></i><b>2.10</b> Session info</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
 <li class="chapter" data-level="3" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>3</b> References</a></li>
@@ -385,8 +384,13 @@ clo2@MGQQR2YQRT9 west % mv orca* fish_net </code></pre>
 -rw-r--r--  1 clo2  staff  0 Aug 28 13:21 clam_4.txt</code></pre>
 </div>
 </div>
-<div id="applying-what-we-just-learned-running-bioinformatics-software" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Applying what we just learned: running bioinformatics software</h2>
+<div id="using-a-text-editor-in-cli" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Using a text editor in CLI</h2>
+<p>A commonly used task in CLI is to edit text files. <code>nano</code>, <code>vim</code>, and <code>emacs</code> are the three most popular ones, in increasing learning curve but also complexity in the tasks you can perform. We will start with <code>nano</code> today.</p>
+<p>Pick a file of interest, and run <code>nano [filename]</code>. You will see a new screen of the <code>filename</code>’s contents. You can move around via the letter keys and make edits as needed. On the bottom of the screen are commands you use to manage the file, such as saving, opening, and quitting. The <code>^</code> symbol refers to the <code>Control</code> key on your keyboard. To quit, hit <code>Ctrl-x</code>, and you may have to hit <code>y</code> to confirm. You should get comfortable using a text editor in CLI as it is a common task.</p>
+</div>
+<div id="optional-applying-what-we-just-learned-running-bioinformatics-software" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> Optional: Applying what we just learned: running bioinformatics software</h2>
 <ol start="0" style="list-style-type: decimal">
 <li><p>Go to <code>cmd_exercises/bioinformatics/</code>.</p></li>
 <li><p>Download and install the following software via the following commands:</p></li>
@@ -396,7 +400,7 @@ cd bwa
 make</code></pre>
 <p>To check that you installed bwa correctly, run the software:</p>
 <pre><code>./bwa</code></pre>
-<p>The appendix describes why we used <code>./bwa</code> instead of <code>bwa</code> to run the software.</p>
+<p>This <a href="https://unix.stackexchange.com/questions/4430/why-do-we-use-dot-slash-to-execute-a-file-in-linux-unix">discussion</a> describes why we used <code>./bwa</code> instead of <code>bwa</code> to run the software.</p>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Go to <code>downloaded_from_sequencing/</code> and take a look at the <code>.fastq</code> file using the commands <code>cat</code>, <code>less</code>, <code>head</code>, and <code>tail</code>. This is a high-throughput sequencing file, containing unaligned DNA sequences. Don’t worry about that the files don’t make sense to you. The point is that you can explore the text files using these commands.</p></li>
 <li><p>Go to <code>reference_genome/</code> and take a look at <code>miniReference.fasta</code> using the commands as above. This is a (fake) reference human genome file. We will take the unaligned DNA sequences from the <code>.fastq</code> files and figure out where they align in the reference genome.</p></li>
@@ -410,8 +414,8 @@ make</code></pre>
 [main] Real time: 0.307 sec; CPU: 0.172 sec</code></pre>
 <p>Nice job!</p>
 </div>
-<div id="bonus-redirects-and-pipes" class="section level2" number="2.7">
-<h2><span class="header-section-number">2.7</span> Bonus: Redirects and Pipes</h2>
+<div id="optional-redirects-and-pipes" class="section level2" number="2.8">
+<h2><span class="header-section-number">2.8</span> Optional: Redirects and Pipes</h2>
 <p>The <code>./bwa mem</code> command seems pretty messy - it just dumps an aligned sequencing file in your command line console - what do you do with it? If you look at its manual, there is no option or argument to specify an output file name, which is a bit not user-friendly at first.</p>
 <p>However, in the CLI world, this is a perfectly normal way to output a result from a program. We simply need to <strong>redirect</strong> that output to a file ourselves. The output of <code>./bwa mem</code> and the output of <code>ls</code> can be redirected to a file, via the <code>&gt;</code> operation:</p>
 <pre><code>./bwa mem [reference genome fasta file] [unaligned sequences fastq file] &gt; [output file]</code></pre>
@@ -423,8 +427,8 @@ make</code></pre>
 <pre><code>./bwa mem [reference genome fasta file] [unaligned sequences fastq file] | tail &gt; [output file]</code></pre>
 <p>This encourages the development of modular, flexible programs that can be connected together via pipes and saved via redirecting.</p>
 </div>
-<div id="appendix-special-symbols-for-directories" class="section level2" number="2.8">
-<h2><span class="header-section-number">2.8</span> Appendix: Special symbols for directories:</h2>
+<div id="appendix-special-symbols-for-directories" class="section level2" number="2.9">
+<h2><span class="header-section-number">2.9</span> Appendix: Special symbols for directories:</h2>
 <ul>
 <li><p><code>.</code> the current directory.</p></li>
 <li><p><code>..</code> the parent directory.</p></li>
@@ -432,73 +436,10 @@ make</code></pre>
 <li><p><code>~</code> the home directory.</p></li>
 </ul>
 </div>
-<div id="appendix-why-do-we-run-some-programs-using-." class="section level2" number="2.9">
-<h2><span class="header-section-number">2.9</span> Appendix: Why do we run some programs using <code>./</code>?</h2>
-</div>
-<div id="appendix-using-a-text-editor-in-cli" class="section level2" number="2.10">
-<h2><span class="header-section-number">2.10</span> Appendix: using a text editor in CLI</h2>
-</div>
-<div id="session-info" class="section level2" number="2.11">
-<h2><span class="header-section-number">2.11</span> Session info</h2>
+<div id="session-info" class="section level2" number="2.10">
+<h2><span class="header-section-number">2.10</span> Session info</h2>
 <p>You should print out session info when you have code for <a href="https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/managing-package-versions.html">reproducibility purposes</a>.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="command-line-seminar.html#cb28-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">session_info</span>()</span></code></pre></div>
-<pre><code>## ─ Session info ───────────────────────────────────────────────────────────────
-##  setting  value                       
-##  version  R version 4.0.2 (2020-06-22)
-##  os       Ubuntu 20.04.5 LTS          
-##  system   x86_64, linux-gnu           
-##  ui       X11                         
-##  language (EN)                        
-##  collate  en_US.UTF-8                 
-##  ctype    en_US.UTF-8                 
-##  tz       Etc/UTC                     
-##  date     2023-09-08                  
-## 
-## ─ Packages ───────────────────────────────────────────────────────────────────
-##  package     * version date       lib source                            
-##  assertthat    0.2.1   2019-03-21 [1] RSPM (R 4.0.5)                    
-##  bookdown      0.24    2023-03-28 [1] Github (rstudio/bookdown@88bc4ea) 
-##  bslib         0.4.2   2022-12-16 [1] CRAN (R 4.0.2)                    
-##  cachem        1.0.7   2023-02-24 [1] CRAN (R 4.0.2)                    
-##  callr         3.5.0   2020-10-08 [1] RSPM (R 4.0.2)                    
-##  cli           3.6.1   2023-03-23 [1] CRAN (R 4.0.2)                    
-##  crayon        1.3.4   2017-09-16 [1] RSPM (R 4.0.0)                    
-##  desc          1.2.0   2018-05-01 [1] RSPM (R 4.0.3)                    
-##  devtools      2.3.2   2020-09-18 [1] RSPM (R 4.0.3)                    
-##  digest        0.6.25  2020-02-23 [1] RSPM (R 4.0.0)                    
-##  ellipsis      0.3.1   2020-05-15 [1] RSPM (R 4.0.3)                    
-##  evaluate      0.20    2023-01-17 [1] CRAN (R 4.0.2)                    
-##  fastmap       1.1.1   2023-02-24 [1] CRAN (R 4.0.2)                    
-##  fs            1.5.0   2020-07-31 [1] RSPM (R 4.0.3)                    
-##  glue          1.4.2   2020-08-27 [1] RSPM (R 4.0.5)                    
-##  htmltools     0.5.5   2023-03-23 [1] CRAN (R 4.0.2)                    
-##  jquerylib     0.1.4   2021-04-26 [1] CRAN (R 4.0.2)                    
-##  jsonlite      1.7.1   2020-09-07 [1] RSPM (R 4.0.2)                    
-##  knitr         1.33    2023-03-28 [1] Github (yihui/knitr@a1052d1)      
-##  magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.0.2)                    
-##  memoise       2.0.1   2021-11-26 [1] CRAN (R 4.0.2)                    
-##  pkgbuild      1.1.0   2020-07-13 [1] RSPM (R 4.0.2)                    
-##  pkgload       1.1.0   2020-05-29 [1] RSPM (R 4.0.3)                    
-##  prettyunits   1.1.1   2020-01-24 [1] RSPM (R 4.0.3)                    
-##  processx      3.4.4   2020-09-03 [1] RSPM (R 4.0.2)                    
-##  ps            1.4.0   2020-10-07 [1] RSPM (R 4.0.2)                    
-##  R6            2.4.1   2019-11-12 [1] RSPM (R 4.0.0)                    
-##  remotes       2.2.0   2020-07-21 [1] RSPM (R 4.0.3)                    
-##  rlang         1.1.0   2023-03-14 [1] CRAN (R 4.0.2)                    
-##  rmarkdown     2.10    2023-03-28 [1] Github (rstudio/rmarkdown@02d3c25)
-##  rprojroot     2.0.3   2022-04-02 [1] CRAN (R 4.0.2)                    
-##  sass          0.4.5   2023-01-24 [1] CRAN (R 4.0.2)                    
-##  sessioninfo   1.1.1   2018-11-05 [1] RSPM (R 4.0.3)                    
-##  stringi       1.5.3   2020-09-09 [1] RSPM (R 4.0.3)                    
-##  stringr       1.4.0   2019-02-10 [1] RSPM (R 4.0.3)                    
-##  testthat      3.0.1   2023-03-28 [1] Github (R-lib/testthat@e99155a)   
-##  usethis       1.6.3   2020-09-17 [1] RSPM (R 4.0.2)                    
-##  withr         2.3.0   2020-09-22 [1] RSPM (R 4.0.2)                    
-##  xfun          0.26    2023-03-28 [1] Github (yihui/xfun@74c2a66)       
-##  yaml          2.2.1   2020-02-01 [1] RSPM (R 4.0.3)                    
-## 
-## [1] /usr/local/lib/R/site-library
-## [2] /usr/local/lib/R/library</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="command-line-seminar.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::session_info()</span></span></code></pre></div>
 
 </div>
 </div>
