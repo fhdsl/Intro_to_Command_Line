@@ -14,10 +14,9 @@ how-do-we-know-what-options-and-arguments-to-use-for-a-command
 exercise-options-for-ls
 putting-the-two-mental-models-together-file-manipulation
 wildcards-to-access-multiple-files
-applying-what-we-just-learned-running-bioinformatics-software
-bonus-redirects-and-pipes
+using-a-text-editor-in-cli
+optional-applying-what-we-just-learned-running-bioinformatics-software
+optional-redirects-and-pipes
 appendix-special-symbols-for-directories
-appendix-why-do-we-run-some-programs-using-.
-appendix-using-a-text-editor-in-cli
 session-info
 references
