@@ -1,8 +1,4 @@
-available-course-formats
-introduction
-motivation
-target-audience
-curriculum
+about-this-course
 command-line-seminar
 what-is-the-command-line-and-why-should-i-learn-it
 getting-started
@@ -18,5 +14,5 @@ using-a-text-editor-in-cli
 optional-applying-what-we-just-learned-running-bioinformatics-software
 optional-redirects-and-pipes
 appendix-special-symbols-for-directories
-session-info
+appendix-why-do-we-run-some-programs-using-.
 references
