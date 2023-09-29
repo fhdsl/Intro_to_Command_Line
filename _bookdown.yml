@@ -1,9 +1,8 @@
-book_filename: "Course_Name"
+book_filename: "Intro to Command Line, Season 1"
 chapter_name: "Chapter "
 repo: https://github.com/jhudsl/OTTR_Template/
 rmd_files: ["index.Rmd",
-            "01-intro.Rmd",
-            "02-chapter_of_course.Rmd",
+            "01-Seminar.Rmd",
             "About.Rmd",
             "References.Rmd"]
 new_session: yes
