@@ -18,7 +18,19 @@ The most commonly used Command Line is the Shell. The Shell is a dynamic program
 
 ## Getting Started
 
-Open your Shell: on Macs, open up "Terminal" Application. On Windows, open up xxx. You should see a single line of text, with a blinking cursor, such as this:
+### Installing Shell for Windows users
+
+-   Open Windows Powershell.
+
+-   Type in: `wsl --install -d ubuntu`, and hit enter.
+
+-   You will might be asked to enter a new username and password. You can use the same as you have for your computer.
+
+-   A shell terminal should show up. If it doesn't show up, look in your search bar for Ubuntu on Windows, and open it.
+
+### For all users
+
+Open your Shell: on Macs, open up "Terminal" Application. On Windows, open up "Windows Subsystem for Unix", or "Ubuntu on Windows". You should see a single line of text, with a blinking cursor, such as this:
 
 ```         
 andrew@MGQQR2YQRT9 ~ % 
@@ -93,7 +105,7 @@ It is very common to navigate a directory tree via iterations of `ls` and `cd` o
 
 ### Exercise: explore the maze.
 
-Download and unzip this file: <https://tinyurl.com/fredhutchcmd>
+Download and unzip this file: <https://tinyurl.com/daslcmd>
 
 Use `cd` and `ls` to get to folder of the file you unzipped.
 
