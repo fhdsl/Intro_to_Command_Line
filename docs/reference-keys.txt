@@ -2,6 +2,8 @@ about-this-course
 command-line-seminar
 what-is-the-command-line-and-why-should-i-learn-it
 getting-started
+installing-shell-for-windows-users
+for-all-users
 mental-model-1-navigating-a-directory-tree
 exercise-explore-the-maze.
 mental-model-2-treat-text-based-programs-as-functions

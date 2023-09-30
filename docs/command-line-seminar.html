@@ -75,7 +75,11 @@
 <li class="chapter" data-level="2" data-path="command-line-seminar.html"><a href="command-line-seminar.html"><i class="fa fa-check"></i><b>2</b> Command Line Seminar</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="command-line-seminar.html"><a href="command-line-seminar.html#what-is-the-command-line-and-why-should-i-learn-it"><i class="fa fa-check"></i><b>2.1</b> What is the Command Line and why should I learn it?</a></li>
-<li class="chapter" data-level="2.2" data-path="command-line-seminar.html"><a href="command-line-seminar.html#getting-started"><i class="fa fa-check"></i><b>2.2</b> Getting Started</a></li>
+<li class="chapter" data-level="2.2" data-path="command-line-seminar.html"><a href="command-line-seminar.html#getting-started"><i class="fa fa-check"></i><b>2.2</b> Getting Started</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="command-line-seminar.html"><a href="command-line-seminar.html#installing-shell-for-windows-users"><i class="fa fa-check"></i><b>2.2.1</b> Installing Shell for Windows users</a></li>
+<li class="chapter" data-level="2.2.2" data-path="command-line-seminar.html"><a href="command-line-seminar.html#for-all-users"><i class="fa fa-check"></i><b>2.2.2</b> For all users</a></li>
+</ul></li>
 <li class="chapter" data-level="2.3" data-path="command-line-seminar.html"><a href="command-line-seminar.html#mental-model-1-navigating-a-directory-tree"><i class="fa fa-check"></i><b>2.3</b> Mental Model 1: Navigating a directory tree</a>
 <ul>
 <li class="chapter" data-level="2.3.1" data-path="command-line-seminar.html"><a href="command-line-seminar.html#exercise-explore-the-maze."><i class="fa fa-check"></i><b>2.3.1</b> Exercise: explore the maze.</a></li>
@@ -148,7 +152,18 @@
 </div>
 <div id="getting-started" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Getting Started</h2>
-<p>Open your Shell: on Macs, open up “Terminal” Application. On Windows, open up xxx. You should see a single line of text, with a blinking cursor, such as this:</p>
+<div id="installing-shell-for-windows-users" class="section level3" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Installing Shell for Windows users</h3>
+<ul>
+<li><p>Open Windows Powershell.</p></li>
+<li><p>Type in: <code>wsl --install -d ubuntu</code>, and hit enter.</p></li>
+<li><p>You will might be asked to enter a new username and password. You can use the same as you have for your computer.</p></li>
+<li><p>A shell terminal should show up. If it doesn’t show up, look in your search bar for Ubuntu on Windows, and open it.</p></li>
+</ul>
+</div>
+<div id="for-all-users" class="section level3" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> For all users</h3>
+<p>Open your Shell: on Macs, open up “Terminal” Application. On Windows, open up “Windows Subsystem for Unix”, or “Ubuntu on Windows”. You should see a single line of text, with a blinking cursor, such as this:</p>
 <pre><code>andrew@MGQQR2YQRT9 ~ % </code></pre>
 <p>Here, <code>andrew</code> is the computer user, and <code>MGQQR2YQRT9</code> is the computer’s name. The next piece of character, <code>~</code> states that the currently directory is <code>~</code>. The symbol <code>~</code> is a short-hand for the “home” directory for the user of a computer. On Macs, it would be something like <code>/User/andrew</code>.</p>
 <p>This current directory is important: in the Command Line, you interact with the computer from a directory, similar interacting with the computer using a file system window graphically.</p>
@@ -158,6 +173,7 @@
 <p>Unlike a GUI, the CLI does not provide immediate options to you to interact with. We have to know a learn a handful of vocabulary to interact with it well. But besides the vocabulary, we need to keep a mental model of a task we want to complete. In GUIs that that mental model is shown to us visually, such as a file browser.</p>
 <p>We organizes our seminar by constructing several mental models and learning relevant commands related to each model.</p>
 <p>Lastly, the CLI is forgiving. It will tell you if you did something you did not intend to, with little consequences, which encourages exploration and experimentation. Consequential actions have security safeguards. With this mindset, we will explore the CLI openly.</p>
+</div>
 </div>
 <div id="mental-model-1-navigating-a-directory-tree" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Mental Model 1: Navigating a directory tree</h2>
@@ -194,7 +210,7 @@ Applications    Desktop     Documents   Downloads   Library     Movies      Musi
 <p>It is very common to navigate a directory tree via iterations of <code>ls</code> and <code>cd</code> on relative paths.</p>
 <div id="exercise-explore-the-maze." class="section level3" number="2.3.1">
 <h3><span class="header-section-number">2.3.1</span> Exercise: explore the maze.</h3>
-<p>Download and unzip this file: <a href="https://tinyurl.com/fredhutchcmd" class="uri">https://tinyurl.com/fredhutchcmd</a></p>
+<p>Download and unzip this file: <a href="https://tinyurl.com/daslcmd" class="uri">https://tinyurl.com/daslcmd</a></p>
 <p>Use <code>cd</code> and <code>ls</code> to get to folder of the file you unzipped.</p>
 <p>Use <code>cd</code> and <code>ls</code> to explore the maze in <code>cmd_exercises/maze</code>, report back what you find!</p>
 <p>To examine a text file completely, use the <code>cat</code> command with the first argument be the text file name, such as:</p>
