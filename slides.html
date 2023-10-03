@@ -499,7 +499,7 @@
 <section id="mental-model-1-navigating-a-directory-tree" class="slide level2">
 <h2>Mental Model 1: Navigating a directory tree</h2>
 <div class="fragment">
-<p>On our computer, the <strong>file system</strong> organizes files and directories in an (upside down) tree-like structure. In each folder, there is a parental directory, and there can be files and directories within it.</p>
+<p>On our computer, the <strong>directory tree</strong> organizes files and directories in an (upside down) tree-like structure. In each folder, there is a parental directory, and there can be files and directories within it.</p>
 <p><img data-src="https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png" width="600"></p>
 <p>Example “home” <strong>directory path</strong>: <code>/Users/andrew/</code></p>
 </div>
@@ -545,8 +545,8 @@ Pod J</code></pre>
 <p>To examine the first few lines of a text file, use the <code>head</code> command with the first argument to be the text file name. To examine the last few lines of a text file, use <code>tail</code>. To scroll through a text file, use <code>less</code>, and press <code>q</code> to quit.</p>
 </div>
 </section>
-<section id="mental-model-2-treat-text-based-programs-as-functions" class="slide level2">
-<h2>Mental Model 2: Treat text-based programs as functions</h2>
+<section id="mental-model-2-treat-text-based-commands-as-functions" class="slide level2">
+<h2>Mental Model 2: Treat text-based commands as functions</h2>
 <div class="fragment">
 <p>The commands you have been using, <code>pwd</code>, <code>cd</code>, <code>ls</code>, and <code>cat</code> are actually computer programs!</p>
 </div>
@@ -623,8 +623,8 @@ Shared/     andrew/</code></pre>
 <div class="fragment">
 <p>Here are some commands that allows you to create, move, copy, and delete files and folders. All of these commands have no return value.</p>
 <ul>
-<li><p><code>cp [old] [new]</code> copies a file or folder from the <code>[old]</code> path to a <code>[new]</code> folder.</p></li>
-<li><p><code>mv [old] [new]</code> moves a file or folder from the <code>[old]</code> path to a <code>[new]</code> folder.</p></li>
+<li><p><code>cp [from] [to]</code> copies a file or folder from the <code>[from]</code> path to a <code>[to]</code> folder.</p></li>
+<li><p><code>mv [from] [to]</code> moves a file or folder from the <code>[from]</code> path to a <code>[to]</code> folder.</p></li>
 <li><p><code>mkdir [folderPath]</code> creates a new folder at the path specified by <code>[folderPath]</code>.</p></li>
 <li><p><code>rm [path]</code> deletes a file at <code>[path]</code>. <code>rm -r [folder]</code> deletes a folder and its subcontents. Cannot be undone!</p></li>
 </ul>
@@ -632,10 +632,26 @@ Shared/     andrew/</code></pre>
 </section>
 <section id="demo-1" class="slide level2">
 <h2>Demo</h2>
+<div class="fragment">
+<ul>
+<li><code>*</code> wildcard</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><code>?</code> wildcard</li>
+</ul>
+</div>
 </section>
 <section id="using-a-text-editor-in-cli" class="slide level2">
 <h2>Using a text editor in CLI</h2>
 <p>A commonly used task in CLI is to edit text files. <code>nano</code>, <code>vim</code>, and <code>emacs</code> are the three most popular ones, in increasing learning curve but also complexity in the tasks you can perform. We will start with <code>nano</code> today.</p>
+</section>
+<section id="thanks-for-coming" class="slide level2">
+<h2>Thanks for coming!</h2>
+<p>Course survey: https://forms.gle/BnHMjsqWsnhoQEtL8</p>
+<p>Stickers: https://forms.gle/REszUXavNtdXGZ2NA</p>
+<p>Git/GitHub course registration: https://forms.gle/MzLh5gehgUysVyGM6</p>
 <div class="footer footer-default">
 
 </div>
