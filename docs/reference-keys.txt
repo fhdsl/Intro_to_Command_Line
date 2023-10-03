@@ -6,7 +6,7 @@ installing-shell-for-windows-users
 for-all-users
 mental-model-1-navigating-a-directory-tree
 exercise-explore-the-maze.
-mental-model-2-treat-text-based-programs-as-functions
+mental-model-2-treat-text-based-commands-as-functions
 subcommands
 how-do-we-know-what-options-and-arguments-to-use-for-a-command
 exercise-options-for-ls
