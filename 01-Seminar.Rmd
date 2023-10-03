@@ -59,7 +59,7 @@ On our computer, the **directory tree** organizes files and directories in an (u
 
 Below is a typical directory tree schematic, with the root directory being `/` and home directory being `/Users/andrew/`. We refer to a particular directory by describing its **directory path** separated by `/` slashes.
 
-![Directory Tree example with user "andrew".](https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png)
+![Source: https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png ](https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png)
 
 To interact with files and programs in the file system in the GUI world, we moved up and down the directory tree via point and clicking on windows. In the CLI world we can use the following commands:
 
@@ -128,12 +128,11 @@ The commands you have been using, `pwd`, `cd`, `ls`, and `cat` are actually comp
 
 If you have done some programming yourself, you use functions to create programming expressions. A function has a name, takes in inputs, and then does something before optionally returning a output.
 
-![Function machine from algebra class.](https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png)
+![Source: Wellesley CS 110: https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png](https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png)
 
 Similarly, when using a command from the command line, we should treat it as a function: a command has a *name*, inputs in terms of *options* and/or *arguments*, and optionally *returns* something. See below for an example of running the `ls` command with some options and arguments.
 
-![Figure from Software Carpentry.](https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg)
-
+![Source: Software Carpentry: https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg](https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg)
 We have been calling `ls` with no argument and options, and it outputs the files and folders in the current working directory.
 
 The command can take an optional argument of a folder path (full or relative), and it outputs the files and folders in that directory:
