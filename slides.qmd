@@ -144,7 +144,7 @@ Lastly, the CLI is forgiving. It will tell you if you did something you did not 
 
 On our computer, the **directory tree** organizes files and directories in an (upside down) tree-like structure. In each folder, there is a parental directory, and there can be files and directories within it. 
 
-![](https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png){width="600"}
+![Source: https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png](https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png){width="600"}
 
 Example "home" **directory path**: `/Users/andrew/`
 
@@ -152,7 +152,7 @@ Example "home" **directory path**: `/Users/andrew/`
 
 . . .
 
-![](https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png){width="400"}
+![Source: https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png](https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png){width="400"}
 
 . . .
 
@@ -205,13 +205,13 @@ When using a command from the command line, we should treat it as a function: a 
 
 . . .
 
-![Function machine from algebra class.](https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png)
+![Source: Wellesley CS 110: https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png](https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png)
 
 ## `ls` example
 
 . . .
 
-![](https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg)
+![Source: Software Carpentry: https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg](https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg)
 
 . . .
 
