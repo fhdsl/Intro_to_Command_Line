@@ -55,7 +55,7 @@ Lastly, the CLI is forgiving. It will tell you if you did something you did not 
 
 ## Mental Model 1: Navigating a directory tree
 
-On our computer, the **file system** organizes files and directories in an (upside down) tree-like structure. In each folder, there is a parental directory, and there can be files and directories within it. The root directory `/` does not have a parental directory and contains all directories and files in on the computer.
+On our computer, the **directory tree** organizes files and directories in an (upside down) tree-like structure. In each folder, there is a parental directory, and there can be files and directories within it. The root directory `/` does not have a parental directory and contains all directories and files in on the computer.
 
 Below is a typical directory tree schematic, with the root directory being `/` and home directory being `/Users/andrew/`. We refer to a particular directory by describing its **directory path** separated by `/` slashes.
 
@@ -122,7 +122,7 @@ To examine the first few lines of a text file, use the `head` command with the f
 
 Hint: to save typing, use the `tab` button twice to complete filepaths you don't know existed.
 
-## Mental Model 2: Treat text-based programs as functions
+## Mental Model 2: Treat text-based commands as functions
 
 The commands you have been using, `pwd`, `cd`, `ls`, and `cat` are actually computer programs! They are completely text-based: the program take in some text input, do something with the input, prints out or save something, and quits. There are other text-based programs that are more interactive while it is running, which we will see later: but for now, we will consider this schema for our programs. (We will use programs and commands interchangeably.)
 
@@ -194,9 +194,9 @@ In the maze, try out a bunch of ways to list files and directories using various
 
 Here are some commands that allows you to create, move, copy, and delete files and folders. All of these commands have no return value.
 
--   `cp [old] [new]` copies a file or folder from the `[old]` path to a `[new]` folder.
+-   `cp [from] [to]` copies a file or folder from the `[from]` path to a `[to]` folder.
 
--   `mv [old] [new]` moves a file or folder from the `[old]` path to a `[new]` folder.
+-   `mv [from] [to]` moves a file or folder from the `[from]` path to a `[to]` folder.
 
 -   `mkdir [folderPath]` creates a new folder at the path specified by `[folderPath]`.
 
