@@ -142,7 +142,7 @@ Lastly, the CLI is forgiving. It will tell you if you did something you did not 
 
 . . .
 
-On our computer, the **file system** organizes files and directories in an (upside down) tree-like structure. In each folder, there is a parental directory, and there can be files and directories within it. 
+On our computer, the **directory tree** organizes files and directories in an (upside down) tree-like structure. In each folder, there is a parental directory, and there can be files and directories within it. 
 
 ![](https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png){width="600"}
 
@@ -193,7 +193,7 @@ Pod J
 
 To examine the first few lines of a text file, use the `head` command with the first argument to be the text file name. To examine the last few lines of a text file, use `tail`. To scroll through a text file, use `less`, and press `q` to quit.
 
-## Mental Model 2: Treat text-based programs as functions
+## Mental Model 2: Treat text-based commands as functions
 
 . . .
 
@@ -283,9 +283,9 @@ In the maze, try out a bunch of ways to list files and directories using various
 
 Here are some commands that allows you to create, move, copy, and delete files and folders. All of these commands have no return value.
 
--   `cp [old] [new]` copies a file or folder from the `[old]` path to a `[new]` folder.
+-   `cp [from] [to]` copies a file or folder from the `[from]` path to a `[to]` folder.
 
--   `mv [old] [new]` moves a file or folder from the `[old]` path to a `[new]` folder.
+-   `mv [from] [to]` moves a file or folder from the `[from]` path to a `[to]` folder.
 
 -   `mkdir [folderPath]` creates a new folder at the path specified by `[folderPath]`.
 
@@ -293,9 +293,24 @@ Here are some commands that allows you to create, move, copy, and delete files a
 
 ## Demo
 
+. . .
+
+-   `*` wildcard
+
+. . .
+
+-   `?` wildcard
+
 ## Using a text editor in CLI
 
 A commonly used task in CLI is to edit text files. `nano`, `vim`, and `emacs` are the three most popular ones, in increasing learning curve but also complexity in the tasks you can perform. We will start with `nano` today.
 
+## Thanks for coming!
+
+Course survey: https://forms.gle/BnHMjsqWsnhoQEtL8
+
+Stickers: https://forms.gle/REszUXavNtdXGZ2NA
+
+Git/GitHub course registration: https://forms.gle/MzLh5gehgUysVyGM6
 
 
