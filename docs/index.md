@@ -1,6 +1,6 @@
 ---
 title: "Intro to Command Line, Season 1"
-date: "September, 2023"
+date: "October, 2023"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
