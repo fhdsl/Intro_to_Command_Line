@@ -1,5 +1,4 @@
-1-Introduction.md
+1-About-this-Course.md
 2-Command-Line-Seminar.md
 3-References.md
-About-this-Course.md
 About-the-Authors.md
