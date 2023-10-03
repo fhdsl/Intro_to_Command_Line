@@ -18,7 +18,3 @@ optional-redirects-and-pipes
 appendix-special-symbols-for-directories
 appendix-why-do-we-run-some-programs-using-.
 references
-installing-shell-for-windows-users
-for-all-users
-mental-model-2-treat-text-based-commands-as-functions
-appendix-why-do-we-run-some-programs-using-.
