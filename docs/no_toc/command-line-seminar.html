@@ -84,7 +84,7 @@
 <ul>
 <li class="chapter" data-level="2.3.1" data-path="command-line-seminar.html"><a href="command-line-seminar.html#exercise-explore-the-maze."><i class="fa fa-check"></i><b>2.3.1</b> Exercise: explore the maze.</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="command-line-seminar.html"><a href="command-line-seminar.html#mental-model-2-treat-text-based-programs-as-functions"><i class="fa fa-check"></i><b>2.4</b> Mental Model 2: Treat text-based programs as functions</a>
+<li class="chapter" data-level="2.4" data-path="command-line-seminar.html"><a href="command-line-seminar.html#mental-model-2-treat-text-based-commands-as-functions"><i class="fa fa-check"></i><b>2.4</b> Mental Model 2: Treat text-based commands as functions</a>
 <ul>
 <li class="chapter" data-level="2.4.1" data-path="command-line-seminar.html"><a href="command-line-seminar.html#subcommands"><i class="fa fa-check"></i><b>2.4.1</b> Subcommands</a></li>
 <li class="chapter" data-level="2.4.2" data-path="command-line-seminar.html"><a href="command-line-seminar.html#how-do-we-know-what-options-and-arguments-to-use-for-a-command"><i class="fa fa-check"></i><b>2.4.2</b> How do we know what options and arguments to use for a command?</a></li>
@@ -177,7 +177,7 @@
 </div>
 <div id="mental-model-1-navigating-a-directory-tree" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Mental Model 1: Navigating a directory tree</h2>
-<p>On our computer, the <strong>file system</strong> organizes files and directories in an (upside down) tree-like structure. In each folder, there is a parental directory, and there can be files and directories within it. The root directory <code>/</code> does not have a parental directory and contains all directories and files in on the computer.</p>
+<p>On our computer, the <strong>directory tree</strong> organizes files and directories in an (upside down) tree-like structure. In each folder, there is a parental directory, and there can be files and directories within it. The root directory <code>/</code> does not have a parental directory and contains all directories and files in on the computer.</p>
 <p>Below is a typical directory tree schematic, with the root directory being <code>/</code> and home directory being <code>/Users/andrew/</code>. We refer to a particular directory by describing its <strong>directory path</strong> separated by <code>/</code> slashes.</p>
 <div class="figure">
 <img src="https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png" alt="" />
@@ -220,8 +220,8 @@ Pod J</code></pre>
 <p>Hint: to save typing, use the <code>tab</code> button twice to complete filepaths you don’t know existed.</p>
 </div>
 </div>
-<div id="mental-model-2-treat-text-based-programs-as-functions" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Mental Model 2: Treat text-based programs as functions</h2>
+<div id="mental-model-2-treat-text-based-commands-as-functions" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Mental Model 2: Treat text-based commands as functions</h2>
 <p>The commands you have been using, <code>pwd</code>, <code>cd</code>, <code>ls</code>, and <code>cat</code> are actually computer programs! They are completely text-based: the program take in some text input, do something with the input, prints out or save something, and quits. There are other text-based programs that are more interactive while it is running, which we will see later: but for now, we will consider this schema for our programs. (We will use programs and commands interchangeably.)</p>
 <p>If you have done some programming yourself, you use functions to create programming expressions. A function has a name, takes in inputs, and then does something before optionally returning a output.</p>
 <div class="figure">
@@ -271,8 +271,8 @@ Shared/     andrew/</code></pre>
 <h2><span class="header-section-number">2.5</span> Putting the two mental models together: file manipulation</h2>
 <p>Here are some commands that allows you to create, move, copy, and delete files and folders. All of these commands have no return value.</p>
 <ul>
-<li><p><code>cp [old] [new]</code> copies a file or folder from the <code>[old]</code> path to a <code>[new]</code> folder.</p></li>
-<li><p><code>mv [old] [new]</code> moves a file or folder from the <code>[old]</code> path to a <code>[new]</code> folder.</p></li>
+<li><p><code>cp [from] [to]</code> copies a file or folder from the <code>[from]</code> path to a <code>[to]</code> folder.</p></li>
+<li><p><code>mv [from] [to]</code> moves a file or folder from the <code>[from]</code> path to a <code>[to]</code> folder.</p></li>
 <li><p><code>mkdir [folderPath]</code> creates a new folder at the path specified by <code>[folderPath]</code>.</p></li>
 <li><p><code>rm [path]</code> deletes a file at <code>[path]</code>. <code>rm -r [folder]</code> deletes a folder and its subcontents. Cannot be undone unless there is a backup system (usually not on personal computers, but available on FH’s computing cluster.)</p></li>
 </ul>
