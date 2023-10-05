@@ -75,11 +75,7 @@
 <li class="chapter" data-level="2" data-path="command-line-seminar.html"><a href="command-line-seminar.html"><i class="fa fa-check"></i><b>2</b> Command Line Seminar</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="command-line-seminar.html"><a href="command-line-seminar.html#what-is-the-command-line-and-why-should-i-learn-it"><i class="fa fa-check"></i><b>2.1</b> What is the Command Line and why should I learn it?</a></li>
-<li class="chapter" data-level="2.2" data-path="command-line-seminar.html"><a href="command-line-seminar.html#getting-started"><i class="fa fa-check"></i><b>2.2</b> Getting Started</a>
-<ul>
-<li class="chapter" data-level="2.2.1" data-path="command-line-seminar.html"><a href="command-line-seminar.html#installing-shell-for-windows-users"><i class="fa fa-check"></i><b>2.2.1</b> Installing Shell for Windows users</a></li>
-<li class="chapter" data-level="2.2.2" data-path="command-line-seminar.html"><a href="command-line-seminar.html#for-all-users"><i class="fa fa-check"></i><b>2.2.2</b> For all users</a></li>
-</ul></li>
+<li class="chapter" data-level="2.2" data-path="command-line-seminar.html"><a href="command-line-seminar.html#getting-started"><i class="fa fa-check"></i><b>2.2</b> Getting Started</a></li>
 <li class="chapter" data-level="2.3" data-path="command-line-seminar.html"><a href="command-line-seminar.html#mental-model-1-navigating-a-directory-tree"><i class="fa fa-check"></i><b>2.3</b> Mental Model 1: Navigating a directory tree</a>
 <ul>
 <li class="chapter" data-level="2.3.1" data-path="command-line-seminar.html"><a href="command-line-seminar.html#exercise-explore-the-maze."><i class="fa fa-check"></i><b>2.3.1</b> Exercise: explore the maze.</a></li>
@@ -97,8 +93,13 @@
 <li class="chapter" data-level="2.6" data-path="command-line-seminar.html"><a href="command-line-seminar.html#using-a-text-editor-in-cli"><i class="fa fa-check"></i><b>2.6</b> Using a text editor in CLI</a></li>
 <li class="chapter" data-level="2.7" data-path="command-line-seminar.html"><a href="command-line-seminar.html#optional-applying-what-we-just-learned-running-bioinformatics-software"><i class="fa fa-check"></i><b>2.7</b> Optional: Applying what we just learned: running bioinformatics software</a></li>
 <li class="chapter" data-level="2.8" data-path="command-line-seminar.html"><a href="command-line-seminar.html#optional-redirects-and-pipes"><i class="fa fa-check"></i><b>2.8</b> Optional: Redirects and Pipes</a></li>
-<li class="chapter" data-level="2.9" data-path="command-line-seminar.html"><a href="command-line-seminar.html#appendix-special-symbols-for-directories"><i class="fa fa-check"></i><b>2.9</b> Appendix: Special symbols for directories:</a></li>
-<li class="chapter" data-level="2.10" data-path="command-line-seminar.html"><a href="command-line-seminar.html#appendix-why-do-we-run-some-programs-using-."><i class="fa fa-check"></i><b>2.10</b> Appendix: Why do we run some programs using <code>./</code>?</a></li>
+<li class="chapter" data-level="2.9" data-path="command-line-seminar.html"><a href="command-line-seminar.html#appendix-starting-the-command-line-locally-on-your-comptuer"><i class="fa fa-check"></i><b>2.9</b> Appendix: Starting the command line locally on your comptuer:</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="command-line-seminar.html"><a href="command-line-seminar.html#for-mac-users"><i class="fa fa-check"></i><b>2.9.1</b> For Mac users</a></li>
+<li class="chapter" data-level="2.9.2" data-path="command-line-seminar.html"><a href="command-line-seminar.html#for-windows-users"><i class="fa fa-check"></i><b>2.9.2</b> For Windows users</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="command-line-seminar.html"><a href="command-line-seminar.html#appendix-special-symbols-for-directories"><i class="fa fa-check"></i><b>2.10</b> Appendix: Special symbols for directories:</a></li>
+<li class="chapter" data-level="2.11" data-path="command-line-seminar.html"><a href="command-line-seminar.html#appendix-why-do-we-run-some-programs-using-."><i class="fa fa-check"></i><b>2.11</b> Appendix: Why do we run some programs using <code>./</code>?</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
 <li class="chapter" data-level="3" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>3</b> References</a></li>
@@ -152,67 +153,63 @@
 </div>
 <div id="getting-started" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Getting Started</h2>
-<div id="installing-shell-for-windows-users" class="section level3" number="2.2.1">
-<h3><span class="header-section-number">2.2.1</span> Installing Shell for Windows users</h3>
-<ul>
-<li><p>Open Windows Powershell.</p></li>
-<li><p>Type in: <code>wsl --install -d ubuntu</code>, and hit enter.</p></li>
-<li><p>You will might be asked to enter a new username and password. You can use the same as you have for your computer.</p></li>
-<li><p>A shell terminal should show up. If it doesn’t show up, look in your search bar for Ubuntu on Windows, and open it.</p></li>
-</ul>
-</div>
-<div id="for-all-users" class="section level3" number="2.2.2">
-<h3><span class="header-section-number">2.2.2</span> For all users</h3>
-<p>Open your Shell: on Macs, open up “Terminal” Application. On Windows, open up “Windows Subsystem for Unix”, or “Ubuntu on Windows”. You should see a single line of text, with a blinking cursor, such as this:</p>
-<pre><code>andrew@MGQQR2YQRT9 ~ % </code></pre>
-<p>Here, <code>andrew</code> is the computer user, and <code>MGQQR2YQRT9</code> is the computer’s name. The next piece of character, <code>~</code> states that the currently directory is <code>~</code>. The symbol <code>~</code> is a short-hand for the “home” directory for the user of a computer. On Macs, it would be something like <code>/User/andrew</code>.</p>
+<p>Here, we are working in replit’s shell. If you want to use the command line locally from your computer, see the appendix.</p>
+<p>You should see a single line of text, with a blinking cursor, such as this:</p>
+<pre><code>~/project$ </code></pre>
+<p>The next piece of character, <code>~/project</code> states that the currently directory is <code>~/project</code>. The symbol <code>~</code> is a short-hand for the “home” directory for the user of a computer. In replit, the home directory is <code>/home/runner</code>.</p>
 <p>This current directory is important: in the Command Line, you interact with the computer from a directory, similar interacting with the computer using a file system window graphically.</p>
-<p>To confirm that you are in “home” directory, type in the command <code>pwd</code> and hit enter.</p>
-<pre><code>andrew@MGQQR2YQRT9 ~ % pwd
-/Users/andrew</code></pre>
+<p>To see the full directory path, type in the command <code>pwd</code> and hit enter.</p>
+<pre><code>~/project$ pwd
+/home/runner/project</code></pre>
 <p>Unlike a GUI, the CLI does not provide immediate options to you to interact with. We have to know a learn a handful of vocabulary to interact with it well. But besides the vocabulary, we need to keep a mental model of a task we want to complete. In GUIs that that mental model is shown to us visually, such as a file browser.</p>
 <p>We organizes our seminar by constructing several mental models and learning relevant commands related to each model.</p>
-<p>Lastly, the CLI is forgiving. It will tell you if you did something you did not intend to, with little consequences, which encourages exploration and experimentation. Consequential actions have security safeguards. With this mindset, we will explore the CLI openly.</p>
-</div>
 </div>
 <div id="mental-model-1-navigating-a-directory-tree" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Mental Model 1: Navigating a directory tree</h2>
 <p>On our computer, the <strong>directory tree</strong> organizes files and directories in an (upside down) tree-like structure. In each folder, there is a parental directory, and there can be files and directories within it. The root directory <code>/</code> does not have a parental directory and contains all directories and files in on the computer.</p>
-<p>Below is a typical directory tree schematic, with the root directory being <code>/</code> and home directory being <code>/Users/andrew/</code>. We refer to a particular directory by describing its <strong>directory path</strong> separated by <code>/</code> slashes.</p>
+<p>Below is a typical directory tree schematic, with the root directory being <code>/</code> and home directory being <code>/home/runner</code>. We refer to a particular directory by describing its <strong>directory path</strong> separated by <code>/</code> slashes.</p>
 <div class="figure">
-<img src="https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png" alt="" />
-<p class="caption">Source: <a href="https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png" class="uri">https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png</a></p>
+<img src="images/directory_tree.png" alt="" />
+<p class="caption">Replit directory tree</p>
 </div>
 <p>To interact with files and programs in the file system in the GUI world, we moved up and down the directory tree via point and clicking on windows. In the CLI world we can use the following commands:</p>
 <ul>
 <li><p><code>pwd</code> prints out our current directory.</p></li>
 <li><p><code>cd /</code> changes directory to the root directory.</p></li>
-<li><p><code>cd /Users/andrew</code> changes directory to the home directory.</p></li>
+<li><p><code>cd /home/runner</code> changes directory to the home directory.</p></li>
 </ul>
 <p>Consider:</p>
-<pre><code>andrew@MGQQR2YQRT9 ~ % cd /Users/andrew
-andrew@MGQQR2YQRT9 ~ % pwd
-/Users/andrew</code></pre>
+<pre><code>~$ cd /home/runner
+~$ pwd
+/home/runner</code></pre>
 <p>So far, we have changed the directory by specifying the <strong>absolute directory path</strong>, which means specifying the directory from the root directory <code>/</code>. Often, we can specify a path by the <strong>relative directory path</strong>, which is a path <em>relative to our current directory</em>.</p>
 <p>Consider:</p>
-<pre><code>andrew@MGQQR2YQRT9 ~ % pwd
-/Users/andrew
-andrew@MGQQR2YQRT9 ~ % cd Desktop/
-andrew@MGQQR2YQRT9 Desktop % pwd
-/Users/andrew/Desktop
-andrew@MGQQR2YQRT9 Desktop % cd ..
-andrew@MGQQR2YQRT9 ~ % pwd
-/Users/andrew</code></pre>
-<p>We started in <code>/Users/andrew</code>, and then changed to <code>/Users/andrew/Desktop</code> by specifying <code>cd Desktop/</code> as a relative directory path. Finally, we changed the directory to the parent directory of <code>/Users/andrew/Desktop</code> via <code>cd ..</code>, back to <code>/Users/andrew</code>. The special directory symbol <code>..</code> specifies the parent directory.</p>
-<p>How did we know that the <code>Desktop/</code> folder is in <code>/Users/andrew/</code>? We can list all the files and directories within the current directory:</p>
-<pre><code>andrew@MGQQR2YQRT9 ~ % ls
-Applications    Desktop     Documents   Downloads   Library     Movies      Music       Pictures    Public</code></pre>
+<pre><code>~$ cd project/
+~/project$ pwd
+/home/runner/project
+~/project$ cd ..
+~$ pwd
+/home/runner</code></pre>
+<p>We started in <code>/home/runner</code>, and then changed to <code>/home/runner/project</code> by specifying <code>cd project/</code> as a relative directory path. Finally, we changed the directory to the parent directory of <code>/home/runner/project</code> via <code>cd ..</code>, back to <code>/home/runner</code>. The special directory symbol <code>..</code> specifies the parent directory.</p>
+<p>How did we know that the <code>project/</code> folder is in <code>/home/runner</code>? We can list all the files and directories within the current directory:</p>
+<pre><code>~$ ls
+project</code></pre>
 <p>It is very common to navigate a directory tree via iterations of <code>ls</code> and <code>cd</code> on relative paths.</p>
 <div id="exercise-explore-the-maze." class="section level3" number="2.3.1">
 <h3><span class="header-section-number">2.3.1</span> Exercise: explore the maze.</h3>
-<p>Download and unzip this file: <a href="https://tinyurl.com/daslcmd" class="uri">https://tinyurl.com/daslcmd</a></p>
-<p>Use <code>cd</code> and <code>ls</code> to get to folder of the file you unzipped.</p>
-<p>Use <code>cd</code> and <code>ls</code> to explore the maze in <code>cmd_exercises/maze</code>, report back what you find!</p>
+<p>We will download some files, and let you a more complex file directory:</p>
+<pre><code>~/project$ git clone https://github.com/fhdsl/S1_Intro_to_Command_Line.git
+Cloning into &#39;S1_Intro_to_Command_Line&#39;...
+remote: Enumerating objects: 844, done.
+remote: Counting objects: 100% (571/571), done.
+remote: Compressing objects: 100% (319/319), done.
+remote: Total 844 (delta 251), reused 465 (delta 209), pack-reused 273
+Receiving objects: 100% (844/844), 25.49 MiB | 6.35 MiB/s, done.
+Resolving deltas: 100% (280/280), done.
+Updating files: 100% (679/679), done.</code></pre>
+<p>Then,</p>
+<pre><code>~/project$ cd S1_Intro_to_Command_Line/cmd_exercises/maze/
+~/.../cmd_exercises/maze$ </code></pre>
 <p>To examine a text file completely, use the <code>cat</code> command with the first argument be the text file name, such as:</p>
 <pre><code>andrew@MGQQR2YQRT9 west % cat orca_J.txt 
 Pod J</code></pre>
@@ -235,11 +232,11 @@ Pod J</code></pre>
 </div>
 <p>We have been calling <code>ls</code> with no argument and options, and it outputs the files and folders in the current working directory.</p>
 <p>The command can take an optional argument of a folder path (full or relative), and it outputs the files and folders in that directory:</p>
-<pre><code>andrew@MGQQR2YQRT9 ~ % ls /Users
-Shared      andrew      </code></pre>
+<pre><code>~/.../cmd_exercises/maze$ ls /
+bin  boot  dev  etc  home  inject  io  lib  lib32  lib64  libx32  media  mnt  nix  opt  proc  repl  root  run  sbin  srv  store  sys  tmp  usr  var</code></pre>
 <p>We add the option <code>-F</code>:</p>
-<pre><code>andrew@MGQQR2YQRT9 ~ % ls -F /Users
-Shared/     andrew/</code></pre>
+<pre><code>~/.../cmd_exercises/maze$ ls -F /
+bin@  boot/  dev/  etc/  home/  inject/  io/  lib@  lib32@  lib64@  libx32@  media/  mnt/  nix/  opt/  proc/  repl/  root/  run/  sbin@  srv/  store/  sys/  tmp/  usr/  var/</code></pre>
 <p>This displays a slash (‘/’) immediately after each pathname that is a directory, and (‘@’) after a symbolic link (not important to know right now).</p>
 <p>It is sometimes easy to overlook that the text printed from a command like <code>ls</code> is indeed the returned output from the program. It is important to keep this in mind when we start to use multiple commands together later in this seminar.</p>
 <div id="subcommands" class="section level3" number="2.4.1">
@@ -248,11 +245,8 @@ Shared/     andrew/</code></pre>
 </div>
 <div id="how-do-we-know-what-options-and-arguments-to-use-for-a-command" class="section level3" number="2.4.2">
 <h3><span class="header-section-number">2.4.2</span> How do we know what options and arguments to use for a command?</h3>
-<p>If the command is built-in (not externally installed), then there is usually a manual for it. Use the <code>man</code> command, with argument of the command you want to look up:</p>
-<pre><code>man ls</code></pre>
-<p>and you will get comprehensive options and arguments to consider. Notice that here, <code>man</code> is the command, and <code>ls</code> is an argument for the command! Press <code>q</code> to exit the manual.</p>
-<p>Often, for externally installed software, there is a <code>--help</code> or <code>-h</code> option that tells you how to use the software. For instance, if Python 3 is installed on your computer:</p>
-<pre><code>python3 --help</code></pre>
+<p>Often, there is a <code>--help</code> or <code>-h</code> option that tells you how to use the software:</p>
+<pre><code>ls --help</code></pre>
 <p>Online resources: <a href="https://explainshell.com/" class="uri">https://explainshell.com/</a></p>
 </div>
 <div id="exercise-options-for-ls" class="section level3" number="2.4.3">
@@ -280,49 +274,49 @@ Shared/     andrew/</code></pre>
 <pre><code>cp my_folder/file.txt .</code></pre>
 <p>copies the file to the working directory.</p>
 <p>Can you explain what I am doing below?</p>
-<pre><code>clo2@MGQQR2YQRT9 cmd_exercises % cd maze/west/
+<pre><code>cmd_exercises % cd maze/west/
 clo2@MGQQR2YQRT9 west % ls
 clam_1.txt      clam_4.txt      orca_L.txt      seaweed_3.txt       seaweed_6.txt
 clam_2.txt      orca_J.txt      seaweed_1.txt       seaweed_4.txt       seaweed_rotten.txt
 clam_3.txt      orca_K.txt      seaweed_2.txt       seaweed_5.txt
-clo2@MGQQR2YQRT9 west % mkdir fish_net
-clo2@MGQQR2YQRT9 west % mv orca_J.txt fish_net 
-clo2@MGQQR2YQRT9 west % ls
+west % mkdir fish_net
+west % mv orca_J.txt fish_net 
+west % ls
 clam_1.txt      clam_4.txt      orca_L.txt      seaweed_3.txt       seaweed_6.txt
 clam_2.txt      fish_net        seaweed_1.txt       seaweed_4.txt       seaweed_rotten.txt
 clam_3.txt      orca_K.txt      seaweed_2.txt       seaweed_5.txt
-clo2@MGQQR2YQRT9 west % ls fish_net 
+west % ls fish_net 
 orca_J.txt
-clo2@MGQQR2YQRT9 west % cp fish_net/orca_J.txt .
-clo2@MGQQR2YQRT9 west % ls
+west % cp fish_net/orca_J.txt .
+west % ls
 clam_1.txt      clam_4.txt      orca_K.txt      seaweed_2.txt       seaweed_5.txt
 clam_2.txt      fish_net        orca_L.txt      seaweed_3.txt       seaweed_6.txt
 clam_3.txt      orca_J.txt      seaweed_1.txt       seaweed_4.txt       seaweed_rotten.txt
-clo2@MGQQR2YQRT9 west % ls fish_net 
+west % ls fish_net 
 orca_J.txt
-clo2@MGQQR2YQRT9 west % rm fish_net/orca_J.txt 
-clo2@MGQQR2YQRT9 west % rm -r fish_net </code></pre>
+west % rm fish_net/orca_J.txt 
+west % rm -r fish_net </code></pre>
 <div id="wildcards-to-access-multiple-files" class="section level3" number="2.5.1">
 <h3><span class="header-section-number">2.5.1</span> Wildcards to access multiple files</h3>
 <p>Suppose that I want to move all the files starting with the characters <code>orca</code> in the <code>maze/west</code> directory. I could run <code>mv</code> command multiple times, but that is time consuming if I have a lot of such files. In the Shell, there are special wildcard symbols that allows you to access multiple files of a specific pattern:</p>
 <p>The <code>*</code> wildcard represents zero or more characters of any form. Therefore, <code>orca*</code> will specify all files that have <code>orca</code> starting in its file name:</p>
-<pre><code>clo2@MGQQR2YQRT9 west % ls -l orca*
+<pre><code>west % ls -l orca*
 -rw-r--r--  1 clo2  staff  6 Aug 28 12:56 orca_J.txt
 -rw-r--r--  1 clo2  staff  6 Aug 25 15:56 orca_K.txt
 -rw-r--r--  1 clo2  staff  6 Aug 25 15:56 orca_L.txt</code></pre>
 <p>The input argument for <code>ls</code> is now a list of files.</p>
 <p>We move it:</p>
-<pre><code>clo2@MGQQR2YQRT9 west % mkdir fish_net
-clo2@MGQQR2YQRT9 west % mv orca* fish_net </code></pre>
+<pre><code>west % mkdir fish_net
+west % mv orca* fish_net </code></pre>
 <p>The wildcard can be used in different part of the filename to specify different files:</p>
 <p>We can use <code>*</code> to specify <em>all</em> files in a directory (undoing what we did before):</p>
-<pre><code>clo2@MGQQR2YQRT9 west % mv fish_net/* .</code></pre>
+<pre><code>west % mv fish_net/* .</code></pre>
 <p>Or just files that have the number 2:</p>
-<pre><code>clo2@MGQQR2YQRT9 west % ls -l *2*
+<pre><code>west % ls -l *2*
 -rw-r--r--  1 clo2  staff  0 Aug 28 13:21 clam_2.txt
 -rw-r--r--  1 clo2  staff  0 Aug 28 13:18 seaweed_2.txt</code></pre>
 <p>The <code>?</code> wildcard represents exactly 1 character of any form:</p>
-<pre><code>clo2@MGQQR2YQRT9 west % ls -l clam_?.txt
+<pre><code>west % ls -l clam_?.txt
 -rw-r--r--  1 clo2  staff  0 Aug 28 13:21 clam_1.txt
 -rw-r--r--  1 clo2  staff  0 Aug 28 13:21 clam_2.txt
 -rw-r--r--  1 clo2  staff  0 Aug 28 13:21 clam_3.txt
@@ -368,8 +362,24 @@ Aligned sequence  10000 :  ATCTGAGGGGACGAGAGGGTAAGATGATTGATGGAGGGGAAATCCACAGAGCC
 <pre><code>./bwa mem --ref [reference genome fasta file] --fastq [unaligned sequences fastq file] | head &gt; [output file]</code></pre>
 <p>This encourages the development of modular, flexible programs that can be connected together via pipes and saved via redirecting.</p>
 </div>
-<div id="appendix-special-symbols-for-directories" class="section level2" number="2.9">
-<h2><span class="header-section-number">2.9</span> Appendix: Special symbols for directories:</h2>
+<div id="appendix-starting-the-command-line-locally-on-your-comptuer" class="section level2" number="2.9">
+<h2><span class="header-section-number">2.9</span> Appendix: Starting the command line locally on your comptuer:</h2>
+<div id="for-mac-users" class="section level3" number="2.9.1">
+<h3><span class="header-section-number">2.9.1</span> For Mac users</h3>
+<p>Open up “Terminal” Application.</p>
+</div>
+<div id="for-windows-users" class="section level3" number="2.9.2">
+<h3><span class="header-section-number">2.9.2</span> For Windows users</h3>
+<ul>
+<li><p>Open Windows Powershell.</p></li>
+<li><p>Type in: <code>wsl --install -d ubuntu</code>, and hit enter.</p></li>
+<li><p>You will might be asked to enter a new username and password. You can use the same as you have for your computer.</p></li>
+<li><p>A shell terminal should show up. If it doesn’t show up, look in your search bar for “Ubuntu on Windows”, and open it.</p></li>
+</ul>
+</div>
+</div>
+<div id="appendix-special-symbols-for-directories" class="section level2" number="2.10">
+<h2><span class="header-section-number">2.10</span> Appendix: Special symbols for directories:</h2>
 <ul>
 <li><p><code>.</code> the current directory.</p></li>
 <li><p><code>..</code> the parent directory.</p></li>
@@ -377,13 +387,12 @@ Aligned sequence  10000 :  ATCTGAGGGGACGAGAGGGTAAGATGATTGATGGAGGGGAAATCCACAGAGCC
 <li><p><code>~</code> the home directory.</p></li>
 </ul>
 </div>
-<div id="appendix-why-do-we-run-some-programs-using-." class="section level2" number="2.10">
-<h2><span class="header-section-number">2.10</span> Appendix: Why do we run some programs using <code>./</code>?</h2>
+<div id="appendix-why-do-we-run-some-programs-using-." class="section level2" number="2.11">
+<h2><span class="header-section-number">2.11</span> Appendix: Why do we run some programs using <code>./</code>?</h2>
 <p>When you type in a command, such as <code>ls</code> in the command line, the command line looks to see whether the command belongs to a list of commands it knows how to run. This list of approved commands is stored in an environmental variable. We can see it via:</p>
 <pre><code>andrew@MGQQR2YQRT9 ~ % echo $PATH
 /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin</code></pre>
-<p>In each folder (using <code>:</code> to distinguish folders apart) are the programs to run commands such as <code>ls</code>.
-If we want to run a program that is not in the <code>$PATH</code> environmental variable, there could be security issues. For instance, perhaps someone created a program called <code>ls</code> that does something bad to your computer, and you run it, thinking that you are running the program <code>ls</code> you are familiar with located in the <code>$PATH</code> environment variable. Or someone creating a malicious program called <code>sl</code> that takes advantages of typos.</p>
+<p>In each folder (using <code>:</code> to distinguish folders apart) are the programs to run commands such as <code>ls</code>. If we want to run a program that is not in the <code>$PATH</code> environmental variable, there could be security issues. For instance, perhaps someone created a program called <code>ls</code> that does something bad to your computer, and you run it, thinking that you are running the program <code>ls</code> you are familiar with located in the <code>$PATH</code> environment variable. Or someone creating a malicious program called <code>sl</code> that takes advantages of typos.</p>
 <p>To protect that, to run programs not in <code>$PATH</code>, we use: <code>./program_name</code>. This is a short-form of referring to the current directory <code>./</code> and running <code>program_name</code>.</p>
 <p>For more info, see this <a href="https://unix.stackexchange.com/questions/4430/why-do-we-use-dot-slash-to-execute-a-file-in-linux-unix">post</a>.</p>
 
