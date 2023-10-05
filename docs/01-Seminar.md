@@ -18,48 +18,36 @@ The most commonly used Command Line is the Shell. The Shell is a dynamic program
 
 ## Getting Started
 
-### Installing Shell for Windows users
+Here, we are working in replit's shell. If you want to use the command line locally from your computer, see the appendix.
 
--   Open Windows Powershell.
-
--   Type in: `wsl --install -d ubuntu`, and hit enter.
-
--   You will might be asked to enter a new username and password. You can use the same as you have for your computer.
-
--   A shell terminal should show up. If it doesn't show up, look in your search bar for Ubuntu on Windows, and open it.
-
-### For all users
-
-Open your Shell: on Macs, open up "Terminal" Application. On Windows, open up "Windows Subsystem for Unix", or "Ubuntu on Windows". You should see a single line of text, with a blinking cursor, such as this:
+You should see a single line of text, with a blinking cursor, such as this:
 
 ```         
-andrew@MGQQR2YQRT9 ~ % 
+~/project$ 
 ```
 
-Here, `andrew` is the computer user, and `MGQQR2YQRT9` is the computer's name. The next piece of character, `~` states that the currently directory is `~`. The symbol `~` is a short-hand for the "home" directory for the user of a computer. On Macs, it would be something like `/User/andrew`.
+The next piece of character, `~/project` states that the currently directory is `~/project`. The symbol `~` is a short-hand for the "home" directory for the user of a computer. In replit, the home directory is `/home/runner`.
 
 This current directory is important: in the Command Line, you interact with the computer from a directory, similar interacting with the computer using a file system window graphically.
 
-To confirm that you are in "home" directory, type in the command `pwd` and hit enter.
+To see the full directory path, type in the command `pwd` and hit enter.
 
 ```         
-andrew@MGQQR2YQRT9 ~ % pwd
-/Users/andrew
+~/project$ pwd
+/home/runner/project
 ```
 
 Unlike a GUI, the CLI does not provide immediate options to you to interact with. We have to know a learn a handful of vocabulary to interact with it well. But besides the vocabulary, we need to keep a mental model of a task we want to complete. In GUIs that that mental model is shown to us visually, such as a file browser.
 
 We organizes our seminar by constructing several mental models and learning relevant commands related to each model.
 
-Lastly, the CLI is forgiving. It will tell you if you did something you did not intend to, with little consequences, which encourages exploration and experimentation. Consequential actions have security safeguards. With this mindset, we will explore the CLI openly.
-
 ## Mental Model 1: Navigating a directory tree
 
 On our computer, the **directory tree** organizes files and directories in an (upside down) tree-like structure. In each folder, there is a parental directory, and there can be files and directories within it. The root directory `/` does not have a parental directory and contains all directories and files in on the computer.
 
-Below is a typical directory tree schematic, with the root directory being `/` and home directory being `/Users/andrew/`. We refer to a particular directory by describing its **directory path** separated by `/` slashes.
+Below is a typical directory tree schematic, with the root directory being `/` and home directory being `/home/runner`. We refer to a particular directory by describing its **directory path** separated by `/` slashes.
 
-![Source: https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png ](https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png)
+![Replit directory tree](images/directory_tree.png)
 
 To interact with files and programs in the file system in the GUI world, we moved up and down the directory tree via point and clicking on windows. In the CLI world we can use the following commands:
 
@@ -67,14 +55,14 @@ To interact with files and programs in the file system in the GUI world, we move
 
 -   `cd /` changes directory to the root directory.
 
--   `cd /Users/andrew` changes directory to the home directory.
+-   `cd /home/runner` changes directory to the home directory.
 
 Consider:
 
 ```         
-andrew@MGQQR2YQRT9 ~ % cd /Users/andrew
-andrew@MGQQR2YQRT9 ~ % pwd
-/Users/andrew
+~$ cd /home/runner
+~$ pwd
+/home/runner
 ```
 
 So far, we have changed the directory by specifying the **absolute directory path**, which means specifying the directory from the root directory `/`. Often, we can specify a path by the **relative directory path**, which is a path *relative to our current directory*.
@@ -82,34 +70,47 @@ So far, we have changed the directory by specifying the **absolute directory pat
 Consider:
 
 ```         
-andrew@MGQQR2YQRT9 ~ % pwd
-/Users/andrew
-andrew@MGQQR2YQRT9 ~ % cd Desktop/
-andrew@MGQQR2YQRT9 Desktop % pwd
-/Users/andrew/Desktop
-andrew@MGQQR2YQRT9 Desktop % cd ..
-andrew@MGQQR2YQRT9 ~ % pwd
-/Users/andrew
+~$ cd project/
+~/project$ pwd
+/home/runner/project
+~/project$ cd ..
+~$ pwd
+/home/runner
 ```
 
-We started in `/Users/andrew`, and then changed to `/Users/andrew/Desktop` by specifying `cd Desktop/` as a relative directory path. Finally, we changed the directory to the parent directory of `/Users/andrew/Desktop` via `cd ..`, back to `/Users/andrew`. The special directory symbol `..` specifies the parent directory.
+We started in `/home/runner`, and then changed to `/home/runner/project` by specifying `cd project/` as a relative directory path. Finally, we changed the directory to the parent directory of `/home/runner/project` via `cd ..`, back to `/home/runner`. The special directory symbol `..` specifies the parent directory.
 
-How did we know that the `Desktop/` folder is in `/Users/andrew/`? We can list all the files and directories within the current directory:
+How did we know that the `project/` folder is in `/home/runner`? We can list all the files and directories within the current directory:
 
 ```         
-andrew@MGQQR2YQRT9 ~ % ls
-Applications    Desktop     Documents   Downloads   Library     Movies      Music       Pictures    Public
+~$ ls
+project
 ```
 
 It is very common to navigate a directory tree via iterations of `ls` and `cd` on relative paths.
 
 ### Exercise: explore the maze.
 
-Download and unzip this file: <https://tinyurl.com/daslcmd>
+We will download some files, and let you a more complex file directory:
 
-Use `cd` and `ls` to get to folder of the file you unzipped.
+```         
+~/project$ git clone https://github.com/fhdsl/S1_Intro_to_Command_Line.git
+Cloning into 'S1_Intro_to_Command_Line'...
+remote: Enumerating objects: 844, done.
+remote: Counting objects: 100% (571/571), done.
+remote: Compressing objects: 100% (319/319), done.
+remote: Total 844 (delta 251), reused 465 (delta 209), pack-reused 273
+Receiving objects: 100% (844/844), 25.49 MiB | 6.35 MiB/s, done.
+Resolving deltas: 100% (280/280), done.
+Updating files: 100% (679/679), done.
+```
 
-Use `cd` and `ls` to explore the maze in `cmd_exercises/maze`, report back what you find!
+Then,
+
+```         
+~/project$ cd S1_Intro_to_Command_Line/cmd_exercises/maze/
+~/.../cmd_exercises/maze$ 
+```
 
 To examine a text file completely, use the `cat` command with the first argument be the text file name, such as:
 
@@ -128,26 +129,26 @@ The commands you have been using, `pwd`, `cd`, `ls`, and `cat` are actually comp
 
 If you have done some programming yourself, you use functions to create programming expressions. A function has a name, takes in inputs, and then does something before optionally returning a output.
 
-![Source: Wellesley CS 110: https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png](https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png)
+![Source: Wellesley CS 110: <https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png>](https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png)
 
 Similarly, when using a command from the command line, we should treat it as a function: a command has a *name*, inputs in terms of *options* and/or *arguments*, and optionally *returns* something. See below for an example of running the `ls` command with some options and arguments.
 
-![Source: Software Carpentry: https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg](https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg)
+![Source: Software Carpentry: <https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg>](https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg)
 
 We have been calling `ls` with no argument and options, and it outputs the files and folders in the current working directory.
 
 The command can take an optional argument of a folder path (full or relative), and it outputs the files and folders in that directory:
 
 ```         
-andrew@MGQQR2YQRT9 ~ % ls /Users
-Shared      andrew      
+~/.../cmd_exercises/maze$ ls /
+bin  boot  dev  etc  home  inject  io  lib  lib32  lib64  libx32  media  mnt  nix  opt  proc  repl  root  run  sbin  srv  store  sys  tmp  usr  var
 ```
 
 We add the option `-F`:
 
 ```         
-andrew@MGQQR2YQRT9 ~ % ls -F /Users
-Shared/     andrew/
+~/.../cmd_exercises/maze$ ls -F /
+bin@  boot/  dev/  etc/  home/  inject/  io/  lib@  lib32@  lib64@  libx32@  media/  mnt/  nix/  opt/  proc/  repl/  root/  run/  sbin@  srv/  store/  sys/  tmp/  usr/  var/
 ```
 
 This displays a slash ('/') immediately after each pathname that is a directory, and ('\@') after a symbolic link (not important to know right now).
@@ -160,18 +161,10 @@ Sometimes, a piece of software have many uses, like a swiss army knife. The soft
 
 ### How do we know what options and arguments to use for a command?
 
-If the command is built-in (not externally installed), then there is usually a manual for it. Use the `man` command, with argument of the command you want to look up:
+Often, there is a `--help` or `-h` option that tells you how to use the software:
 
 ```         
-man ls
-```
-
-and you will get comprehensive options and arguments to consider. Notice that here, `man` is the command, and `ls` is an argument for the command! Press `q` to exit the manual.
-
-Often, for externally installed software, there is a `--help` or `-h` option that tells you how to use the software. For instance, if Python 3 is installed on your computer:
-
-```         
-python3 --help
+ls --help
 ```
 
 Online resources: <https://explainshell.com/>
@@ -213,28 +206,28 @@ copies the file to the working directory.
 Can you explain what I am doing below?
 
 ```         
-clo2@MGQQR2YQRT9 cmd_exercises % cd maze/west/
+cmd_exercises % cd maze/west/
 clo2@MGQQR2YQRT9 west % ls
 clam_1.txt      clam_4.txt      orca_L.txt      seaweed_3.txt       seaweed_6.txt
 clam_2.txt      orca_J.txt      seaweed_1.txt       seaweed_4.txt       seaweed_rotten.txt
 clam_3.txt      orca_K.txt      seaweed_2.txt       seaweed_5.txt
-clo2@MGQQR2YQRT9 west % mkdir fish_net
-clo2@MGQQR2YQRT9 west % mv orca_J.txt fish_net 
-clo2@MGQQR2YQRT9 west % ls
+west % mkdir fish_net
+west % mv orca_J.txt fish_net 
+west % ls
 clam_1.txt      clam_4.txt      orca_L.txt      seaweed_3.txt       seaweed_6.txt
 clam_2.txt      fish_net        seaweed_1.txt       seaweed_4.txt       seaweed_rotten.txt
 clam_3.txt      orca_K.txt      seaweed_2.txt       seaweed_5.txt
-clo2@MGQQR2YQRT9 west % ls fish_net 
+west % ls fish_net 
 orca_J.txt
-clo2@MGQQR2YQRT9 west % cp fish_net/orca_J.txt .
-clo2@MGQQR2YQRT9 west % ls
+west % cp fish_net/orca_J.txt .
+west % ls
 clam_1.txt      clam_4.txt      orca_K.txt      seaweed_2.txt       seaweed_5.txt
 clam_2.txt      fish_net        orca_L.txt      seaweed_3.txt       seaweed_6.txt
 clam_3.txt      orca_J.txt      seaweed_1.txt       seaweed_4.txt       seaweed_rotten.txt
-clo2@MGQQR2YQRT9 west % ls fish_net 
+west % ls fish_net 
 orca_J.txt
-clo2@MGQQR2YQRT9 west % rm fish_net/orca_J.txt 
-clo2@MGQQR2YQRT9 west % rm -r fish_net 
+west % rm fish_net/orca_J.txt 
+west % rm -r fish_net 
 ```
 
 ### Wildcards to access multiple files
@@ -244,7 +237,7 @@ Suppose that I want to move all the files starting with the characters `orca` in
 The `*` wildcard represents zero or more characters of any form. Therefore, `orca*` will specify all files that have `orca` starting in its file name:
 
 ```         
-clo2@MGQQR2YQRT9 west % ls -l orca*
+west % ls -l orca*
 -rw-r--r--  1 clo2  staff  6 Aug 28 12:56 orca_J.txt
 -rw-r--r--  1 clo2  staff  6 Aug 25 15:56 orca_K.txt
 -rw-r--r--  1 clo2  staff  6 Aug 25 15:56 orca_L.txt
@@ -255,8 +248,8 @@ The input argument for `ls` is now a list of files.
 We move it:
 
 ```         
-clo2@MGQQR2YQRT9 west % mkdir fish_net
-clo2@MGQQR2YQRT9 west % mv orca* fish_net 
+west % mkdir fish_net
+west % mv orca* fish_net 
 ```
 
 The wildcard can be used in different part of the filename to specify different files:
@@ -264,13 +257,13 @@ The wildcard can be used in different part of the filename to specify different 
 We can use `*` to specify *all* files in a directory (undoing what we did before):
 
 ```         
-clo2@MGQQR2YQRT9 west % mv fish_net/* .
+west % mv fish_net/* .
 ```
 
 Or just files that have the number 2:
 
 ```         
-clo2@MGQQR2YQRT9 west % ls -l *2*
+west % ls -l *2*
 -rw-r--r--  1 clo2  staff  0 Aug 28 13:21 clam_2.txt
 -rw-r--r--  1 clo2  staff  0 Aug 28 13:18 seaweed_2.txt
 ```
@@ -278,7 +271,7 @@ clo2@MGQQR2YQRT9 west % ls -l *2*
 The `?` wildcard represents exactly 1 character of any form:
 
 ```         
-clo2@MGQQR2YQRT9 west % ls -l clam_?.txt
+west % ls -l clam_?.txt
 -rw-r--r--  1 clo2  staff  0 Aug 28 13:21 clam_1.txt
 -rw-r--r--  1 clo2  staff  0 Aug 28 13:21 clam_2.txt
 -rw-r--r--  1 clo2  staff  0 Aug 28 13:21 clam_3.txt
@@ -305,13 +298,13 @@ A popular DNA sequence alignment tool is called "BWA", and here we present a toy
 
 Look at the documentation of `bwa mem` command to understand what needs to be the input:
 
-```
+```         
 ./bwa mem --help
 ```
 
 The appendix explains why we use `./bwa mem` instead of `bwa mem` to run the command.
 
-You should use the files from Steps 1 and 2 to use as the input arguments for alignment. 
+You should use the files from Steps 1 and 2 to use as the input arguments for alignment.
 
 If it works, you will get a wall of text ending with something like:
 
@@ -355,6 +348,22 @@ and then save it:
 
 This encourages the development of modular, flexible programs that can be connected together via pipes and saved via redirecting.
 
+## Appendix: Starting the command line locally on your comptuer:
+
+### For Mac users
+
+Open up "Terminal" Application.
+
+### For Windows users
+
+-   Open Windows Powershell.
+
+-   Type in: `wsl --install -d ubuntu`, and hit enter.
+
+-   You will might be asked to enter a new username and password. You can use the same as you have for your computer.
+
+-   A shell terminal should show up. If it doesn't show up, look in your search bar for "Ubuntu on Windows", and open it.
+
 ## Appendix: Special symbols for directories:
 
 -   `.` the current directory.
@@ -369,15 +378,13 @@ This encourages the development of modular, flexible programs that can be connec
 
 When you type in a command, such as `ls` in the command line, the command line looks to see whether the command belongs to a list of commands it knows how to run. This list of approved commands is stored in an environmental variable. We can see it via:
 
-```
+```         
 andrew@MGQQR2YQRT9 ~ % echo $PATH
 /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin
 ```
 
-In each folder (using `:` to distinguish folders apart) are the programs to run commands such as `ls`. 
-If we want to run a program that is not in the `$PATH` environmental variable, there could be security issues. For instance, perhaps someone created a program called `ls` that does something bad to your computer, and you run it, thinking that you are running the program `ls` you are familiar with located in the `$PATH` environment variable. Or someone creating a malicious program called `sl` that takes advantages of typos.
+In each folder (using `:` to distinguish folders apart) are the programs to run commands such as `ls`. If we want to run a program that is not in the `$PATH` environmental variable, there could be security issues. For instance, perhaps someone created a program called `ls` that does something bad to your computer, and you run it, thinking that you are running the program `ls` you are familiar with located in the `$PATH` environment variable. Or someone creating a malicious program called `sl` that takes advantages of typos.
 
-To protect that, to run programs not in `$PATH`, we use: `./program_name`. This is a short-form of referring to the current directory `./` and running `program_name`.  
-
+To protect that, to run programs not in `$PATH`, we use: `./program_name`. This is a short-form of referring to the current directory `./` and running `program_name`.
 
 For more info, see this [post](https://unix.stackexchange.com/questions/4430/why-do-we-use-dot-slash-to-execute-a-file-in-linux-unix).
