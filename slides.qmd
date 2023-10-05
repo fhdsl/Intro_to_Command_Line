@@ -36,21 +36,21 @@ output-location: fragment
 
 . . .
 
--   Treat text-based programs as functions
+-   Be able to navigate a directory tree
 
 . . .
 
--   Be able to navigate a directory tree 
-
-. . .
-
--   Be able to create, delete, copy, and move files 
+-   Be able to create, delete, copy, and move files
 
 . . .
 
 -   Use a text editor in the command line
 
-## Ways we can interact with a computer: 
+. . .
+
+-   Treat text-based programs as functions
+
+## Ways we can interact with a computer:
 
 . . .
 
@@ -78,12 +78,11 @@ However, the way a computer interprets and executes instructions are based on te
 
 . . .
 
-
 -   Use of programming languages and scientific software tools
 
 . . .
 
--   Use to high performance computing systems and the cloud 
+-   Use to high performance computing systems and the cloud
 
 ::: notes
 -   Scalable manipulation of text, files, and folders: if we want to move all files that have the words "tax returns" to a new folder, it would probably not scale easily via a mouse, but it could be done in one command in the Command Line.
@@ -95,30 +94,15 @@ However, the way a computer interprets and executes instructions are based on te
 
 ## Getting started
 
-### Installing Shell for Windows users
+We will be using replit, a online coding interface to access the command line.
 
--   Open Windows Powershell.
-
--   Type in: `wsl --install -d ubuntu`, and hit enter.
-
--   You will might be asked to enter a new username and password. You can use the same as you have for your computer.
-
--   A shell terminal should show up. If it doesn't show up, look in your search bar for Ubuntu on Windows, and open it.
-
-### For all users
-
--   For Macs, open up "Terminal" Application. 
-
--   On Windows, open up "Windows Subsystem for Unix", or "Ubuntu on Windows". You should see a single line of text, with a blinking cursor, such as this:
-
-```         
-andrew@MGQQR2YQRT9 ~ % 
-```
+-   Create an account on [replit.com](replit.com)
+-   Go to the project [https://replit.com/\@clo2fh/project?v=1](https://replit.com/@clo2fh/project?v=1)
+-   Click "Fork" on the right hand side of the screen.
 
 ## Interacting with the command line, a perspective
 
 . . .
-
 
 -   Unlike a GUI, the CLI does not provide immediate options to you to interact with.
 
@@ -128,9 +112,9 @@ andrew@MGQQR2YQRT9 ~ %
 
 . . .
 
--   It is forgiving, and encourages exploration and experimentation. 
+-   It is forgiving, and encourages exploration and experimentation.
 
-:::notes
+::: notes
 Unlike a GUI, the CLI does not provide immediate options to you to interact with. We have to know a learn a handful of vocabulary to interact with it well. But besides the vocabulary, we need to keep a mental model of a task we want to complete. In GUIs that that mental model is shown to us visually, such as a file browser.
 
 We organizes our seminar by constructing several mental models and learning relevant commands related to each model.
@@ -142,17 +126,17 @@ Lastly, the CLI is forgiving. It will tell you if you did something you did not 
 
 . . .
 
-On our computer, the **directory tree** organizes files and directories in an (upside down) tree-like structure. In each folder, there is a parental directory, and there can be files and directories within it. 
+On our computer, the **directory tree** organizes files and directories in an (upside down) tree-like structure. In each folder, there is a parental directory, and there can be files and directories within it.
 
-![Source: https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png](https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png){width="600"}
+![Replit directory tree](images/directory_tree.png){alt="Replit directory tree"}
 
-Example "home" **directory path**: `/Users/andrew/`
+Example "home" **directory path**: `/home/runner/`
 
 ## Basic directory tree navigation
 
 . . .
 
-![Source: https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png](https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png){width="400"}
+![Replit directory tree](images/directory_tree.png){alt="Replit directory tree" width="400"}
 
 . . .
 
@@ -164,7 +148,7 @@ Example "home" **directory path**: `/Users/andrew/`
 
 . . .
 
--   `cd /Users/andrew` changes directory to the home directory.
+-   `cd /home/runner` changes directory to the home directory.
 
 ## Demo
 
@@ -172,22 +156,16 @@ Example "home" **directory path**: `/Users/andrew/`
 
 -   The **relative directory path** is a path *relative to our current directory*.
 
--   `ls` lists all the files in the current directory. 
+-   `ls` lists all the files in the current directory.
 
 ## Exercise: explore the maze
 
-Download and unzip this file: https://tinyurl.com/daslcmd
-
-Use `cd` and `ls` to get to folder of the file you unzipped. 
-
-. . .
-
-Use `cd` and `ls` to explore the maze in `cmd_exercises/maze`, report back what you find!
+Use `cd` and `ls` to explore the maze in `/home/runner/project/maze`, report back what you find!
 
 To examine a text file completely, use the `cat` command with the first argument be the text file name, such as:
 
 ```         
-andrew@MGQQR2YQRT9 west % cat orca_J.txt 
+west % cat orca_J.txt 
 Pod J
 ```
 
@@ -205,7 +183,7 @@ When using a command from the command line, we should treat it as a function: a 
 
 . . .
 
-![Source: Wellesley CS 110: https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png](https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png)
+![Source: Wellesley CS 110: https://cs.wellesley.edu/\~cs110/lectures/L16/images/function.png](https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png)
 
 ## `ls` example
 
@@ -215,10 +193,9 @@ When using a command from the command line, we should treat it as a function: a 
 
 . . .
 
-
 ```         
-andrew@MGQQR2YQRT9 ~ % ls /Users
-Shared		andrew		
+~/.../cmd_exercises/maze$ ls /
+bin  boot  dev  etc  home  inject  io  lib  lib32  lib64  libx32  media  mnt  nix  opt  proc  repl  root  run  sbin  srv  store  sys  tmp  usr  var   
 ```
 
 . . .
@@ -226,11 +203,11 @@ Shared		andrew
 We add the option `-F`:
 
 ```         
-andrew@MGQQR2YQRT9 ~ % ls -F /Users
-Shared/		andrew/
+~/.../cmd_exercises/maze$ ls -F /
+bin@  boot/  dev/  etc/  home/  inject/  io/  lib@  lib32@  lib64@  libx32@  media/  mnt/  nix/  opt/  proc/  repl/  root/  run/  sbin@  srv/  store/  sys/  tmp/  usr/  var/
 ```
 
-:::notes
+::: notes
 This displays a slash ('/') immediately after each pathname that is a directory, and ('\@') after a symbolic link (not important to know right now).
 
 It is sometimes easy to overlook that the text printed from a command like `ls` is indeed the returned output from the program. It is important to keep this in mind when we start to use multiple commands together later in this seminar.
@@ -238,30 +215,19 @@ It is sometimes easy to overlook that the text printed from a command like `ls` 
 Subcommands
 :::
 
-## What are the possible options and arguemnts for a command?
+## What are the possible options and arguments for a command?
 
 . . .
 
-If the command is built-in (not externally installed), then there is usually a manual for it. Use the `man` command, with argument of the command you want to look up:
+There is often `--help` or `-h` option that tells you how to use the software.
 
 ```         
-man ls
-```
-
-Notice that here, `man` is the command, and `ls` is an argument for the command!
-
-. . .
-
-Often, for externally installed software, there is a `--help` or `-h` option that tells you how to use the software.
-
-```         
-python3 --help
+ls --help
 ```
 
 . . .
 
 Online resources: <https://explainshell.com/>
-
 
 ## Exercise: options for `ls`
 
@@ -312,5 +278,3 @@ Course survey: https://forms.gle/BnHMjsqWsnhoQEtL8
 Stickers: https://forms.gle/REszUXavNtdXGZ2NA
 
 Git/GitHub course registration: https://forms.gle/MzLh5gehgUysVyGM6
-
-

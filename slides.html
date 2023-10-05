@@ -363,11 +363,6 @@
 </div>
 <div class="fragment">
 <ul>
-<li>Treat text-based programs as functions</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
 <li>Be able to navigate a directory tree</li>
 </ul>
 </div>
@@ -379,6 +374,11 @@
 <div class="fragment">
 <ul>
 <li>Use a text editor in the command line</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Treat text-based programs as functions</li>
 </ul>
 </div>
 </section>
@@ -449,19 +449,12 @@
 </section>
 <section id="getting-started" class="slide level2">
 <h2>Getting started</h2>
-<h3 id="installing-shell-for-windows-users">Installing Shell for Windows users</h3>
+<p>We will be using replit, a online coding interface to access the command line.</p>
 <ul>
-<li><p>Open Windows Powershell.</p></li>
-<li><p>Type in: <code>wsl --install -d ubuntu</code>, and hit enter.</p></li>
-<li><p>You will might be asked to enter a new username and password. You can use the same as you have for your computer.</p></li>
-<li><p>A shell terminal should show up. If it doesn’t show up, look in your search bar for Ubuntu on Windows, and open it.</p></li>
+<li>Create an account on <a href="replit.com">replit.com</a></li>
+<li>Go to the project <a href="https://replit.com/@clo2fh/project?v=1">https://replit.com/@clo2fh/project?v=1</a></li>
+<li>Click “Fork” on the right hand side of the screen.</li>
 </ul>
-<h3 id="for-all-users">For all users</h3>
-<ul>
-<li><p>For Macs, open up “Terminal” Application.</p></li>
-<li><p>On Windows, open up “Windows Subsystem for Unix”, or “Ubuntu on Windows”. You should see a single line of text, with a blinking cursor, such as this:</p></li>
-</ul>
-<pre><code>andrew@MGQQR2YQRT9 ~ % </code></pre>
 </section>
 <section id="interacting-with-the-command-line-a-perspective" class="slide level2">
 <h2>Interacting with the command line, a perspective</h2>
@@ -502,11 +495,11 @@
 <p>On our computer, the <strong>directory tree</strong> organizes files and directories in an (upside down) tree-like structure. In each folder, there is a parental directory, and there can be files and directories within it.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png" width="600"></p>
-<figcaption>Source: https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png</figcaption>
+<p><img data-src="images/directory_tree.png"></p>
+<figcaption>Replit directory tree</figcaption>
 </figure>
 </div>
-<p>Example “home” <strong>directory path</strong>: <code>/Users/andrew/</code></p>
+<p>Example “home” <strong>directory path</strong>: <code>/home/runner/</code></p>
 </div>
 </section>
 <section id="basic-directory-tree-navigation" class="slide level2">
@@ -514,8 +507,8 @@
 <div class="fragment">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png" width="400"></p>
-<figcaption>Source: https://andysbrainbook.readthedocs.io/en/latest/_images/UnixTree1.png</figcaption>
+<p><img data-src="images/directory_tree.png" width="400"></p>
+<figcaption>Replit directory tree</figcaption>
 </figure>
 </div>
 </div>
@@ -531,7 +524,7 @@
 </div>
 <div class="fragment">
 <ul>
-<li><code>cd /Users/andrew</code> changes directory to the home directory.</li>
+<li><code>cd /home/runner</code> changes directory to the home directory.</li>
 </ul>
 </div>
 </section>
@@ -545,15 +538,11 @@
 </section>
 <section id="exercise-explore-the-maze" class="slide level2">
 <h2>Exercise: explore the maze</h2>
-<p>Download and unzip this file: https://tinyurl.com/daslcmd</p>
-<p>Use <code>cd</code> and <code>ls</code> to get to folder of the file you unzipped.</p>
-<div class="fragment">
-<p>Use <code>cd</code> and <code>ls</code> to explore the maze in <code>cmd_exercises/maze</code>, report back what you find!</p>
+<p>Use <code>cd</code> and <code>ls</code> to explore the maze in <code>/home/runner/project/maze</code>, report back what you find!</p>
 <p>To examine a text file completely, use the <code>cat</code> command with the first argument be the text file name, such as:</p>
-<pre><code>andrew@MGQQR2YQRT9 west % cat orca_J.txt 
+<pre><code>west % cat orca_J.txt 
 Pod J</code></pre>
 <p>To examine the first few lines of a text file, use the <code>head</code> command with the first argument to be the text file name. To examine the last few lines of a text file, use <code>tail</code>. To scroll through a text file, use <code>less</code>, and press <code>q</code> to quit.</p>
-</div>
 </section>
 <section id="mental-model-2-treat-text-based-commands-as-functions" class="slide level2">
 <h2>Mental Model 2: Treat text-based commands as functions</h2>
@@ -583,13 +572,13 @@ Pod J</code></pre>
 </div>
 </div>
 <div class="fragment">
-<pre><code>andrew@MGQQR2YQRT9 ~ % ls /Users
-Shared      andrew      </code></pre>
+<pre><code>~/.../cmd_exercises/maze$ ls /
+bin  boot  dev  etc  home  inject  io  lib  lib32  lib64  libx32  media  mnt  nix  opt  proc  repl  root  run  sbin  srv  store  sys  tmp  usr  var   </code></pre>
 </div>
 <div class="fragment">
 <p>We add the option <code>-F</code>:</p>
-<pre><code>andrew@MGQQR2YQRT9 ~ % ls -F /Users
-Shared/     andrew/</code></pre>
+<pre><code>~/.../cmd_exercises/maze$ ls -F /
+bin@  boot/  dev/  etc/  home/  inject/  io/  lib@  lib32@  lib64@  libx32@  media/  mnt/  nix/  opt/  proc/  repl/  root/  run/  sbin@  srv/  store/  sys/  tmp/  usr/  var/</code></pre>
 <aside class="notes">
 <p>This displays a slash (‘/’) immediately after each pathname that is a directory, and (‘@’) after a symbolic link (not important to know right now).</p>
 <p>It is sometimes easy to overlook that the text printed from a command like <code>ls</code> is indeed the returned output from the program. It is important to keep this in mind when we start to use multiple commands together later in this seminar.</p>
@@ -607,16 +596,11 @@ Shared/     andrew/</code></pre>
       }</style></aside>
 </div>
 </section>
-<section id="what-are-the-possible-options-and-arguemnts-for-a-command" class="slide level2">
-<h2>What are the possible options and arguemnts for a command?</h2>
+<section id="what-are-the-possible-options-and-arguments-for-a-command" class="slide level2">
+<h2>What are the possible options and arguments for a command?</h2>
 <div class="fragment">
-<p>If the command is built-in (not externally installed), then there is usually a manual for it. Use the <code>man</code> command, with argument of the command you want to look up:</p>
-<pre><code>man ls</code></pre>
-<p>Notice that here, <code>man</code> is the command, and <code>ls</code> is an argument for the command!</p>
-</div>
-<div class="fragment">
-<p>Often, for externally installed software, there is a <code>--help</code> or <code>-h</code> option that tells you how to use the software.</p>
-<pre><code>python3 --help</code></pre>
+<p>There is often <code>--help</code> or <code>-h</code> option that tells you how to use the software.</p>
+<pre><code>ls --help</code></pre>
 </div>
 <div class="fragment">
 <p>Online resources: <a href="https://explainshell.com/" class="uri">https://explainshell.com/</a></p>
