@@ -3,7 +3,7 @@ command-line-seminar
 what-is-the-command-line-and-why-should-i-learn-it
 getting-started
 mental-model-1-navigating-a-directory-tree
-exercise-explore-the-maze.
+exercise-explore-the-project-folder.
 mental-model-2-treat-text-based-commands-as-functions
 subcommands
 how-do-we-know-what-options-and-arguments-to-use-for-a-command
@@ -11,9 +11,9 @@ exercise-options-for-ls
 putting-the-two-mental-models-together-file-manipulation
 wildcards-to-access-multiple-files
 using-a-text-editor-in-cli
-optional-applying-what-we-just-learned-running-bioinformatics-software
-optional-redirects-and-pipes
-appendix-starting-the-command-line-locally-on-your-comptuer
+applying-what-we-just-learned-running-bioinformatics-software
+redirects-and-pipes
+appendix-starting-the-command-line-locally-on-your-computer
 for-mac-users
 for-windows-users
 appendix-special-symbols-for-directories

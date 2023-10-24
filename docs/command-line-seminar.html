@@ -78,7 +78,7 @@
 <li class="chapter" data-level="2.2" data-path="command-line-seminar.html"><a href="command-line-seminar.html#getting-started"><i class="fa fa-check"></i><b>2.2</b> Getting Started</a></li>
 <li class="chapter" data-level="2.3" data-path="command-line-seminar.html"><a href="command-line-seminar.html#mental-model-1-navigating-a-directory-tree"><i class="fa fa-check"></i><b>2.3</b> Mental Model 1: Navigating a directory tree</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="command-line-seminar.html"><a href="command-line-seminar.html#exercise-explore-the-maze."><i class="fa fa-check"></i><b>2.3.1</b> Exercise: explore the maze.</a></li>
+<li class="chapter" data-level="2.3.1" data-path="command-line-seminar.html"><a href="command-line-seminar.html#exercise-explore-the-project-folder."><i class="fa fa-check"></i><b>2.3.1</b> Exercise: explore the <code>project</code> folder.</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="command-line-seminar.html"><a href="command-line-seminar.html#mental-model-2-treat-text-based-commands-as-functions"><i class="fa fa-check"></i><b>2.4</b> Mental Model 2: Treat text-based commands as functions</a>
 <ul>
@@ -91,9 +91,9 @@
 <li class="chapter" data-level="2.5.1" data-path="command-line-seminar.html"><a href="command-line-seminar.html#wildcards-to-access-multiple-files"><i class="fa fa-check"></i><b>2.5.1</b> Wildcards to access multiple files</a></li>
 </ul></li>
 <li class="chapter" data-level="2.6" data-path="command-line-seminar.html"><a href="command-line-seminar.html#using-a-text-editor-in-cli"><i class="fa fa-check"></i><b>2.6</b> Using a text editor in CLI</a></li>
-<li class="chapter" data-level="2.7" data-path="command-line-seminar.html"><a href="command-line-seminar.html#optional-applying-what-we-just-learned-running-bioinformatics-software"><i class="fa fa-check"></i><b>2.7</b> Optional: Applying what we just learned: running bioinformatics software</a></li>
-<li class="chapter" data-level="2.8" data-path="command-line-seminar.html"><a href="command-line-seminar.html#optional-redirects-and-pipes"><i class="fa fa-check"></i><b>2.8</b> Optional: Redirects and Pipes</a></li>
-<li class="chapter" data-level="2.9" data-path="command-line-seminar.html"><a href="command-line-seminar.html#appendix-starting-the-command-line-locally-on-your-comptuer"><i class="fa fa-check"></i><b>2.9</b> Appendix: Starting the command line locally on your comptuer:</a>
+<li class="chapter" data-level="2.7" data-path="command-line-seminar.html"><a href="command-line-seminar.html#applying-what-we-just-learned-running-bioinformatics-software"><i class="fa fa-check"></i><b>2.7</b> Applying what we just learned: running bioinformatics software</a></li>
+<li class="chapter" data-level="2.8" data-path="command-line-seminar.html"><a href="command-line-seminar.html#redirects-and-pipes"><i class="fa fa-check"></i><b>2.8</b> Redirects and Pipes</a></li>
+<li class="chapter" data-level="2.9" data-path="command-line-seminar.html"><a href="command-line-seminar.html#appendix-starting-the-command-line-locally-on-your-computer"><i class="fa fa-check"></i><b>2.9</b> Appendix: Starting the command line locally on your computer:</a>
 <ul>
 <li class="chapter" data-level="2.9.1" data-path="command-line-seminar.html"><a href="command-line-seminar.html#for-mac-users"><i class="fa fa-check"></i><b>2.9.1</b> For Mac users</a></li>
 <li class="chapter" data-level="2.9.2" data-path="command-line-seminar.html"><a href="command-line-seminar.html#for-windows-users"><i class="fa fa-check"></i><b>2.9.2</b> For Windows users</a></li>
@@ -155,12 +155,12 @@
 <h2><span class="header-section-number">2.2</span> Getting Started</h2>
 <p>Here, we are working in replit’s shell. If you want to use the command line locally from your computer, see the appendix.</p>
 <p>You should see a single line of text, with a blinking cursor, such as this:</p>
-<pre><code>~/project$ </code></pre>
-<p>The next piece of character, <code>~/project</code> states that the currently directory is <code>~/project</code>. The symbol <code>~</code> is a short-hand for the “home” directory for the user of a computer. In replit, the home directory is <code>/home/runner</code>.</p>
+<pre><code>~/CommandLineDaSL$</code></pre>
+<p>The next piece of character, <code>~/CommandLineDaSL</code> states that the currently directory is <code>~/CommandLineDaSL</code>. The symbol <code>~</code> is a short-hand for the “home” directory for the user of a computer. In replit, the home directory is <code>/home/runner</code>.</p>
 <p>This current directory is important: in the Command Line, you interact with the computer from a directory, similar interacting with the computer using a file system window graphically.</p>
 <p>To see the full directory path, type in the command <code>pwd</code> and hit enter.</p>
-<pre><code>~/project$ pwd
-/home/runner/project</code></pre>
+<pre><code>~/CommandLineDaSL$ pwd
+/home/runner/CommandLineDaSL</code></pre>
 <p>Unlike a GUI, the CLI does not provide immediate options to you to interact with. We have to know a learn a handful of vocabulary to interact with it well. But besides the vocabulary, we need to keep a mental model of a task we want to complete. In GUIs that that mental model is shown to us visually, such as a file browser.</p>
 <p>We organizes our seminar by constructing several mental models and learning relevant commands related to each model.</p>
 </div>
@@ -184,35 +184,27 @@
 /home/runner</code></pre>
 <p>So far, we have changed the directory by specifying the <strong>absolute directory path</strong>, which means specifying the directory from the root directory <code>/</code>. Often, we can specify a path by the <strong>relative directory path</strong>, which is a path <em>relative to our current directory</em>.</p>
 <p>Consider:</p>
-<pre><code>~$ cd project/
-~/project$ pwd
-/home/runner/project
-~/project$ cd ..
+<pre><code>~$ cd CommandLineDaSL/
+~/CommandLineDaSL$ pwd
+/home/runner/CommandLineDaSL
+~/CommandLineDaSL$ cd ..
 ~$ pwd
-/home/runner</code></pre>
-<p>We started in <code>/home/runner</code>, and then changed to <code>/home/runner/project</code> by specifying <code>cd project/</code> as a relative directory path. Finally, we changed the directory to the parent directory of <code>/home/runner/project</code> via <code>cd ..</code>, back to <code>/home/runner</code>. The special directory symbol <code>..</code> specifies the parent directory.</p>
-<p>How did we know that the <code>project/</code> folder is in <code>/home/runner</code>? We can list all the files and directories within the current directory:</p>
+/home/runner
+~$ </code></pre>
+<p>We started in <code>/home/runner</code>, and then changed to <code>/home/runner/CommandLineDaSL$</code> by specifying <code>cd CommandLineDaSL$/</code> as a relative directory path. Finally, we changed the directory to the parent directory of <code>/home/runner/CommandLineDaSL$</code> via <code>cd ..</code>, back to <code>/home/runner</code>. The special directory symbol <code>..</code> specifies the parent directory.</p>
+<p>How did we know that the CommandLineDaSL$<code>/</code> folder is in <code>/home/runner</code>? We can list all the files and directories within the current directory:</p>
 <pre><code>~$ ls
-project</code></pre>
+CommandLineDaSL$</code></pre>
 <p>It is very common to navigate a directory tree via iterations of <code>ls</code> and <code>cd</code> on relative paths.</p>
-<div id="exercise-explore-the-maze." class="section level3" number="2.3.1">
-<h3><span class="header-section-number">2.3.1</span> Exercise: explore the maze.</h3>
-<p>We will download some files, and let you a more complex file directory:</p>
-<pre><code>~/project$ git clone https://github.com/fhdsl/S1_Intro_to_Command_Line.git
-Cloning into &#39;S1_Intro_to_Command_Line&#39;...
-remote: Enumerating objects: 844, done.
-remote: Counting objects: 100% (571/571), done.
-remote: Compressing objects: 100% (319/319), done.
-remote: Total 844 (delta 251), reused 465 (delta 209), pack-reused 273
-Receiving objects: 100% (844/844), 25.49 MiB | 6.35 MiB/s, done.
-Resolving deltas: 100% (280/280), done.
-Updating files: 100% (679/679), done.</code></pre>
-<p>Then,</p>
-<pre><code>~/project$ cd S1_Intro_to_Command_Line/cmd_exercises/maze/
-~/.../cmd_exercises/maze$ </code></pre>
+<div id="exercise-explore-the-project-folder." class="section level3" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Exercise: explore the <code>project</code> folder.</h3>
+<pre><code>~/CommandLineDaSL$ cd project/
+~/CommandLineDaSL/project$ ls
+analysis  input_files  output_files</code></pre>
 <p>To examine a text file completely, use the <code>cat</code> command with the first argument be the text file name, such as:</p>
-<pre><code>andrew@MGQQR2YQRT9 west % cat orca_J.txt 
-Pod J</code></pre>
+<pre><code>~/.../project/input_files$ cat sample1_case.fastq 
+@HWI-ST745_0098:1:1101:1097:2038#0/1
+CNTTTTTTACTTTTTTTCCAATCAAGGTACATTCANGATCCTAATAAAATTCCANNAACACTGGACANTGATACNA</code></pre>
 <p>To examine the first few lines of a text file, use the <code>head</code> command with the first argument to be the text file name. To examine the last few lines of a text file, use <code>tail</code>. To scroll through a text file, use <code>less</code>, and press <code>q</code> to quit.</p>
 <p>Hint: to save typing, use the <code>tab</code> button twice to complete filepaths you don’t know existed.</p>
 </div>
@@ -232,11 +224,12 @@ Pod J</code></pre>
 </div>
 <p>We have been calling <code>ls</code> with no argument and options, and it outputs the files and folders in the current working directory.</p>
 <p>The command can take an optional argument of a folder path (full or relative), and it outputs the files and folders in that directory:</p>
-<pre><code>~/.../cmd_exercises/maze$ ls /
+<pre><code>~/CommandLineDaSL$ ls /
 bin  boot  dev  etc  home  inject  io  lib  lib32  lib64  libx32  media  mnt  nix  opt  proc  repl  root  run  sbin  srv  store  sys  tmp  usr  var</code></pre>
 <p>We add the option <code>-F</code>:</p>
-<pre><code>~/.../cmd_exercises/maze$ ls -F /
-bin@  boot/  dev/  etc/  home/  inject/  io/  lib@  lib32@  lib64@  libx32@  media/  mnt/  nix/  opt/  proc/  repl/  root/  run/  sbin@  srv/  store/  sys/  tmp/  usr/  var/</code></pre>
+<pre><code>~/CommandLineDaSL$ ls /  -F
+bin@   dev/  home/    io/   lib32@  libx32@  mnt/  opt/   repl/  run/   srv/    sys/  usr/
+boot/  etc/  inject/  lib@  lib64@  media/   nix/  proc/  root/  sbin@  store/  tmp/  var/</code></pre>
 <p>This displays a slash (‘/’) immediately after each pathname that is a directory, and (‘@’) after a symbolic link (not important to know right now).</p>
 <p>It is sometimes easy to overlook that the text printed from a command like <code>ls</code> is indeed the returned output from the program. It is important to keep this in mind when we start to use multiple commands together later in this seminar.</p>
 <div id="subcommands" class="section level3" number="2.4.1">
@@ -274,53 +267,46 @@ bin@  boot/  dev/  etc/  home/  inject/  io/  lib@  lib32@  lib64@  libx32@  med
 <pre><code>cp my_folder/file.txt .</code></pre>
 <p>copies the file to the working directory.</p>
 <p>Can you explain what I am doing below?</p>
-<pre><code>cmd_exercises % cd maze/west/
-clo2@MGQQR2YQRT9 west % ls
-clam_1.txt      clam_4.txt      orca_L.txt      seaweed_3.txt       seaweed_6.txt
-clam_2.txt      orca_J.txt      seaweed_1.txt       seaweed_4.txt       seaweed_rotten.txt
-clam_3.txt      orca_K.txt      seaweed_2.txt       seaweed_5.txt
-west % mkdir fish_net
-west % mv orca_J.txt fish_net 
-west % ls
-clam_1.txt      clam_4.txt      orca_L.txt      seaweed_3.txt       seaweed_6.txt
-clam_2.txt      fish_net        seaweed_1.txt       seaweed_4.txt       seaweed_rotten.txt
-clam_3.txt      orca_K.txt      seaweed_2.txt       seaweed_5.txt
-west % ls fish_net 
-orca_J.txt
-west % cp fish_net/orca_J.txt .
-west % ls
-clam_1.txt      clam_4.txt      orca_K.txt      seaweed_2.txt       seaweed_5.txt
-clam_2.txt      fish_net        orca_L.txt      seaweed_3.txt       seaweed_6.txt
-clam_3.txt      orca_J.txt      seaweed_1.txt       seaweed_4.txt       seaweed_rotten.txt
-west % ls fish_net 
-orca_J.txt
-west % rm fish_net/orca_J.txt 
-west % rm -r fish_net </code></pre>
+<pre><code>~/.../project/input_files$ mkdir case
+~/.../project/input_files$ mkdir control
+~/.../project/input_files$ cp sample1_case.fastq case
+~/.../project/input_files$ cp sample5_control.fastq control
+~/.../project/input_files$ cd control/
+~/.../input_files/control$ ls
+sample5_control.fastq</code></pre>
 <div id="wildcards-to-access-multiple-files" class="section level3" number="2.5.1">
 <h3><span class="header-section-number">2.5.1</span> Wildcards to access multiple files</h3>
 <p>Suppose that I want to move all the files starting with the characters <code>orca</code> in the <code>maze/west</code> directory. I could run <code>mv</code> command multiple times, but that is time consuming if I have a lot of such files. In the Shell, there are special wildcard symbols that allows you to access multiple files of a specific pattern:</p>
-<p>The <code>*</code> wildcard represents zero or more characters of any form. Therefore, <code>orca*</code> will specify all files that have <code>orca</code> starting in its file name:</p>
-<pre><code>west % ls -l orca*
--rw-r--r--  1 clo2  staff  6 Aug 28 12:56 orca_J.txt
--rw-r--r--  1 clo2  staff  6 Aug 25 15:56 orca_K.txt
--rw-r--r--  1 clo2  staff  6 Aug 25 15:56 orca_L.txt</code></pre>
+<p>The <code>*</code> wildcard represents zero or more characters of any form. Therefore, <code>*case*</code> will specify all files that starts with anything, have the word case in the middle, and ends with anything.</p>
+<pre><code>~/.../project/input_files$ ls -l  *case*
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:19 sample1_case.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:20 sample2_case.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:21 sample3_case.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample4_case.fastq
+
+case:
+total 0</code></pre>
+<p>Similarly, if we want anything that ends in fastq,</p>
+<pre><code>~/.../project/input_files$ ls -l *fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample10_control.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:19 sample1_case.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:20 sample2_case.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:21 sample3_case.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample4_case.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample5_control.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample6_control.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample7_control.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample8_control.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample9_control.fastq</code></pre>
 <p>The input argument for <code>ls</code> is now a list of files.</p>
 <p>We move it:</p>
-<pre><code>west % mkdir fish_net
-west % mv orca* fish_net </code></pre>
+<pre><code>~/.../project/input_files$ cp *case* case/</code></pre>
 <p>The wildcard can be used in different part of the filename to specify different files:</p>
 <p>We can use <code>*</code> to specify <em>all</em> files in a directory (undoing what we did before):</p>
-<pre><code>west % mv fish_net/* .</code></pre>
-<p>Or just files that have the number 2:</p>
-<pre><code>west % ls -l *2*
--rw-r--r--  1 clo2  staff  0 Aug 28 13:21 clam_2.txt
--rw-r--r--  1 clo2  staff  0 Aug 28 13:18 seaweed_2.txt</code></pre>
-<p>The <code>?</code> wildcard represents exactly 1 character of any form:</p>
-<pre><code>west % ls -l clam_?.txt
--rw-r--r--  1 clo2  staff  0 Aug 28 13:21 clam_1.txt
--rw-r--r--  1 clo2  staff  0 Aug 28 13:21 clam_2.txt
--rw-r--r--  1 clo2  staff  0 Aug 28 13:21 clam_3.txt
--rw-r--r--  1 clo2  staff  0 Aug 28 13:21 clam_4.txt</code></pre>
+<pre><code>~/.../project/input_files$ cd case/
+~/.../input_files/case$ ls
+sample1_case.fastq  sample2_case.fastq  sample3_case.fastq  sample4_case.fastq
+~/.../input_files/case$ rm *</code></pre>
 </div>
 </div>
 <div id="using-a-text-editor-in-cli" class="section level2" number="2.6">
@@ -328,19 +314,20 @@ west % mv orca* fish_net </code></pre>
 <p>A commonly used task in CLI is to edit text files. <code>nano</code>, <code>vim</code>, and <code>emacs</code> are the three most popular ones, in increasing learning curve but also complexity in the tasks you can perform. We will start with <code>nano</code> today.</p>
 <p>Pick a file of interest, and run <code>nano [filename]</code>. You will see a new screen of the filename’s contents. You can move around via the letter keys and make edits as needed. On the bottom of the screen are commands you use to manage the file, such as saving, opening, and quitting. The ^ symbol refers to the Control key on your keyboard. To quit, hit Ctrl-x, and you may have to hit y to confirm. You should get comfortable using a text editor in CLI as it is a common task.</p>
 </div>
-<div id="optional-applying-what-we-just-learned-running-bioinformatics-software" class="section level2" number="2.7">
-<h2><span class="header-section-number">2.7</span> Optional: Applying what we just learned: running bioinformatics software</h2>
+<div id="applying-what-we-just-learned-running-bioinformatics-software" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> Applying what we just learned: running bioinformatics software</h2>
 <p>A popular DNA sequence alignment tool is called “BWA”, and here we present a toy version of it to simulate what it like to use a bioinformatics command line tool. It takes in an unaligned sequence file and a reference genome, and then pretends to align the unaligned sequence to the reference genome.</p>
-<ol start="0" style="list-style-type: decimal">
-<li><p>Go to <code>cmd_exercises/bioinformatics/</code>.</p></li>
-<li><p>Go to <code>downloaded_from_sequencing/</code> and take a look at the <code>.fastq</code> file using the commands <code>cat</code>, <code>less</code>, <code>head</code>, and <code>tail</code>. This is a high-throughput sequencing file, containing unaligned DNA sequences. Don’t worry about that the files don’t make sense to you. The point is that you can explore the text files using these commands.</p></li>
-<li><p>Go to <code>reference_genome/</code> and take a look at <code>miniReference.fasta</code> using the commands as above. This is a (fake) reference human genome file. We will take the unaligned DNA sequences from the <code>.fastq</code> files and figure out where they align in the reference genome.</p></li>
-<li><p>Go to <code>bwa_fake/</code>. Let’s align the fastq file to the reference genome!</p></li>
-</ol>
-<p>Look at the documentation of <code>bwa mem</code> command to understand what needs to be the input:</p>
-<pre><code>./bwa mem --help</code></pre>
-<p>The appendix explains why we use <code>./bwa mem</code> instead of <code>bwa mem</code> to run the command.</p>
-<p>You should use the files from Steps 1 and 2 to use as the input arguments for alignment.</p>
+<pre><code>~/CommandLineDaSL/project$ cd software/
+~/.../project/software$ python aligner.py --help
+usage: aligner.py [-h] --reference REFERENCE --input INPUT
+
+options:
+  -h, --help            show this help message and exit
+  --reference REFERENCE, -r REFERENCE
+                        Reference genome file
+  --input INPUT, -i INPUT
+                        Input fastq file</code></pre>
+<p>You should use a fastq file from the <code>input_files</code> folder and the reference genome file from the <code>input_files/reference_genome</code> folder.</p>
 <p>If it works, you will get a wall of text ending with something like:</p>
 <pre><code>Aligned sequence  9996 :  ATATTAAATTCTAATATCTGGATCCTTTTGTAGTTCATGAGCGTGATGATTGGGTGTTTCACGCATGTGTGTGCAA
 Aligned sequence  9997 :  ATTTTCTCTTTTTATTTATTATTTATTGGTTTCATAGAGCTGAGTGGAGTACGAATGTCTTAACTCTGATATCATT
@@ -349,21 +336,21 @@ Aligned sequence  9999 :  ATTCTTCCACCTCTGAAAAACCCCTACCCTCACAGACACTCTAGCCCACAGTCC
 Aligned sequence  10000 :  ATCTGAGGGGACGAGAGGGTAAGATGATTGATGGAGGGGAAATCCACAGAGCCTCAGGCACCAAATATGTAGCAAA</code></pre>
 <p>Nice job!</p>
 </div>
-<div id="optional-redirects-and-pipes" class="section level2" number="2.8">
-<h2><span class="header-section-number">2.8</span> Optional: Redirects and Pipes</h2>
-<p>The <code>./bwa mem</code> command seems pretty messy - it just dumps an aligned sequencing file in your command line console - what do you do with it? If you look at its manual, there is no option or argument to specify an output file name, which is a bit not user-friendly at first.</p>
+<div id="redirects-and-pipes" class="section level2" number="2.8">
+<h2><span class="header-section-number">2.8</span> Redirects and Pipes</h2>
+<p>The <code>python aligner.py</code> command seems pretty messy - it just dumps an aligned sequencing file in your command line console - what do you do with it? If you look at its manual, there is no option or argument to specify an output file name, which is a bit not user-friendly at first.</p>
 <p>However, in the CLI world, this is a perfectly normal way to output a result from a program. We simply need to <strong>redirect</strong> that output to a file ourselves. The output of <code>./bwa mem</code> and the output of <code>ls</code> can be redirected to a file, via the <code>&gt;</code> operation:</p>
-<pre><code>./bwa mem --ref [reference genome fasta file] --fastq [unaligned sequences fastq file] &gt; [output file]</code></pre>
+<pre><code>python aligner.py --reference [reference genome fasta file] --input [unaligned sequences fastq file] &gt; [output file]</code></pre>
 <p>Remember when we looked at the output of the <code>ls</code> command, an emphasis is placed that the files and directories listed are considered the output of the program. We can redirect that output into a file too:</p>
 <pre><code>ls &gt; ls_output.txt</code></pre>
 <p>Another reason why in the CLI world the output is often dumped to the console is that it gives the user an option to <strong>pipe</strong> it to the next program that takes the first program’s output as input, using the symbol <code>|</code>. This allows the user to chain together several programs together, each performing a modular task. For instance, if we want to align the sequences, and then look at the first few aligned sequences, we can pipe the output of <code>bwa mem</code> with <code>tail</code>:</p>
-<pre><code>./bwa mem --ref [reference genome fasta file] --fastq [unaligned sequences fastq file] | head</code></pre>
+<pre><code>python aligner.py --reference [reference genome fasta file] --input [unaligned sequences fastq file] | head</code></pre>
 <p>and then save it:</p>
-<pre><code>./bwa mem --ref [reference genome fasta file] --fastq [unaligned sequences fastq file] | head &gt; [output file]</code></pre>
+<pre><code>python aligner.py --reference [reference genome fasta file] --input [unaligned sequences fastq file] | head &gt; [output file]</code></pre>
 <p>This encourages the development of modular, flexible programs that can be connected together via pipes and saved via redirecting.</p>
 </div>
-<div id="appendix-starting-the-command-line-locally-on-your-comptuer" class="section level2" number="2.9">
-<h2><span class="header-section-number">2.9</span> Appendix: Starting the command line locally on your comptuer:</h2>
+<div id="appendix-starting-the-command-line-locally-on-your-computer" class="section level2" number="2.9">
+<h2><span class="header-section-number">2.9</span> Appendix: Starting the command line locally on your computer:</h2>
 <div id="for-mac-users" class="section level3" number="2.9.1">
 <h3><span class="header-section-number">2.9.1</span> For Mac users</h3>
 <p>Open up “Terminal” Application.</p>
