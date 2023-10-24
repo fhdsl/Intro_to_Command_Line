@@ -23,18 +23,18 @@ Here, we are working in replit's shell. If you want to use the command line loca
 You should see a single line of text, with a blinking cursor, such as this:
 
 ```         
-~/project$ 
+~/CommandLineDaSL$
 ```
 
-The next piece of character, `~/project` states that the currently directory is `~/project`. The symbol `~` is a short-hand for the "home" directory for the user of a computer. In replit, the home directory is `/home/runner`.
+The next piece of character, `~/CommandLineDaSL` states that the currently directory is `~/CommandLineDaSL`. The symbol `~` is a short-hand for the "home" directory for the user of a computer. In replit, the home directory is `/home/runner`.
 
 This current directory is important: in the Command Line, you interact with the computer from a directory, similar interacting with the computer using a file system window graphically.
 
 To see the full directory path, type in the command `pwd` and hit enter.
 
 ```         
-~/project$ pwd
-/home/runner/project
+~/CommandLineDaSL$ pwd
+/home/runner/CommandLineDaSL
 ```
 
 Unlike a GUI, the CLI does not provide immediate options to you to interact with. We have to know a learn a handful of vocabulary to interact with it well. But besides the vocabulary, we need to keep a mental model of a task we want to complete. In GUIs that that mental model is shown to us visually, such as a file browser.
@@ -70,53 +70,40 @@ So far, we have changed the directory by specifying the **absolute directory pat
 Consider:
 
 ```         
-~$ cd project/
-~/project$ pwd
-/home/runner/project
-~/project$ cd ..
+~$ cd CommandLineDaSL/
+~/CommandLineDaSL$ pwd
+/home/runner/CommandLineDaSL
+~/CommandLineDaSL$ cd ..
 ~$ pwd
 /home/runner
+~$ 
 ```
 
-We started in `/home/runner`, and then changed to `/home/runner/project` by specifying `cd project/` as a relative directory path. Finally, we changed the directory to the parent directory of `/home/runner/project` via `cd ..`, back to `/home/runner`. The special directory symbol `..` specifies the parent directory.
+We started in `/home/runner`, and then changed to `/home/runner/CommandLineDaSL$` by specifying `cd CommandLineDaSL$/` as a relative directory path. Finally, we changed the directory to the parent directory of `/home/runner/CommandLineDaSL$` via `cd ..`, back to `/home/runner`. The special directory symbol `..` specifies the parent directory.
 
-How did we know that the `project/` folder is in `/home/runner`? We can list all the files and directories within the current directory:
+How did we know that the CommandLineDaSL\$`/` folder is in `/home/runner`? We can list all the files and directories within the current directory:
 
 ```         
 ~$ ls
-project
+CommandLineDaSL$
 ```
 
 It is very common to navigate a directory tree via iterations of `ls` and `cd` on relative paths.
 
-### Exercise: explore the maze.
-
-We will download some files, and let you a more complex file directory:
+### Exercise: explore the `project` folder.
 
 ```         
-~/project$ git clone https://github.com/fhdsl/S1_Intro_to_Command_Line.git
-Cloning into 'S1_Intro_to_Command_Line'...
-remote: Enumerating objects: 844, done.
-remote: Counting objects: 100% (571/571), done.
-remote: Compressing objects: 100% (319/319), done.
-remote: Total 844 (delta 251), reused 465 (delta 209), pack-reused 273
-Receiving objects: 100% (844/844), 25.49 MiB | 6.35 MiB/s, done.
-Resolving deltas: 100% (280/280), done.
-Updating files: 100% (679/679), done.
-```
-
-Then,
-
-```         
-~/project$ cd S1_Intro_to_Command_Line/cmd_exercises/maze/
-~/.../cmd_exercises/maze$ 
+~/CommandLineDaSL$ cd project/
+~/CommandLineDaSL/project$ ls
+analysis  input_files  output_files
 ```
 
 To examine a text file completely, use the `cat` command with the first argument be the text file name, such as:
 
 ```         
-andrew@MGQQR2YQRT9 west % cat orca_J.txt 
-Pod J
+~/.../project/input_files$ cat sample1_case.fastq 
+@HWI-ST745_0098:1:1101:1097:2038#0/1
+CNTTTTTTACTTTTTTTCCAATCAAGGTACATTCANGATCCTAATAAAATTCCANNAACACTGGACANTGATACNA
 ```
 
 To examine the first few lines of a text file, use the `head` command with the first argument to be the text file name. To examine the last few lines of a text file, use `tail`. To scroll through a text file, use `less`, and press `q` to quit.
@@ -140,15 +127,16 @@ We have been calling `ls` with no argument and options, and it outputs the files
 The command can take an optional argument of a folder path (full or relative), and it outputs the files and folders in that directory:
 
 ```         
-~/.../cmd_exercises/maze$ ls /
+~/CommandLineDaSL$ ls /
 bin  boot  dev  etc  home  inject  io  lib  lib32  lib64  libx32  media  mnt  nix  opt  proc  repl  root  run  sbin  srv  store  sys  tmp  usr  var
 ```
 
 We add the option `-F`:
 
 ```         
-~/.../cmd_exercises/maze$ ls -F /
-bin@  boot/  dev/  etc/  home/  inject/  io/  lib@  lib32@  lib64@  libx32@  media/  mnt/  nix/  opt/  proc/  repl/  root/  run/  sbin@  srv/  store/  sys/  tmp/  usr/  var/
+~/CommandLineDaSL$ ls /  -F
+bin@   dev/  home/    io/   lib32@  libx32@  mnt/  opt/   repl/  run/   srv/    sys/  usr/
+boot/  etc/  inject/  lib@  lib64@  media/   nix/  proc/  root/  sbin@  store/  tmp/  var/
 ```
 
 This displays a slash ('/') immediately after each pathname that is a directory, and ('\@') after a symbolic link (not important to know right now).
@@ -206,41 +194,46 @@ copies the file to the working directory.
 Can you explain what I am doing below?
 
 ```         
-cmd_exercises % cd maze/west/
-clo2@MGQQR2YQRT9 west % ls
-clam_1.txt      clam_4.txt      orca_L.txt      seaweed_3.txt       seaweed_6.txt
-clam_2.txt      orca_J.txt      seaweed_1.txt       seaweed_4.txt       seaweed_rotten.txt
-clam_3.txt      orca_K.txt      seaweed_2.txt       seaweed_5.txt
-west % mkdir fish_net
-west % mv orca_J.txt fish_net 
-west % ls
-clam_1.txt      clam_4.txt      orca_L.txt      seaweed_3.txt       seaweed_6.txt
-clam_2.txt      fish_net        seaweed_1.txt       seaweed_4.txt       seaweed_rotten.txt
-clam_3.txt      orca_K.txt      seaweed_2.txt       seaweed_5.txt
-west % ls fish_net 
-orca_J.txt
-west % cp fish_net/orca_J.txt .
-west % ls
-clam_1.txt      clam_4.txt      orca_K.txt      seaweed_2.txt       seaweed_5.txt
-clam_2.txt      fish_net        orca_L.txt      seaweed_3.txt       seaweed_6.txt
-clam_3.txt      orca_J.txt      seaweed_1.txt       seaweed_4.txt       seaweed_rotten.txt
-west % ls fish_net 
-orca_J.txt
-west % rm fish_net/orca_J.txt 
-west % rm -r fish_net 
+~/.../project/input_files$ mkdir case
+~/.../project/input_files$ mkdir control
+~/.../project/input_files$ cp sample1_case.fastq case
+~/.../project/input_files$ cp sample5_control.fastq control
+~/.../project/input_files$ cd control/
+~/.../input_files/control$ ls
+sample5_control.fastq
 ```
 
 ### Wildcards to access multiple files
 
 Suppose that I want to move all the files starting with the characters `orca` in the `maze/west` directory. I could run `mv` command multiple times, but that is time consuming if I have a lot of such files. In the Shell, there are special wildcard symbols that allows you to access multiple files of a specific pattern:
 
-The `*` wildcard represents zero or more characters of any form. Therefore, `orca*` will specify all files that have `orca` starting in its file name:
+The `*` wildcard represents zero or more characters of any form. Therefore, `*case*` will specify all files that starts with anything, have the word case in the middle, and ends with anything.
 
 ```         
-west % ls -l orca*
--rw-r--r--  1 clo2  staff  6 Aug 28 12:56 orca_J.txt
--rw-r--r--  1 clo2  staff  6 Aug 25 15:56 orca_K.txt
--rw-r--r--  1 clo2  staff  6 Aug 25 15:56 orca_L.txt
+~/.../project/input_files$ ls -l  *case*
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:19 sample1_case.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:20 sample2_case.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:21 sample3_case.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample4_case.fastq
+
+case:
+total 0
+```
+
+Similarly, if we want anything that ends in fastq,
+
+```         
+~/.../project/input_files$ ls -l *fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample10_control.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:19 sample1_case.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:20 sample2_case.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:21 sample3_case.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample4_case.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample5_control.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample6_control.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample7_control.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample8_control.fastq
+-rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample9_control.fastq
 ```
 
 The input argument for `ls` is now a list of files.
@@ -248,8 +241,7 @@ The input argument for `ls` is now a list of files.
 We move it:
 
 ```         
-west % mkdir fish_net
-west % mv orca* fish_net 
+~/.../project/input_files$ cp *case* case/
 ```
 
 The wildcard can be used in different part of the filename to specify different files:
@@ -257,25 +249,10 @@ The wildcard can be used in different part of the filename to specify different 
 We can use `*` to specify *all* files in a directory (undoing what we did before):
 
 ```         
-west % mv fish_net/* .
-```
-
-Or just files that have the number 2:
-
-```         
-west % ls -l *2*
--rw-r--r--  1 clo2  staff  0 Aug 28 13:21 clam_2.txt
--rw-r--r--  1 clo2  staff  0 Aug 28 13:18 seaweed_2.txt
-```
-
-The `?` wildcard represents exactly 1 character of any form:
-
-```         
-west % ls -l clam_?.txt
--rw-r--r--  1 clo2  staff  0 Aug 28 13:21 clam_1.txt
--rw-r--r--  1 clo2  staff  0 Aug 28 13:21 clam_2.txt
--rw-r--r--  1 clo2  staff  0 Aug 28 13:21 clam_3.txt
--rw-r--r--  1 clo2  staff  0 Aug 28 13:21 clam_4.txt
+~/.../project/input_files$ cd case/
+~/.../input_files/case$ ls
+sample1_case.fastq  sample2_case.fastq  sample3_case.fastq  sample4_case.fastq
+~/.../input_files/case$ rm *
 ```
 
 ## Using a text editor in CLI
@@ -284,27 +261,24 @@ A commonly used task in CLI is to edit text files. `nano`, `vim`, and `emacs` ar
 
 Pick a file of interest, and run `nano [filename]`. You will see a new screen of the filename's contents. You can move around via the letter keys and make edits as needed. On the bottom of the screen are commands you use to manage the file, such as saving, opening, and quitting. The \^ symbol refers to the Control key on your keyboard. To quit, hit Ctrl-x, and you may have to hit y to confirm. You should get comfortable using a text editor in CLI as it is a common task.
 
-## Optional: Applying what we just learned: running bioinformatics software
+## Applying what we just learned: running bioinformatics software
 
 A popular DNA sequence alignment tool is called "BWA", and here we present a toy version of it to simulate what it like to use a bioinformatics command line tool. It takes in an unaligned sequence file and a reference genome, and then pretends to align the unaligned sequence to the reference genome.
 
-0.  Go to `cmd_exercises/bioinformatics/`.
-
-1.  Go to `downloaded_from_sequencing/` and take a look at the `.fastq` file using the commands `cat`, `less`, `head`, and `tail`. This is a high-throughput sequencing file, containing unaligned DNA sequences. Don't worry about that the files don't make sense to you. The point is that you can explore the text files using these commands.
-
-2.  Go to `reference_genome/` and take a look at `miniReference.fasta` using the commands as above. This is a (fake) reference human genome file. We will take the unaligned DNA sequences from the `.fastq` files and figure out where they align in the reference genome.
-
-3.  Go to `bwa_fake/`. Let's align the fastq file to the reference genome!
-
-Look at the documentation of `bwa mem` command to understand what needs to be the input:
-
 ```         
-./bwa mem --help
+~/CommandLineDaSL/project$ cd software/
+~/.../project/software$ python aligner.py --help
+usage: aligner.py [-h] --reference REFERENCE --input INPUT
+
+options:
+  -h, --help            show this help message and exit
+  --reference REFERENCE, -r REFERENCE
+                        Reference genome file
+  --input INPUT, -i INPUT
+                        Input fastq file
 ```
 
-The appendix explains why we use `./bwa mem` instead of `bwa mem` to run the command.
-
-You should use the files from Steps 1 and 2 to use as the input arguments for alignment.
+You should use a fastq file from the `input_files` folder and the reference genome file from the `input_files/reference_genome` folder.
 
 If it works, you will get a wall of text ending with something like:
 
@@ -318,14 +292,14 @@ Aligned sequence  10000 :  ATCTGAGGGGACGAGAGGGTAAGATGATTGATGGAGGGGAAATCCACAGAGCC
 
 Nice job!
 
-## Optional: Redirects and Pipes
+## Redirects and Pipes
 
-The `./bwa mem` command seems pretty messy - it just dumps an aligned sequencing file in your command line console - what do you do with it? If you look at its manual, there is no option or argument to specify an output file name, which is a bit not user-friendly at first.
+The `python aligner.py` command seems pretty messy - it just dumps an aligned sequencing file in your command line console - what do you do with it? If you look at its manual, there is no option or argument to specify an output file name, which is a bit not user-friendly at first.
 
 However, in the CLI world, this is a perfectly normal way to output a result from a program. We simply need to **redirect** that output to a file ourselves. The output of `./bwa mem` and the output of `ls` can be redirected to a file, via the `>` operation:
 
 ```         
-./bwa mem --ref [reference genome fasta file] --fastq [unaligned sequences fastq file] > [output file]
+python aligner.py --reference [reference genome fasta file] --input [unaligned sequences fastq file] > [output file]
 ```
 
 Remember when we looked at the output of the `ls` command, an emphasis is placed that the files and directories listed are considered the output of the program. We can redirect that output into a file too:
@@ -337,18 +311,18 @@ ls > ls_output.txt
 Another reason why in the CLI world the output is often dumped to the console is that it gives the user an option to **pipe** it to the next program that takes the first program's output as input, using the symbol `|`. This allows the user to chain together several programs together, each performing a modular task. For instance, if we want to align the sequences, and then look at the first few aligned sequences, we can pipe the output of `bwa mem` with `tail`:
 
 ```         
-./bwa mem --ref [reference genome fasta file] --fastq [unaligned sequences fastq file] | head
+python aligner.py --reference [reference genome fasta file] --input [unaligned sequences fastq file] | head
 ```
 
 and then save it:
 
 ```         
-./bwa mem --ref [reference genome fasta file] --fastq [unaligned sequences fastq file] | head > [output file]
+python aligner.py --reference [reference genome fasta file] --input [unaligned sequences fastq file] | head > [output file]
 ```
 
 This encourages the development of modular, flexible programs that can be connected together via pipes and saved via redirecting.
 
-## Appendix: Starting the command line locally on your comptuer:
+## Appendix: Starting the command line locally on your computer:
 
 ### For Mac users
 
