@@ -1,6 +1,6 @@
 ---
-title: "Intro to Command Line, Season 1"
-date: "October, 2023"
+title: "Intro to Command Line, Season 2"
+date: "January, 2024"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
@@ -19,7 +19,7 @@ Fluency in programming and data science requires using computer software from th
 
 Targeted audience: Researchers who want to use scientific software launched from the command line, want to use a high-performance cluster computing environment, or want to use a cloud computing environment.
 
-Commitment: A 1.5 hour seminar.
+Commitment: A 1.5 hour workshop.
 
 
 
