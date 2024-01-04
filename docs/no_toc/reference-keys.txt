@@ -1,5 +1,5 @@
 about-this-course
-command-line-seminar
+command-line-workshop
 what-is-the-command-line-and-why-should-i-learn-it
 getting-started
 mental-model-1-navigating-a-directory-tree
