@@ -1,4 +1,4 @@
-# Command Line Seminar
+# Command Line Workshop
 
 ## What is the Command Line and why should I learn it?
 
