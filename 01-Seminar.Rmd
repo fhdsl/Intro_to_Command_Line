@@ -120,6 +120,13 @@ If you have done some programming yourself, you use functions to create programm
 
 Similarly, when using a command from the command line, we should treat it as a function: a command has a *name*, inputs in terms of *options* and/or *arguments*, and optionally *returns* something. See below for an example of running the `ls` command with some options and arguments.
 
+A command's usage can have any of the following combination:
+
+-   Arguments
+-   Options
+-   Options with its own required arguments
+
+
 ![Source: Software Carpentry: <https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg>](https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg)
 
 We have been calling `ls` with no argument and options, and it outputs the files and folders in the current working directory.

@@ -1,5 +1,5 @@
 ---
-title: "Command Line Seminar"
+title: "Command Line Workshop"
 format: revealjs
 smaller: true
 scrollable: true
@@ -7,6 +7,10 @@ execute:
   echo: true
 output-location: fragment
 ---
+
+## Welcome!
+
+![](images/Intro_To_CL%201.png){width="500"}
 
 ## Introductions
 
@@ -26,13 +30,13 @@ output-location: fragment
 
     -   What you want to get out of the seminar
 
-    -   Favorite fall activity
+    -   ???
 
-## Goals of the seminar
+## Goals of the workshop
 
 . . .
 
--   Understand the purpose of a Command Line Interface vs. Graphical User Interface
+-   Understand the purposes of Command Line Interface vs. Graphical User Interface
 
 . . .
 
@@ -96,9 +100,10 @@ However, the way a computer interprets and executes instructions are based on te
 
 We will be using replit, a online coding interface to access the command line.
 
--   Create an account on [replit.com](replit.com)
--   Go to the project [https://replit.com/\@clo2fh/project?v=1](https://replit.com/@clo2fh/project?v=1)
+-   Go to the project [https://replit.com/\@clo22/CommandLineDaSL](https://replit.com/@clo22/CommandLineDaSL)
 -   Click "Fork" on the right hand side of the screen.
+-   Create an account or sign-in.
+-   Click on the "Shell" tab.
 
 ## Interacting with the command line, a perspective
 
@@ -128,7 +133,7 @@ Lastly, the CLI is forgiving. It will tell you if you did something you did not 
 
 On our computer, the **directory tree** organizes files and directories in an (upside down) tree-like structure. In each folder, there is a parental directory, and there can be files and directories within it.
 
-![Replit directory tree](images/directory_tree.png){alt="Replit directory tree"}
+![Replit directory tree](images/directory_tree.png)
 
 Example "home" **directory path**: `/home/runner/`
 
@@ -136,7 +141,7 @@ Example "home" **directory path**: `/home/runner/`
 
 . . .
 
-![Replit directory tree](images/directory_tree.png){alt="Replit directory tree" width="400"}
+![Replit directory tree](images/directory_tree.png){width="400"}
 
 . . .
 
@@ -150,26 +155,31 @@ Example "home" **directory path**: `/home/runner/`
 
 -   `cd /home/runner` changes directory to the home directory.
 
-## Demo
+## Absolute vs. relative paths
 
--   The **absolute directory path** specifies the directory from the root directory `/`.
+. . .
+
+-   The **absolute directory path** specifies the directory from the root directory `/`
 
 -   The **relative directory path** is a path *relative to our current directory*.
 
 -   `ls` lists all the files in the current directory.
 
-## Exercise: explore the maze
+## Exercise: explore the `project` folder
 
-Use `cd` and `ls` to explore the maze in `/home/runner/project/maze`, report back what you find!
+Use `cd` and `ls` to explore `/home/runner/CommandLineDaSL/project`
 
-To examine a text file completely, use the `cat` command with the first argument be the text file name, such as:
+. . .
 
-```         
-west % cat orca_J.txt 
-Pod J
-```
+Commands to look at text files:
 
-To examine the first few lines of a text file, use the `head` command with the first argument to be the text file name. To examine the last few lines of a text file, use `tail`. To scroll through a text file, use `less`, and press `q` to quit.
+-   `cat [filename]` prints out the entire text file.
+
+-   `less [filename]` opens up the text file in a separate screen to explore. Press `q` to quit.
+
+-   `head [filename]` prints out the first few lines of the text file.
+
+-   `tail [filename]` prints out the last few lines of the text file.
 
 ## Mental Model 2: Treat text-based commands as functions
 
@@ -189,22 +199,33 @@ When using a command from the command line, we should treat it as a function: a 
 
 . . .
 
+A command's usage can have any of the following combination:
+
+-   Arguments
+-   Options
+-   Options with its own required arguments
+
+. . .
+
 ![Source: Software Carpentry: https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg](https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg)
 
 . . .
 
+Arguments:
+
 ```         
-~/.../cmd_exercises/maze$ ls /
-bin  boot  dev  etc  home  inject  io  lib  lib32  lib64  libx32  media  mnt  nix  opt  proc  repl  root  run  sbin  srv  store  sys  tmp  usr  var   
+~/CommandLineDaSL$ ls /
+bin  boot  dev  etc  home  inject  io  lib  lib32  lib64  libx32  media  mnt  nix  opt  proc  repl  root  run  sbin  srv  store  sys  tmp  usr  var  
 ```
 
 . . .
 
-We add the option `-F`:
+Arguments and options:
 
 ```         
-~/.../cmd_exercises/maze$ ls -F /
-bin@  boot/  dev/  etc/  home/  inject/  io/  lib@  lib32@  lib64@  libx32@  media/  mnt/  nix/  opt/  proc/  repl/  root/  run/  sbin@  srv/  store/  sys/  tmp/  usr/  var/
+~/CommandLineDaSL$ ls /  -F
+bin@   dev/  home/    io/   lib32@  libx32@  mnt/  opt/   repl/  run/   srv/    sys/  usr/
+boot/  etc/  inject/  lib@  lib64@  media/   nix/  proc/  root/  sbin@  store/  tmp/  var/
 ```
 
 ::: notes
@@ -231,19 +252,21 @@ Online resources: <https://explainshell.com/>
 
 ## Exercise: options for `ls`
 
-In the maze, try out a bunch of ways to list files and directories using various options of `ls`. Some questions to explore:
+In the `project` folder, try out a bunch of ways to list files and directories using various options of `ls`. Some questions to explore:
 
--   Can you sort by last modified?
+-   Can you display all files? This would include files that start with `.`, which are considered "hidden".
 
--   Can you show the long format? What is the long format?
+-   Can you sort by time (last modified)?
 
--   What are hidden files? Are there any hidden files in the maze? (This requires some googling. The manual is not clear on this.)
+-   Can you show the long format? What does it show?
+
+-   Can you print out the entire project directory tree by using a recursive option?
+
+-   Can you show the size of each file?
 
 -   How can you use multiple options at once?
 
--   Can you print out the entire maze directory tree by using a recursive option?
-
-## Putting the two mental models together: file manipulation
+## File manipulation
 
 . . .
 
@@ -263,18 +286,39 @@ Here are some commands that allows you to create, move, copy, and delete files a
 
 -   `*` wildcard
 
-. . .
-
--   `?` wildcard
-
 ## Using a text editor in CLI
 
 A commonly used task in CLI is to edit text files. `nano`, `vim`, and `emacs` are the three most popular ones, in increasing learning curve but also complexity in the tasks you can perform. We will start with `nano` today.
 
-## Thanks for coming!
+## Running software in CLI
 
-Course survey: https://forms.gle/BnHMjsqWsnhoQEtL8
+Putting it all together, let's run a (fake) software that aligns sequencing reads to the reference genome.
 
-Stickers: https://forms.gle/REszUXavNtdXGZ2NA
+. . .
 
-Git/GitHub course registration: https://forms.gle/MzLh5gehgUysVyGM6
+```         
+~/CommandLineDaSL/project$ cd software/
+~/.../project/software$ python aligner.py --help
+usage: aligner.py [-h] --reference REFERENCE --input INPUT
+
+options:
+  -h, --help            show this help message and exit
+  --reference REFERENCE, -r REFERENCE
+                        Reference genome file
+  --input INPUT, -i INPUT
+                        Input fastq file
+```
+
+You should use a fastq file from the `input_files` folder and the reference genome file from the `input_files/reference_genome` folder.
+
+## Redirect and Pipes
+
+The `python aligner.py` command seems pretty messy - it just dumps an aligned sequencing file in your command line console - what do you do with it?
+
+. . .
+
+-   Redirect the output to a file: `python aligner.py --reference [reference genome fasta file] --input [unaligned sequences fastq file] > [output file]`
+
+. . .
+
+-   Pipe the output into the next command: `python aligner.py --reference [reference genome fasta file] --input [unaligned sequences fastq file] | head`
