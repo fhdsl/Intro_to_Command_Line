@@ -10,7 +10,7 @@ output-location: fragment
 
 ## Welcome!
 
-![](images/Intro_To_CL%201.png){width="500"}
+![](images/CL-3.1%20(Final).png)
 
 ## Introductions
 
@@ -28,9 +28,9 @@ output-location: fragment
 
     -   Name, pronouns, group you work in
 
-    -   What you want to get out of the seminar
+    -   What you want to get out of the workshop
 
-    -   ???
+    -   Favorite winter activity?
 
 ## Goals of the workshop
 
@@ -135,7 +135,7 @@ On our computer, the **directory tree** organizes files and directories in an (u
 
 ![Replit directory tree](images/directory_tree.png)
 
-Example "home" **directory path**: `/home/runner/`
+Example: special "home" **directory path**: `/home/runner/`
 
 ## Basic directory tree navigation
 
@@ -153,7 +153,7 @@ Example "home" **directory path**: `/home/runner/`
 
 . . .
 
--   `cd /home/runner` changes directory to the home directory.
+-   `cd /home/runner` changes directory to the special "home" directory.
 
 ## Absolute vs. relative paths
 
@@ -161,7 +161,13 @@ Example "home" **directory path**: `/home/runner/`
 
 -   The **absolute directory path** specifies the directory from the root directory `/`
 
+. . .
+
 -   The **relative directory path** is a path *relative to our current directory*.
+
+    -   The symbol `..` specifies the parent directory.
+
+. . .
 
 -   `ls` lists all the files in the current directory.
 
@@ -181,6 +187,10 @@ Commands to look at text files:
 
 -   `tail [filename]` prints out the last few lines of the text file.
 
+. . .
+
+Hit `Ctrl-C` to stop a running program.
+
 ## Mental Model 2: Treat text-based commands as functions
 
 . . .
@@ -189,7 +199,7 @@ The commands you have been using, `pwd`, `cd`, `ls`, and `cat` are actually comp
 
 . . .
 
-When using a command from the command line, we should treat it as a function: a command has a **name**, inputs in terms of **options** and/or **arguments**, and optionally **returns** something.
+When using a command from the command line, we should treat it as a function: a command has a **name**, inputs in terms of **arguments** and/or **options**, and **returns** something.
 
 . . .
 
@@ -201,9 +211,9 @@ When using a command from the command line, we should treat it as a function: a 
 
 A command's usage can have any of the following combination:
 
--   Arguments
+-   Input arguments
 -   Options
--   Options with its own required arguments
+-   Options with its own required input arguments
 
 . . .
 
@@ -211,7 +221,7 @@ A command's usage can have any of the following combination:
 
 . . .
 
-Arguments:
+Input arguments:
 
 ```         
 ~/CommandLineDaSL$ ls /
@@ -220,7 +230,7 @@ bin  boot  dev  etc  home  inject  io  lib  lib32  lib64  libx32  media  mnt  ni
 
 . . .
 
-Arguments and options:
+Input arguments and options:
 
 ```         
 ~/CommandLineDaSL$ ls /  -F
