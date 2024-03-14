@@ -18,7 +18,9 @@ The most commonly used Command Line is the Shell. The Shell is a dynamic program
 
 ## Getting Started
 
-Here, we are working in replit's shell. If you want to use the command line locally from your computer, see the appendix.
+In this workshop, we are working on a virtual command line via Replit. After this workshop, if you want to use the command line locally from your computer, see the appendix.
+
+To access the virtual command line on Replit, you should "fork" the following [workspace](https://replit.com/@clo22/CommandLineDaSL), and look at the "Shell" window.
 
 You should see a single line of text, with a blinking cursor, such as this:
 
@@ -125,7 +127,6 @@ A command's usage can have any of the following combination:
 -   Arguments
 -   Options
 -   Options with its own required arguments
-
 
 ![Source: Software Carpentry: <https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg>](https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg)
 
