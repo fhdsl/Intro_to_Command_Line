@@ -1,4 +1,4 @@
-# {Course Name}
+# Intro to Command Line
 
 This course was created from [this GitHub template](https://github.com/jhudsl/OTTR_Template).
 
@@ -8,14 +8,12 @@ If you would like to contribute to this course material, take a look at the [OTT
 
 ## About this course
 
-This course introduces {info on what this course introduces}
+Fluency in programming and data science requires using computer software from the Command Line, a text-based way of controlling the computer. You will go on a guided under-the-hood tour behind the graphical interface we typically use: you will learn how to interact and manipulate files, folders, and software via the Command Line.
 
-## Learning Objectives
+## Targeted audience
 
-This course will teach learners to:  
+Researchers who want to use scientific software launched from the command line, want to use a high-performance cluster computing environment, or want to use a cloud computing environment.
 
-- {You can use https://www.bobpikegroup.com/trainer-blog/5-steps-to-writing-clear-and-measurable-learning-objectives to define some learning objectives here}
-- {More learning objectives}
 
 ## Encountering problems?
 
