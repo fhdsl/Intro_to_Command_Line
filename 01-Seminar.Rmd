@@ -118,7 +118,7 @@ The commands you have been using, `pwd`, `cd`, `ls`, and `cat` are actually comp
 
 If you have done some programming yourself, you use functions to create programming expressions. A function has a name, takes in inputs, and then does something before optionally returning a output.
 
-![Source: Wellesley CS 110: <https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png>](https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png)
+![Image source: Wellesley CS 110: <https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png>](https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png)
 
 Similarly, when using a command from the command line, we should treat it as a function: a command has a *name*, inputs in terms of *options* and/or *arguments*, and optionally *returns* something. See below for an example of running the `ls` command with some options and arguments.
 
@@ -128,7 +128,7 @@ A command's usage can have any of the following combination:
 -   Options
 -   Options with its own required arguments
 
-![Source: Software Carpentry: <https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg>](https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg)
+![Image source: Software Carpentry: <https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg>](https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg)
 
 We have been calling `ls` with no argument and options, and it outputs the files and folders in the current working directory.
 

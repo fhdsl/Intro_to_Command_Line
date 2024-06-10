@@ -30,7 +30,7 @@ output-location: fragment
 
     -   What you want to get out of the workshop
 
-    -   Favorite winter activity?
+    -   Favorite spring activity?
 
 ## Goals of the workshop
 
