@@ -4,19 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Command Line Workshop | Intro to Command Line, Season 3</title>
+  <title>Chapter 2 Command Line Workshop | Intro to Command Line</title>
   <meta name="description" content="Description about Course/Book." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39.1 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Command Line Workshop | Intro to Command Line, Season 3" />
+  <meta property="og:title" content="Chapter 2 Command Line Workshop | Intro to Command Line" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Description about Course/Book." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Command Line Workshop | Intro to Command Line, Season 3" />
+  <meta name="twitter:title" content="Chapter 2 Command Line Workshop | Intro to Command Line" />
   
   <meta name="twitter:description" content="Description about Course/Book." />
   
@@ -31,7 +30,6 @@
   <link rel="shortcut icon" href="assets/dasl_favicon.ico" type="image/x-icon" />
 <link rel="prev" href="index.html"/>
 <link rel="next" href="about-the-authors.html"/>
-<script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,11 +47,16 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="assets/style.css" type="text/css" />
 </head>
@@ -117,7 +120,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro to Command Line, Season 3</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro to Command Line</a>
           </h1>
         </div>
 
@@ -137,10 +140,10 @@
 <div class="hero-image-container"> 
   <img class= "hero-image" src="assets/dasl_thin_main_image.png">
 </div>
-<div id="command-line-workshop" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Command Line Workshop</h1>
-<div id="what-is-the-command-line-and-why-should-i-learn-it" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> What is the Command Line and why should I learn it?</h2>
+<div id="command-line-workshop" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Command Line Workshop<a href="command-line-workshop.html#command-line-workshop" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="what-is-the-command-line-and-why-should-i-learn-it" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> What is the Command Line and why should I learn it?<a href="command-line-workshop.html#what-is-the-command-line-and-why-should-i-learn-it" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let’s think about the ways we can interact with a computer: keyboard and mouse, hand gestures on a smartphone, voice commands, AR/VR, etc. Most of these interactions are related to a Graphical User Interface (GUI), which centers on the interaction between a pointer and colorful windows and menus.</p>
 <p>However, the way a computer interprets and executes instructions are based on text commands. Even graphical information, such as where the mouse is when it clicked a button, is converted into numbers and characters. That means to be an effective programmer and data scientist, we also need to learn how to interact with our computers in a text-based way. This text-based interaction is called the Command Line Interface (CLI).</p>
 <p>Examples where we need to use the Command Line:</p>
@@ -151,8 +154,8 @@
 </ul>
 <p>The most commonly used Command Line is the Shell. The Shell is a dynamic programming environment, similar to R and Python, but focuses on interacting with the operating system.</p>
 </div>
-<div id="getting-started" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Getting Started</h2>
+<div id="getting-started" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Getting Started<a href="command-line-workshop.html#getting-started" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In this workshop, we are working on a virtual command line via Replit. After this workshop, if you want to use the command line locally from your computer, see the appendix.</p>
 <p>To access the virtual command line on Replit, you should “fork” the following <a href="https://replit.com/@clo22/CommandLineDaSL">workspace</a>, and look at the “Shell” window.</p>
 <p>You should see a single line of text, with a blinking cursor, such as this:</p>
@@ -165,13 +168,13 @@
 <p>Unlike a GUI, the CLI does not provide immediate options to you to interact with. We have to know a learn a handful of vocabulary to interact with it well. But besides the vocabulary, we need to keep a mental model of a task we want to complete. In GUIs that that mental model is shown to us visually, such as a file browser.</p>
 <p>We organizes our seminar by constructing several mental models and learning relevant commands related to each model.</p>
 </div>
-<div id="mental-model-1-navigating-a-directory-tree" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Mental Model 1: Navigating a directory tree</h2>
+<div id="mental-model-1-navigating-a-directory-tree" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Mental Model 1: Navigating a directory tree<a href="command-line-workshop.html#mental-model-1-navigating-a-directory-tree" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>On our computer, the <strong>directory tree</strong> organizes files and directories in an (upside down) tree-like structure. In each folder, there is a parental directory, and there can be files and directories within it. The root directory <code>/</code> does not have a parental directory and contains all directories and files in on the computer.</p>
 <p>Below is a typical directory tree schematic, with the root directory being <code>/</code> and home directory being <code>/home/runner</code>. We refer to a particular directory by describing its <strong>directory path</strong> separated by <code>/</code> slashes.</p>
-<div class="figure">
-<img src="images/directory_tree.png" alt="" />
-<p class="caption">Replit directory tree</p>
+<div class="float">
+<img src="images/directory_tree.png" alt="Replit directory tree" />
+<div class="figcaption">Replit directory tree</div>
 </div>
 <p>To interact with files and programs in the file system in the GUI world, we moved up and down the directory tree via point and clicking on windows. In the CLI world we can use the following commands:</p>
 <ul>
@@ -197,8 +200,8 @@
 <pre><code>~$ ls
 CommandLineDaSL$</code></pre>
 <p>It is very common to navigate a directory tree via iterations of <code>ls</code> and <code>cd</code> on relative paths.</p>
-<div id="exercise-explore-the-project-folder." class="section level3" number="2.3.1">
-<h3><span class="header-section-number">2.3.1</span> Exercise: explore the <code>project</code> folder.</h3>
+<div id="exercise-explore-the-project-folder." class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Exercise: explore the <code>project</code> folder.<a href="command-line-workshop.html#exercise-explore-the-project-folder." class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <pre><code>~/CommandLineDaSL$ cd project/
 ~/CommandLineDaSL/project$ ls
 analysis  input_files  output_files</code></pre>
@@ -210,13 +213,13 @@ CNTTTTTTACTTTTTTTCCAATCAAGGTACATTCANGATCCTAATAAAATTCCANNAACACTGGACANTGATACNA</co
 <p>Hint: to save typing, use the <code>tab</code> button twice to complete filepaths you don’t know existed.</p>
 </div>
 </div>
-<div id="mental-model-2-treat-text-based-commands-as-functions" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Mental Model 2: Treat text-based commands as functions</h2>
+<div id="mental-model-2-treat-text-based-commands-as-functions" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Mental Model 2: Treat text-based commands as functions<a href="command-line-workshop.html#mental-model-2-treat-text-based-commands-as-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The commands you have been using, <code>pwd</code>, <code>cd</code>, <code>ls</code>, and <code>cat</code> are actually computer programs! They are completely text-based: the program take in some text input, do something with the input, prints out or save something, and quits. There are other text-based programs that are more interactive while it is running, which we will see later: but for now, we will consider this schema for our programs. (We will use programs and commands interchangeably.)</p>
 <p>If you have done some programming yourself, you use functions to create programming expressions. A function has a name, takes in inputs, and then does something before optionally returning a output.</p>
-<div class="figure">
-<img src="https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png" alt="" />
-<p class="caption">Source: Wellesley CS 110: <a href="https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png" class="uri">https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png</a></p>
+<div class="float">
+<img src="https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png" alt="Image source: Wellesley CS 110: https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png" />
+<div class="figcaption">Image source: Wellesley CS 110: <a href="https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png" class="uri">https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png</a></div>
 </div>
 <p>Similarly, when using a command from the command line, we should treat it as a function: a command has a <em>name</em>, inputs in terms of <em>options</em> and/or <em>arguments</em>, and optionally <em>returns</em> something. See below for an example of running the <code>ls</code> command with some options and arguments.</p>
 <p>A command’s usage can have any of the following combination:</p>
@@ -225,9 +228,9 @@ CNTTTTTTACTTTTTTTCCAATCAAGGTACATTCANGATCCTAATAAAATTCCANNAACACTGGACANTGATACNA</co
 <li>Options</li>
 <li>Options with its own required arguments</li>
 </ul>
-<div class="figure">
-<img src="https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg" alt="" />
-<p class="caption">Source: Software Carpentry: <a href="https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg" class="uri">https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg</a></p>
+<div class="float">
+<img src="https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg" alt="Image source: Software Carpentry: https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg" />
+<div class="figcaption">Image source: Software Carpentry: <a href="https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg" class="uri">https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg</a></div>
 </div>
 <p>We have been calling <code>ls</code> with no argument and options, and it outputs the files and folders in the current working directory.</p>
 <p>The command can take an optional argument of a folder path (full or relative), and it outputs the files and folders in that directory:</p>
@@ -239,18 +242,18 @@ bin@   dev/  home/    io/   lib32@  libx32@  mnt/  opt/   repl/  run/   srv/    
 boot/  etc/  inject/  lib@  lib64@  media/   nix/  proc/  root/  sbin@  store/  tmp/  var/</code></pre>
 <p>This displays a slash (‘/’) immediately after each pathname that is a directory, and (‘@’) after a symbolic link (not important to know right now).</p>
 <p>It is sometimes easy to overlook that the text printed from a command like <code>ls</code> is indeed the returned output from the program. It is important to keep this in mind when we start to use multiple commands together later in this seminar.</p>
-<div id="subcommands" class="section level3" number="2.4.1">
-<h3><span class="header-section-number">2.4.1</span> Subcommands</h3>
+<div id="subcommands" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Subcommands<a href="command-line-workshop.html#subcommands" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Sometimes, a piece of software have many uses, like a swiss army knife. The software might organize its use by using subcommands. For instance, the software <code>git</code> has several subcommands such as <code>git clone</code>, <code>git commit</code>, and so forth. The usual options and arguments follow the subcommand.</p>
 </div>
-<div id="how-do-we-know-what-options-and-arguments-to-use-for-a-command" class="section level3" number="2.4.2">
-<h3><span class="header-section-number">2.4.2</span> How do we know what options and arguments to use for a command?</h3>
+<div id="how-do-we-know-what-options-and-arguments-to-use-for-a-command" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> How do we know what options and arguments to use for a command?<a href="command-line-workshop.html#how-do-we-know-what-options-and-arguments-to-use-for-a-command" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Often, there is a <code>--help</code> or <code>-h</code> option that tells you how to use the software:</p>
 <pre><code>ls --help</code></pre>
 <p>Online resources: <a href="https://explainshell.com/" class="uri">https://explainshell.com/</a></p>
 </div>
-<div id="exercise-options-for-ls" class="section level3" number="2.4.3">
-<h3><span class="header-section-number">2.4.3</span> Exercise: options for <code>ls</code></h3>
+<div id="exercise-options-for-ls" class="section level3 hasAnchor" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> Exercise: options for <code>ls</code><a href="command-line-workshop.html#exercise-options-for-ls" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In the maze, try out a bunch of ways to list files and directories using various options of <code>ls</code>. Some questions to explore:</p>
 <ul>
 <li><p>Can you sort by last modified?</p></li>
@@ -261,8 +264,8 @@ boot/  etc/  inject/  lib@  lib64@  media/   nix/  proc/  root/  sbin@  store/  
 </ul>
 </div>
 </div>
-<div id="putting-the-two-mental-models-together-file-manipulation" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Putting the two mental models together: file manipulation</h2>
+<div id="putting-the-two-mental-models-together-file-manipulation" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Putting the two mental models together: file manipulation<a href="command-line-workshop.html#putting-the-two-mental-models-together-file-manipulation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here are some commands that allows you to create, move, copy, and delete files and folders. All of these commands have no return value.</p>
 <ul>
 <li><p><code>cp [from] [to]</code> copies a file or folder from the <code>[from]</code> path to a <code>[to]</code> folder.</p></li>
@@ -281,8 +284,8 @@ boot/  etc/  inject/  lib@  lib64@  media/   nix/  proc/  root/  sbin@  store/  
 ~/.../project/input_files$ cd control/
 ~/.../input_files/control$ ls
 sample5_control.fastq</code></pre>
-<div id="wildcards-to-access-multiple-files" class="section level3" number="2.5.1">
-<h3><span class="header-section-number">2.5.1</span> Wildcards to access multiple files</h3>
+<div id="wildcards-to-access-multiple-files" class="section level3 hasAnchor" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Wildcards to access multiple files<a href="command-line-workshop.html#wildcards-to-access-multiple-files" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Suppose that I want to move all the files starting with the characters <code>orca</code> in the <code>maze/west</code> directory. I could run <code>mv</code> command multiple times, but that is time consuming if I have a lot of such files. In the Shell, there are special wildcard symbols that allows you to access multiple files of a specific pattern:</p>
 <p>The <code>*</code> wildcard represents zero or more characters of any form. Therefore, <code>*case*</code> will specify all files that starts with anything, have the word case in the middle, and ends with anything.</p>
 <pre><code>~/.../project/input_files$ ls -l  *case*
@@ -316,13 +319,13 @@ sample1_case.fastq  sample2_case.fastq  sample3_case.fastq  sample4_case.fastq
 ~/.../input_files/case$ rm *</code></pre>
 </div>
 </div>
-<div id="using-a-text-editor-in-cli" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Using a text editor in CLI</h2>
+<div id="using-a-text-editor-in-cli" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Using a text editor in CLI<a href="command-line-workshop.html#using-a-text-editor-in-cli" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A commonly used task in CLI is to edit text files. <code>nano</code>, <code>vim</code>, and <code>emacs</code> are the three most popular ones, in increasing learning curve but also complexity in the tasks you can perform. We will start with <code>nano</code> today.</p>
 <p>Pick a file of interest, and run <code>nano [filename]</code>. You will see a new screen of the filename’s contents. You can move around via the letter keys and make edits as needed. On the bottom of the screen are commands you use to manage the file, such as saving, opening, and quitting. The ^ symbol refers to the Control key on your keyboard. To quit, hit Ctrl-x, and you may have to hit y to confirm. You should get comfortable using a text editor in CLI as it is a common task.</p>
 </div>
-<div id="applying-what-we-just-learned-running-bioinformatics-software" class="section level2" number="2.7">
-<h2><span class="header-section-number">2.7</span> Applying what we just learned: running bioinformatics software</h2>
+<div id="applying-what-we-just-learned-running-bioinformatics-software" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Applying what we just learned: running bioinformatics software<a href="command-line-workshop.html#applying-what-we-just-learned-running-bioinformatics-software" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A popular DNA sequence alignment tool is called “BWA”, and here we present a toy version of it to simulate what it like to use a bioinformatics command line tool. It takes in an unaligned sequence file and a reference genome, and then pretends to align the unaligned sequence to the reference genome.</p>
 <pre><code>~/CommandLineDaSL/project$ cd software/
 ~/.../project/software$ python aligner.py --help
@@ -343,8 +346,8 @@ Aligned sequence  9999 :  ATTCTTCCACCTCTGAAAAACCCCTACCCTCACAGACACTCTAGCCCACAGTCC
 Aligned sequence  10000 :  ATCTGAGGGGACGAGAGGGTAAGATGATTGATGGAGGGGAAATCCACAGAGCCTCAGGCACCAAATATGTAGCAAA</code></pre>
 <p>Nice job!</p>
 </div>
-<div id="redirects-and-pipes" class="section level2" number="2.8">
-<h2><span class="header-section-number">2.8</span> Redirects and Pipes</h2>
+<div id="redirects-and-pipes" class="section level2 hasAnchor" number="2.8">
+<h2><span class="header-section-number">2.8</span> Redirects and Pipes<a href="command-line-workshop.html#redirects-and-pipes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The <code>python aligner.py</code> command seems pretty messy - it just dumps an aligned sequencing file in your command line console - what do you do with it? If you look at its manual, there is no option or argument to specify an output file name, which is a bit not user-friendly at first.</p>
 <p>However, in the CLI world, this is a perfectly normal way to output a result from a program. We simply need to <strong>redirect</strong> that output to a file ourselves. The output of <code>./bwa mem</code> and the output of <code>ls</code> can be redirected to a file, via the <code>&gt;</code> operation:</p>
 <pre><code>python aligner.py --reference [reference genome fasta file] --input [unaligned sequences fastq file] &gt; [output file]</code></pre>
@@ -356,14 +359,14 @@ Aligned sequence  10000 :  ATCTGAGGGGACGAGAGGGTAAGATGATTGATGGAGGGGAAATCCACAGAGCC
 <pre><code>python aligner.py --reference [reference genome fasta file] --input [unaligned sequences fastq file] | head &gt; [output file]</code></pre>
 <p>This encourages the development of modular, flexible programs that can be connected together via pipes and saved via redirecting.</p>
 </div>
-<div id="appendix-starting-the-command-line-locally-on-your-computer" class="section level2" number="2.9">
-<h2><span class="header-section-number">2.9</span> Appendix: Starting the command line locally on your computer:</h2>
-<div id="for-mac-users" class="section level3" number="2.9.1">
-<h3><span class="header-section-number">2.9.1</span> For Mac users</h3>
+<div id="appendix-starting-the-command-line-locally-on-your-computer" class="section level2 hasAnchor" number="2.9">
+<h2><span class="header-section-number">2.9</span> Appendix: Starting the command line locally on your computer:<a href="command-line-workshop.html#appendix-starting-the-command-line-locally-on-your-computer" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="for-mac-users" class="section level3 hasAnchor" number="2.9.1">
+<h3><span class="header-section-number">2.9.1</span> For Mac users<a href="command-line-workshop.html#for-mac-users" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Open up “Terminal” Application.</p>
 </div>
-<div id="for-windows-users" class="section level3" number="2.9.2">
-<h3><span class="header-section-number">2.9.2</span> For Windows users</h3>
+<div id="for-windows-users" class="section level3 hasAnchor" number="2.9.2">
+<h3><span class="header-section-number">2.9.2</span> For Windows users<a href="command-line-workshop.html#for-windows-users" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>Open Windows Powershell.</p></li>
 <li><p>Type in: <code>wsl --install -d ubuntu</code>, and hit enter.</p></li>
@@ -372,8 +375,8 @@ Aligned sequence  10000 :  ATCTGAGGGGACGAGAGGGTAAGATGATTGATGGAGGGGAAATCCACAGAGCC
 </ul>
 </div>
 </div>
-<div id="appendix-special-symbols-for-directories" class="section level2" number="2.10">
-<h2><span class="header-section-number">2.10</span> Appendix: Special symbols for directories:</h2>
+<div id="appendix-special-symbols-for-directories" class="section level2 hasAnchor" number="2.10">
+<h2><span class="header-section-number">2.10</span> Appendix: Special symbols for directories:<a href="command-line-workshop.html#appendix-special-symbols-for-directories" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p><code>.</code> the current directory.</p></li>
 <li><p><code>..</code> the parent directory.</p></li>
@@ -381,8 +384,8 @@ Aligned sequence  10000 :  ATCTGAGGGGACGAGAGGGTAAGATGATTGATGGAGGGGAAATCCACAGAGCC
 <li><p><code>~</code> the home directory.</p></li>
 </ul>
 </div>
-<div id="appendix-why-do-we-run-some-programs-using-." class="section level2" number="2.11">
-<h2><span class="header-section-number">2.11</span> Appendix: Why do we run some programs using <code>./</code>?</h2>
+<div id="appendix-why-do-we-run-some-programs-using-." class="section level2 hasAnchor" number="2.11">
+<h2><span class="header-section-number">2.11</span> Appendix: Why do we run some programs using <code>./</code>?<a href="command-line-workshop.html#appendix-why-do-we-run-some-programs-using-." class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When you type in a command, such as <code>ls</code> in the command line, the command line looks to see whether the command belongs to a list of commands it knows how to run. This list of approved commands is stored in an environmental variable. We can see it via:</p>
 <pre><code>andrew@MGQQR2YQRT9 ~ % echo $PATH
 /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin</code></pre>
