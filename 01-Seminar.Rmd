@@ -18,25 +18,25 @@ The most commonly used Command Line is the Shell. The Shell is a dynamic program
 
 ## Getting Started
 
-In this workshop, we are working on a virtual command line via Replit. After this workshop, if you want to use the command line locally from your computer, see the appendix.
+In this workshop, we are working on a virtual command line via Posit Cloud. After this workshop, if you want to use the command line locally from your computer, see the appendix.
 
-To access the virtual command line on Replit, you should "fork" the following [workspace](https://replit.com/@clo22/CommandLineDaSL), and look at the "Shell" window.
+To access the virtual command line on Posit Cloud, you can access the following project: <https://posit.cloud/content/9696853>
 
-You should see a single line of text, with a blinking cursor, such as this:
+Once you are in, on the left hand side of the screen, click the "Terminal" tab.
+
+You should see some text, ending with a blinking cursor, such as this:
 
 ```         
-~/CommandLineDaSL$
+/cloud/project$ 
 ```
 
-The next piece of character, `~/CommandLineDaSL` states that the currently directory is `~/CommandLineDaSL`. The symbol `~` is a short-hand for the "home" directory for the user of a computer. In replit, the home directory is `/home/runner`.
+This states that your current directory is `/cloud/project`. This current directory is important: in the Command Line, you interact with the computer from a directory, similar interacting with the computer using a file system window graphically.
 
-This current directory is important: in the Command Line, you interact with the computer from a directory, similar interacting with the computer using a file system window graphically.
-
-To see the full directory path, type in the command `pwd` and hit enter.
+Sometimes, the directory path is long so not the full path is printed. To see the path, type in the command `pwd` and hit enter.
 
 ```         
-~/CommandLineDaSL$ pwd
-/home/runner/CommandLineDaSL
+/cloud/project$ pwd
+/cloud/project
 ```
 
 Unlike a GUI, the CLI does not provide immediate options to you to interact with. We have to know a learn a handful of vocabulary to interact with it well. But besides the vocabulary, we need to keep a mental model of a task we want to complete. In GUIs that that mental model is shown to us visually, such as a file browser.
@@ -49,7 +49,7 @@ On our computer, the **directory tree** organizes files and directories in an (u
 
 Below is a typical directory tree schematic, with the root directory being `/` and home directory being `/home/runner`. We refer to a particular directory by describing its **directory path** separated by `/` slashes.
 
-![Replit directory tree](images/directory_tree.png)
+![Posit Cloud directory tree](images/directory_tree.png){alt="Posit Cloud directory tree"}
 
 To interact with files and programs in the file system in the GUI world, we moved up and down the directory tree via point and clicking on windows. In the CLI world we can use the following commands:
 
@@ -57,103 +57,68 @@ To interact with files and programs in the file system in the GUI world, we move
 
 -   `cd /` changes directory to the root directory.
 
--   `cd /home/runner` changes directory to the home directory.
-
-Consider:
-
-```         
-~$ cd /home/runner
-~$ pwd
-/home/runner
-```
+-   `cd /cloud/project/input_files` changes directory to the directory we started with.
 
 So far, we have changed the directory by specifying the **absolute directory path**, which means specifying the directory from the root directory `/`. Often, we can specify a path by the **relative directory path**, which is a path *relative to our current directory*.
 
-Consider:
+Suppose you want to access the folder `input_files`.
+
+-   The **absolute directory path** specifies the directory from the root directory: `/cloud/project/input_files`
+-   The **relative directory path** is a path *relative to our current directory*: if we are currently at `/cloud/project`, the relative path is `input_files` .
+-   The symbol `..` specifies the parent directory. If we are currently at `/cloud/project/software`, the relative path is `../input_files`. You go up one directory, then go down to `input_files`.
+
+To find out what files and folders are within your current directory, the `ls` command will list them for you:
 
 ```         
-~$ cd CommandLineDaSL/
-~/CommandLineDaSL$ pwd
-/home/runner/CommandLineDaSL
-~/CommandLineDaSL$ cd ..
-~$ pwd
-/home/runner
-~$ 
-```
-
-We started in `/home/runner`, and then changed to `/home/runner/CommandLineDaSL$` by specifying `cd CommandLineDaSL$/` as a relative directory path. Finally, we changed the directory to the parent directory of `/home/runner/CommandLineDaSL$` via `cd ..`, back to `/home/runner`. The special directory symbol `..` specifies the parent directory.
-
-How did we know that the CommandLineDaSL\$`/` folder is in `/home/runner`? We can list all the files and directories within the current directory:
-
-```         
-~$ ls
-CommandLineDaSL$
+/cloud/project$ ls
+input_files  output_files  project.Rproj  software
 ```
 
 It is very common to navigate a directory tree via iterations of `ls` and `cd` on relative paths.
 
-### Exercise: explore the `project` folder.
+### Exercise: explore the `/cloud/project` folder.
+
+Folders will not have an extension name, but files will, such as `.txt` or `.fastq` ones.
+
+To examine a text file completely, use the `cat` command with the text file name, such as:
 
 ```         
-~/CommandLineDaSL$ cd project/
-~/CommandLineDaSL/project$ ls
-analysis  input_files  output_files
+/cloud/project/input_files$ cat metadata.txt
+metadata goes here.
 ```
 
-To examine a text file completely, use the `cat` command with the first argument be the text file name, such as:
-
-```         
-~/.../project/input_files$ cat sample1_case.fastq 
-@HWI-ST745_0098:1:1101:1097:2038#0/1
-CNTTTTTTACTTTTTTTCCAATCAAGGTACATTCANGATCCTAATAAAATTCCANNAACACTGGACANTGATACNA
-```
-
-To examine the first few lines of a text file, use the `head` command with the first argument to be the text file name. To examine the last few lines of a text file, use `tail`. To scroll through a text file, use `less`, and press `q` to quit.
+To examine the first few lines of a text file, use the `head` command with the first argument to be the text file name. To examine the last few lines of a text file, use `tail`. To scroll through a text file, use `less`, which opens up a file, and you can use the arrow keys to browse. Then press `q` to quit.
 
 Hint: to save typing, use the `tab` button twice to complete filepaths you don't know existed.
 
+If something looks out of control, hit `Ctrl-C` to stop a running program.
+
 ## Mental Model 2: Treat text-based commands as functions
 
-The commands you have been using, `pwd`, `cd`, `ls`, and `cat` are actually computer programs! They are completely text-based: the program take in some text input, do something with the input, prints out or save something, and quits. There are other text-based programs that are more interactive while it is running, which we will see later: but for now, we will consider this schema for our programs. (We will use programs and commands interchangeably.)
+A **function** is a tool that you can use over and over again:
 
-If you have done some programming yourself, you use functions to create programming expressions. A function has a name, takes in inputs, and then does something before optionally returning a output.
+-   It can take in inputs
 
-![Image source: Wellesley CS 110: <https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png>](https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png)
+-   Does something
 
-Similarly, when using a command from the command line, we should treat it as a function: a command has a *name*, inputs in terms of *options* and/or *arguments*, and optionally *returns* something. See below for an example of running the `ls` command with some options and arguments.
+-   and can give an output.
 
-A command's usage can have any of the following combination:
+The commands you have been using, `pwd`, `cd`, `ls`, and `cat` can be viewed as functions:
 
--   Arguments
--   Options
--   Options with its own required arguments
+-   It can take in **input arguments**, **options**
 
-![Image source: Software Carpentry: <https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg>](https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg)
+-   Does something
 
-We have been calling `ls` with no argument and options, and it outputs the files and folders in the current working directory.
+-   and can give an output
 
-The command can take an optional argument of a folder path (full or relative), and it outputs the files and folders in that directory:
+For example, let's look at the ways `ls` can be used:
 
-```         
-~/CommandLineDaSL$ ls /
-bin  boot  dev  etc  home  inject  io  lib  lib32  lib64  libx32  media  mnt  nix  opt  proc  repl  root  run  sbin  srv  store  sys  tmp  usr  var
-```
-
-We add the option `-F`:
-
-```         
-~/CommandLineDaSL$ ls /  -F
-bin@   dev/  home/    io/   lib32@  libx32@  mnt/  opt/   repl/  run/   srv/    sys/  usr/
-boot/  etc/  inject/  lib@  lib64@  media/   nix/  proc/  root/  sbin@  store/  tmp/  var/
-```
-
-This displays a slash ('/') immediately after each pathname that is a directory, and ('\@') after a symbolic link (not important to know right now).
-
-It is sometimes easy to overlook that the text printed from a command like `ls` is indeed the returned output from the program. It is important to keep this in mind when we start to use multiple commands together later in this seminar.
-
-### Subcommands
-
-Sometimes, a piece of software have many uses, like a swiss army knife. The software might organize its use by using subcommands. For instance, the software `git` has several subcommands such as `git clone`, `git commit`, and so forth. The usual options and arguments follow the subcommand.
+-   With an input argument
+    -   `ls /cloud/project`
+-   With options
+    -   `ls -l`
+-   With options and input argument
+    -   `ls -l /cloud/project`
 
 ### How do we know what options and arguments to use for a command?
 
@@ -167,21 +132,23 @@ Online resources: <https://explainshell.com/>
 
 ### Exercise: options for `ls`
 
-In the maze, try out a bunch of ways to list files and directories using various options of `ls`. Some questions to explore:
+In the `project` folder, try out a bunch of ways to list files and directories using various options of `ls`. Some questions to explore:
 
--   Can you sort by last modified?
+-   Can you display all files? This would include files that start with `.`, which are considered "hidden".
 
--   Can you show the long format? What is the long format?
+-   Can you sort by time (last modified)?
 
--   What are hidden files? Are there any hidden files in the maze? (This requires some googling. The manual is not clear on this.)
+-   Can you show the long format? What does it show?
+
+-   Can you print out the entire project directory tree by using a recursive option?
+
+-   Can you show the size of each file?
 
 -   How can you use multiple options at once?
 
--   Can you print out the entire maze directory tree by using a recursive option?
+## File manipulation
 
-## Putting the two mental models together: file manipulation
-
-Here are some commands that allows you to create, move, copy, and delete files and folders. All of these commands have no return value.
+Here are some commands that allows you to create, move, copy, and delete files and folders. All of these commands have no output text.
 
 -   `cp [from] [to]` copies a file or folder from the `[from]` path to a `[to]` folder.
 
@@ -189,9 +156,9 @@ Here are some commands that allows you to create, move, copy, and delete files a
 
 -   `mkdir [folderPath]` creates a new folder at the path specified by `[folderPath]`.
 
--   `rm [path]` deletes a file at `[path]`. `rm -r [folder]` deletes a folder and its subcontents. Cannot be undone unless there is a backup system (usually not on personal computers, but available on FH's computing cluster.)
+-   `rm [path]` deletes a file at `[path]`. `rm -r [folder]` deletes a folder and its subcontents. Cannot be undone unless there is a backup system (usually not on personal computers, but available on Fred Hutch's computing cluster.)
 
-There is a another special directory symbol that come up often in copying and moving. If you want to copy a file to the current directory, specify the working directory via `.`. For example,
+There is a another special directory symbol that come up often in copying and moving. If you want to copy a file to the current directory, specify the working directory via `.` For example,
 
 ```         
 cp my_folder/file.txt .
@@ -202,46 +169,40 @@ copies the file to the working directory.
 Can you explain what I am doing below?
 
 ```         
-~/.../project/input_files$ mkdir case
-~/.../project/input_files$ mkdir control
-~/.../project/input_files$ cp sample1_case.fastq case
-~/.../project/input_files$ cp sample5_control.fastq control
-~/.../project/input_files$ cd control/
-~/.../input_files/control$ ls
+/cloud/project/input_files$ mkdir cases
+/cloud/project/input_files$ mkdir controls
+/cloud/project/input_files$ cp sample1_case.fastq cases
+/cloud/project/input_files$ cp sample5_control.fastq controls
+/cloud/project/input_files$ cd control/
+/cloud/project/input_files$ ls
 sample5_control.fastq
 ```
 
 ### Wildcards to access multiple files
 
-Suppose that I want to move all the files starting with the characters `orca` in the `maze/west` directory. I could run `mv` command multiple times, but that is time consuming if I have a lot of such files. In the Shell, there are special wildcard symbols that allows you to access multiple files of a specific pattern:
+How can I move multiple files at once based on some pattern, such as "case" or "control"?
 
 The `*` wildcard represents zero or more characters of any form. Therefore, `*case*` will specify all files that starts with anything, have the word case in the middle, and ends with anything.
 
 ```         
-~/.../project/input_files$ ls -l  *case*
--rw-r--r-- 1 runner runner 1934812 Oct 23 23:19 sample1_case.fastq
--rw-r--r-- 1 runner runner 1934812 Oct 23 23:20 sample2_case.fastq
--rw-r--r-- 1 runner runner 1934812 Oct 23 23:21 sample3_case.fastq
--rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample4_case.fastq
-
-case:
-total 0
+/cloud/project/input_files$ ls -l  *case*
+-rw-rw---- 1 r2244204 rstudio-user 1934812 Mar 20 23:24 sample1_case.fastq
+-rw-rw---- 1 r2244204 rstudio-user 1934812 Mar 20 23:24 sample2_case.fastq
+-rw-rw---- 1 r2244204 rstudio-user 1934812 Mar 20 23:24 sample3_case.fastq
+-rw-rw---- 1 r2244204 rstudio-user 1934812 Mar 20 23:24 sample4_case.fastq
 ```
 
 Similarly, if we want anything that ends in fastq,
 
 ```         
-~/.../project/input_files$ ls -l *fastq
--rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample10_control.fastq
--rw-r--r-- 1 runner runner 1934812 Oct 23 23:19 sample1_case.fastq
--rw-r--r-- 1 runner runner 1934812 Oct 23 23:20 sample2_case.fastq
--rw-r--r-- 1 runner runner 1934812 Oct 23 23:21 sample3_case.fastq
--rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample4_case.fastq
--rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample5_control.fastq
--rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample6_control.fastq
--rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample7_control.fastq
--rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample8_control.fastq
--rw-r--r-- 1 runner runner 1934812 Oct 23 23:22 sample9_control.fastq
+/cloud/project/input_files$ ls -l  *fastq
+-rw-rw---- 1 r2244204 rstudio-user 1934812 Mar 20 23:24 sample1_case.fastq
+-rw-rw---- 1 r2244204 rstudio-user 1934812 Mar 20 23:24 sample2_case.fastq
+-rw-rw---- 1 r2244204 rstudio-user 1934812 Mar 20 23:24 sample3_case.fastq
+-rw-rw---- 1 r2244204 rstudio-user 1934812 Mar 20 23:24 sample4_case.fastq
+-rw-rw---- 1 r2244204 rstudio-user 1934812 Mar 20 23:24 sample5_control.fastq
+-rw-rw---- 1 r2244204 rstudio-user 1934812 Mar 20 23:24 sample6_control.fastq
+-rw-rw---- 1 r2244204 rstudio-user 1934812 Mar 20 23:24 sample7_control.fastq
 ```
 
 The input argument for `ls` is now a list of files.
@@ -249,36 +210,29 @@ The input argument for `ls` is now a list of files.
 We move it:
 
 ```         
-~/.../project/input_files$ cp *case* case/
+/cloud/project/input_files$ cp *case* cases/
 ```
 
-The wildcard can be used in different part of the filename to specify different files:
-
-We can use `*` to specify *all* files in a directory (undoing what we did before):
+We can use `*` to specify *all* files in a directory. We delete all files in `cases` (cannot be easily undone!!)
 
 ```         
-~/.../project/input_files$ cd case/
-~/.../input_files/case$ ls
+/cloud/project/input_files$ cd cases/
+/cloud/project/input_files/cases$ ls
 sample1_case.fastq  sample2_case.fastq  sample3_case.fastq  sample4_case.fastq
-~/.../input_files/case$ rm *
+/cloud/project/input_files/cases$ rm *
 ```
-
-## Using a text editor in CLI
-
-A commonly used task in CLI is to edit text files. `nano`, `vim`, and `emacs` are the three most popular ones, in increasing learning curve but also complexity in the tasks you can perform. We will start with `nano` today.
-
-Pick a file of interest, and run `nano [filename]`. You will see a new screen of the filename's contents. You can move around via the letter keys and make edits as needed. On the bottom of the screen are commands you use to manage the file, such as saving, opening, and quitting. The \^ symbol refers to the Control key on your keyboard. To quit, hit Ctrl-x, and you may have to hit y to confirm. You should get comfortable using a text editor in CLI as it is a common task.
 
 ## Applying what we just learned: running bioinformatics software
 
 A popular DNA sequence alignment tool is called "BWA", and here we present a toy version of it to simulate what it like to use a bioinformatics command line tool. It takes in an unaligned sequence file and a reference genome, and then pretends to align the unaligned sequence to the reference genome.
 
 ```         
-~/CommandLineDaSL/project$ cd software/
-~/.../project/software$ python aligner.py --help
+/cloud/project/input_files$ cd ../software/
+
+/cloud/project/software$ python aligner.py --help
 usage: aligner.py [-h] --reference REFERENCE --input INPUT
 
-options:
+optional arguments:
   -h, --help            show this help message and exit
   --reference REFERENCE, -r REFERENCE
                         Reference genome file
@@ -334,7 +288,7 @@ This encourages the development of modular, flexible programs that can be connec
 
 ### For Mac users
 
-Open up "Terminal" Application.
+Open up "Terminal" Application in `Applications/Utilities`.
 
 ### For Windows users
 
@@ -346,7 +300,7 @@ Open up "Terminal" Application.
 
 -   A shell terminal should show up. If it doesn't show up, look in your search bar for "Ubuntu on Windows", and open it.
 
-## Appendix: Special symbols for directories:
+## Appendix: Special symbols for directories
 
 -   `.` the current directory.
 
@@ -356,7 +310,15 @@ Open up "Terminal" Application.
 
 -   `~` the home directory.
 
+## Appendix: Using a text editor in CLI
+
+A commonly used task in CLI is to edit text files. `nano`, `vim`, and `emacs` are the three most popular ones, in increasing learning curve but also complexity in the tasks you can perform. The easiest one to use, `nano` is not installed by default in Posit Cloud. If it was installed on your computer, here is how you would use it:
+
+Pick a file of interest, and run `nano [filename]`. You will see a new screen of the filename's contents. You can move around via the letter keys and make edits as needed. On the bottom of the screen are commands you use to manage the file, such as saving, opening, and quitting. The \^ symbol refers to the Control key on your keyboard. To quit, hit Ctrl-x, and you may have to hit y to confirm. You should get comfortable using a text editor in CLI as it is a common task.
+
 ## Appendix: Why do we run some programs using `./`?
+
+Sometimes, you run a piece of software within a folder via `./my_program`. Why is that?
 
 When you type in a command, such as `ls` in the command line, the command line looks to see whether the command belongs to a list of commands it knows how to run. This list of approved commands is stored in an environmental variable. We can see it via:
 

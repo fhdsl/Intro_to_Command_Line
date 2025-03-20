@@ -20,7 +20,7 @@ output-location: fragment
 
 . . .
 
--   What is DaSL?
+-   What is [DaSL](https://hutchdatascience.org/)?
 
 . . .
 
@@ -29,8 +29,6 @@ output-location: fragment
     -   Name, pronouns, group you work in
 
     -   What you want to get out of the workshop
-
-    -   Favorite spring activity?
 
 ## Goals of the workshop
 
@@ -48,11 +46,11 @@ output-location: fragment
 
 . . .
 
--   Use a text editor in the command line
+-   Analyze the components of a shell command: what are the possible inputs, options, and outputs, and where to find documentation for help.
 
 . . .
 
--   Treat text-based programs as functions
+-   Apply what we learned to a demo: bioinformatics tool
 
 ## Ways we can interact with a computer:
 
@@ -98,12 +96,12 @@ However, the way a computer interprets and executes instructions are based on te
 
 ## Getting started
 
-We will be using replit, a online coding interface to access the command line.
+We will be using Posit Cloud, a online coding interface for R, but it has a built-in Command Line.
 
--   Go to the project [https://replit.com/\@clo22/CommandLineDaSL](https://replit.com/@clo22/CommandLineDaSL)
--   Click "Fork" on the right hand side of the screen.
--   Create an account or sign-in.
--   Click on the "Shell" tab.
+-   Go to the project: <https://posit.cloud/spaces/622776/join?access_code=602ukbDJCZ0h366T6ktC3IDvbiWtZdmxKeSERdYq>
+    -   Create an account or sign-in.
+-   Open "[Intro_to_Command_Line_practice](https://posit.cloud/spaces/622776/content/9888837)"
+-   Click on the "Terminal" tab.
 
 ## Interacting with the command line, a perspective
 
@@ -117,7 +115,7 @@ We will be using replit, a online coding interface to access the command line.
 
 . . .
 
--   It is forgiving, and encourages exploration and experimentation.
+-   It is (mostly) forgiving, and encourages exploration and experimentation.
 
 ::: notes
 Unlike a GUI, the CLI does not provide immediate options to you to interact with. We have to know a learn a handful of vocabulary to interact with it well. But besides the vocabulary, we need to keep a mental model of a task we want to complete. In GUIs that that mental model is shown to us visually, such as a file browser.
@@ -133,15 +131,13 @@ Lastly, the CLI is forgiving. It will tell you if you did something you did not 
 
 On our computer, the **directory tree** organizes files and directories in an (upside down) tree-like structure. In each folder, there is a parental directory, and there can be files and directories within it.
 
-![Replit directory tree](images/directory_tree.png)
-
-Example: special "home" **directory path**: `/home/runner/`
+![Posit Cloud directory tree](images/directory_tree.png)
 
 ## Basic directory tree navigation
 
 . . .
 
-![Replit directory tree](images/directory_tree.png){width="400"}
+![Posit Cloud directory tree](images/directory_tree.png)
 
 . . .
 
@@ -153,19 +149,25 @@ Example: special "home" **directory path**: `/home/runner/`
 
 . . .
 
--   `cd /home/runner` changes directory to the special "home" directory.
+-   `cd /cloud/project` is where we started.
 
 ## Absolute vs. relative paths
 
+![](images/directory_tree.png){alt="Posit Cloud directory tree"}
+
+Suppose you want to access the folder `input_files`.
+
 . . .
 
--   The **absolute directory path** specifies the directory from the root directory `/`
+-   The **absolute directory path** specifies the directory from the root directory: `/cloud/project/input_files`
 
 . . .
 
--   The **relative directory path** is a path *relative to our current directory*.
+-   The **relative directory path** is a path *relative to our current directory*: if we are currently at `/cloud/project`, the relative path is `input_files` .
 
-    -   The symbol `..` specifies the parent directory.
+. . .
+
+-   The symbol `..` specifies the parent directory. If we are currently at `/cloud/project/software`, the relative path is `../input_files`.
 
 . . .
 
@@ -173,7 +175,7 @@ Example: special "home" **directory path**: `/home/runner/`
 
 ## Exercise: explore the `project` folder
 
-Use `cd` and `ls` to explore `/home/runner/CommandLineDaSL/project`
+Use `cd` and `ls` to explore `/cloud/project`
 
 . . .
 
@@ -191,19 +193,25 @@ Commands to look at text files:
 
 Hit `Ctrl-C` to stop a running program.
 
-## Mental Model 2: Treat text-based commands as functions
+## Mental Model 2: Treat commands as functions
+
+A **function** is a tool that you can use over and over again:
+
+-   It can take in inputs
+
+-   Does something
+
+-   and can give an output.
 
 . . .
 
-The commands you have been using, `pwd`, `cd`, `ls`, and `cat` are actually computer programs!
+The commands you have been using, `pwd`, `cd`, `ls`, and `cat` can be viewed as functions.
 
-. . .
+-   It can take in **input arguments**, **options**
 
-When using a command from the command line, we should treat it as a function: a command has a **name**, inputs in terms of **arguments** and/or **options**, and **returns** something.
+-   Does something
 
-. . .
-
-![Source: Wellesley CS 110: https://cs.wellesley.edu/\~cs110/lectures/L16/images/function.png](https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png)
+-   and can give an output
 
 ## `ls` example
 
@@ -211,40 +219,24 @@ When using a command from the command line, we should treat it as a function: a 
 
 A command's usage can have any of the following combination:
 
--   Input arguments
+-   Input argument
+    -   `ls /cloud/project`
+
+. . .
+
 -   Options
--   Options with its own required input arguments
+    -   `ls -l`
 
 . . .
 
-![Source: Software Carpentry: https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg](https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg)
+-   Options with input argument
+    -   `ls -l /cloud/project`
 
 . . .
 
-Input arguments:
+-   Multiple input arguments
 
-```         
-~/CommandLineDaSL$ ls /
-bin  boot  dev  etc  home  inject  io  lib  lib32  lib64  libx32  media  mnt  nix  opt  proc  repl  root  run  sbin  srv  store  sys  tmp  usr  var  
-```
-
-. . .
-
-Input arguments and options:
-
-```         
-~/CommandLineDaSL$ ls /  -F
-bin@   dev/  home/    io/   lib32@  libx32@  mnt/  opt/   repl/  run/   srv/    sys/  usr/
-boot/  etc/  inject/  lib@  lib64@  media/   nix/  proc/  root/  sbin@  store/  tmp/  var/
-```
-
-::: notes
-This displays a slash ('/') immediately after each pathname that is a directory, and ('\@') after a symbolic link (not important to know right now).
-
-It is sometimes easy to overlook that the text printed from a command like `ls` is indeed the returned output from the program. It is important to keep this in mind when we start to use multiple commands together later in this seminar.
-
-Subcommands
-:::
+    -   `sh my_script.sh –i my_input.txt -o my_output.txt`
 
 ## What are the possible options and arguments for a command?
 
@@ -288,17 +280,13 @@ Here are some commands that allows you to create, move, copy, and delete files a
 
 -   `mkdir [folderPath]` creates a new folder at the path specified by `[folderPath]`.
 
--   `rm [path]` deletes a file at `[path]`. `rm -r [folder]` deletes a folder and its subcontents. Cannot be undone!
+-   `rm [path]` deletes a file at `[path]`. `rm -r [folder]` deletes a folder and its subcontents. Cannot be undone! 😱
 
 ## Demo
 
 . . .
 
 -   `*` wildcard
-
-## Using a text editor in CLI
-
-A commonly used task in CLI is to edit text files. `nano`, `vim`, and `emacs` are the three most popular ones, in increasing learning curve but also complexity in the tasks you can perform. We will start with `nano` today.
 
 ## Running software in CLI
 
@@ -332,3 +320,9 @@ The `python aligner.py` command seems pretty messy - it just dumps an aligned se
 . . .
 
 -   Pipe the output into the next command: `python aligner.py --reference [reference genome fasta file] --input [unaligned sequences fastq file] | head`
+
+## Accessing the Command Line on your computer
+
+-   Macs: `/Applications/Utilities/Terminal.app`
+
+-   Windows: Powershell or Windows Command Prompt gives a *different* flavor of the command line. To use the Unix command line, [install Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install).

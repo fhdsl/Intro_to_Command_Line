@@ -8,7 +8,7 @@
 <link href="intro_to_command_line_slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="intro_to_command_line_slides_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="intro_to_command_line_slides_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.353">
+  <meta name="generator" content="quarto-1.5.57">
 
   <title>Command Line Workshop</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -155,7 +155,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -344,7 +345,7 @@
 </div>
 <div class="fragment">
 <ul>
-<li>What is DaSL?</li>
+<li>What is <a href="https://hutchdatascience.org/">DaSL</a>?</li>
 </ul>
 </div>
 <div class="fragment">
@@ -353,7 +354,6 @@
 <ul>
 <li><p>Name, pronouns, group you work in</p></li>
 <li><p>What you want to get out of the workshop</p></li>
-<li><p>Favorite spring activity?</p></li>
 </ul></li>
 </ul>
 </div>
@@ -377,12 +377,12 @@
 </div>
 <div class="fragment">
 <ul>
-<li>Use a text editor in the command line</li>
+<li>Analyze the components of a shell command: what are the possible inputs, options, and outputs, and where to find documentation for help.</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li>Treat text-based programs as functions</li>
+<li>Apply what we learned to a demo: bioinformatics tool</li>
 </ul>
 </div>
 </section>
@@ -453,12 +453,14 @@
 </section>
 <section id="getting-started" class="slide level2">
 <h2>Getting started</h2>
-<p>We will be using replit, a online coding interface to access the command line.</p>
+<p>We will be using Posit Cloud, a online coding interface for R, but it has a built-in Command Line.</p>
 <ul>
-<li>Go to the project <a href="https://replit.com/@clo22/CommandLineDaSL">https://replit.com/@clo22/CommandLineDaSL</a></li>
-<li>Click “Fork” on the right hand side of the screen.</li>
+<li>Go to the project: <a href="https://posit.cloud/spaces/622776/join?access_code=602ukbDJCZ0h366T6ktC3IDvbiWtZdmxKeSERdYq" class="uri">https://posit.cloud/spaces/622776/join?access_code=602ukbDJCZ0h366T6ktC3IDvbiWtZdmxKeSERdYq</a>
+<ul>
 <li>Create an account or sign-in.</li>
-<li>Click on the “Shell” tab.</li>
+</ul></li>
+<li>Open “<a href="https://posit.cloud/spaces/622776/content/9888837">Intro_to_Command_Line_practice</a>”</li>
+<li>Click on the “Terminal” tab.</li>
 </ul>
 </section>
 <section id="interacting-with-the-command-line-a-perspective" class="slide level2">
@@ -475,7 +477,7 @@
 </div>
 <div class="fragment">
 <ul>
-<li>It is forgiving, and encourages exploration and experimentation.</li>
+<li>It is (mostly) forgiving, and encourages exploration and experimentation.</li>
 </ul>
 <aside class="notes">
 <p>Unlike a GUI, the CLI does not provide immediate options to you to interact with. We have to know a learn a handful of vocabulary to interact with it well. But besides the vocabulary, we need to keep a mental model of a task we want to complete. In GUIs that that mental model is shown to us visually, such as a file browser.</p>
@@ -501,10 +503,9 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/directory_tree.png"></p>
-<figcaption>Replit directory tree</figcaption>
+<figcaption>Posit Cloud directory tree</figcaption>
 </figure>
 </div>
-<p>Example: special “home” <strong>directory path</strong>: <code>/home/runner/</code></p>
 </div>
 </section>
 <section id="basic-directory-tree-navigation" class="slide level2">
@@ -512,8 +513,8 @@
 <div class="fragment">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/directory_tree.png" width="400"></p>
-<figcaption>Replit directory tree</figcaption>
+<p><img data-src="images/directory_tree.png"></p>
+<figcaption>Posit Cloud directory tree</figcaption>
 </figure>
 </div>
 </div>
@@ -529,23 +530,27 @@
 </div>
 <div class="fragment">
 <ul>
-<li><code>cd /home/runner</code> changes directory to the special “home” directory.</li>
+<li><code>cd /cloud/project</code> is where we started.</li>
 </ul>
 </div>
 </section>
 <section id="absolute-vs.-relative-paths" class="slide level2">
 <h2>Absolute vs.&nbsp;relative paths</h2>
+
+<img data-src="images/directory_tree.png" alt="Posit Cloud directory tree" class="r-stretch"><p>Suppose you want to access the folder <code>input_files</code>.</p>
 <div class="fragment">
 <ul>
-<li>The <strong>absolute directory path</strong> specifies the directory from the root directory <code>/</code></li>
+<li>The <strong>absolute directory path</strong> specifies the directory from the root directory: <code>/cloud/project/input_files</code></li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><p>The <strong>relative directory path</strong> is a path <em>relative to our current directory</em>.</p>
+<li>The <strong>relative directory path</strong> is a path <em>relative to our current directory</em>: if we are currently at <code>/cloud/project</code>, the relative path is <code>input_files</code> .</li>
+</ul>
+</div>
+<div class="fragment">
 <ul>
-<li>The symbol <code>..</code> specifies the parent directory.</li>
-</ul></li>
+<li>The symbol <code>..</code> specifies the parent directory. If we are currently at <code>/cloud/project/software</code>, the relative path is <code>../input_files</code>.</li>
 </ul>
 </div>
 <div class="fragment">
@@ -556,7 +561,7 @@
 </section>
 <section id="exercise-explore-the-project-folder" class="slide level2">
 <h2>Exercise: explore the <code>project</code> folder</h2>
-<p>Use <code>cd</code> and <code>ls</code> to explore <code>/home/runner/CommandLineDaSL/project</code></p>
+<p>Use <code>cd</code> and <code>ls</code> to explore <code>/cloud/project</code></p>
 <div class="fragment">
 <p>Commands to look at text files:</p>
 <ul>
@@ -570,21 +575,21 @@
 <p>Hit <code>Ctrl-C</code> to stop a running program.</p>
 </div>
 </section>
-<section id="mental-model-2-treat-text-based-commands-as-functions" class="slide level2">
-<h2>Mental Model 2: Treat text-based commands as functions</h2>
+<section id="mental-model-2-treat-commands-as-functions" class="slide level2">
+<h2>Mental Model 2: Treat commands as functions</h2>
+<p>A <strong>function</strong> is a tool that you can use over and over again:</p>
+<ul>
+<li><p>It can take in inputs</p></li>
+<li><p>Does something</p></li>
+<li><p>and can give an output.</p></li>
+</ul>
 <div class="fragment">
-<p>The commands you have been using, <code>pwd</code>, <code>cd</code>, <code>ls</code>, and <code>cat</code> are actually computer programs!</p>
-</div>
-<div class="fragment">
-<p>When using a command from the command line, we should treat it as a function: a command has a <strong>name</strong>, inputs in terms of <strong>arguments</strong> and/or <strong>options</strong>, and <strong>returns</strong> something.</p>
-</div>
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png"></p>
-<figcaption>Source: Wellesley CS 110: https://cs.wellesley.edu/~cs110/lectures/L16/images/function.png</figcaption>
-</figure>
-</div>
+<p>The commands you have been using, <code>pwd</code>, <code>cd</code>, <code>ls</code>, and <code>cat</code> can be viewed as functions.</p>
+<ul>
+<li><p>It can take in <strong>input arguments</strong>, <strong>options</strong></p></li>
+<li><p>Does something</p></li>
+<li><p>and can give an output</p></li>
+</ul>
 </div>
 </section>
 <section id="ls-example" class="slide level2">
@@ -592,44 +597,35 @@
 <div class="fragment">
 <p>A command’s usage can have any of the following combination:</p>
 <ul>
-<li>Input arguments</li>
-<li>Options</li>
-<li>Options with its own required input arguments</li>
+<li>Input argument
+<ul>
+<li><code>ls /cloud/project</code></li>
+</ul></li>
 </ul>
 </div>
 <div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg"></p>
-<figcaption>Source: Software Carpentry: https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg</figcaption>
-</figure>
-</div>
-</div>
-<div class="fragment">
-<p>Input arguments:</p>
-<pre><code>~/CommandLineDaSL$ ls /
-bin  boot  dev  etc  home  inject  io  lib  lib32  lib64  libx32  media  mnt  nix  opt  proc  repl  root  run  sbin  srv  store  sys  tmp  usr  var  </code></pre>
+<ul>
+<li>Options
+<ul>
+<li><code>ls -l</code></li>
+</ul></li>
+</ul>
 </div>
 <div class="fragment">
-<p>Input arguments and options:</p>
-<pre><code>~/CommandLineDaSL$ ls /  -F
-bin@   dev/  home/    io/   lib32@  libx32@  mnt/  opt/   repl/  run/   srv/    sys/  usr/
-boot/  etc/  inject/  lib@  lib64@  media/   nix/  proc/  root/  sbin@  store/  tmp/  var/</code></pre>
-<aside class="notes">
-<p>This displays a slash (‘/’) immediately after each pathname that is a directory, and (‘@’) after a symbolic link (not important to know right now).</p>
-<p>It is sometimes easy to overlook that the text printed from a command like <code>ls</code> is indeed the returned output from the program. It is important to keep this in mind when we start to use multiple commands together later in this seminar.</p>
-<p>Subcommands</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<ul>
+<li>Options with input argument
+<ul>
+<li><code>ls -l /cloud/project</code></li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><p>Multiple input arguments</p>
+<ul>
+<li><code>sh my_script.sh –i my_input.txt -o my_output.txt</code></li>
+</ul></li>
+</ul>
 </div>
 </section>
 <section id="what-are-the-possible-options-and-arguments-for-a-command" class="slide level2">
@@ -662,7 +658,7 @@ boot/  etc/  inject/  lib@  lib64@  media/   nix/  proc/  root/  sbin@  store/  
 <li><p><code>cp [from] [to]</code> copies a file or folder from the <code>[from]</code> path to a <code>[to]</code> folder.</p></li>
 <li><p><code>mv [from] [to]</code> moves a file or folder from the <code>[from]</code> path to a <code>[to]</code> folder.</p></li>
 <li><p><code>mkdir [folderPath]</code> creates a new folder at the path specified by <code>[folderPath]</code>.</p></li>
-<li><p><code>rm [path]</code> deletes a file at <code>[path]</code>. <code>rm -r [folder]</code> deletes a folder and its subcontents. Cannot be undone!</p></li>
+<li><p><code>rm [path]</code> deletes a file at <code>[path]</code>. <code>rm -r [folder]</code> deletes a folder and its subcontents. Cannot be undone! 😱</p></li>
 </ul>
 </div>
 </section>
@@ -673,10 +669,6 @@ boot/  etc/  inject/  lib@  lib64@  media/   nix/  proc/  root/  sbin@  store/  
 <li><code>*</code> wildcard</li>
 </ul>
 </div>
-</section>
-<section id="using-a-text-editor-in-cli" class="slide level2">
-<h2>Using a text editor in CLI</h2>
-<p>A commonly used task in CLI is to edit text files. <code>nano</code>, <code>vim</code>, and <code>emacs</code> are the three most popular ones, in increasing learning curve but also complexity in the tasks you can perform. We will start with <code>nano</code> today.</p>
 </section>
 <section id="running-software-in-cli" class="slide level2">
 <h2>Running software in CLI</h2>
@@ -707,6 +699,15 @@ options:
 <ul>
 <li>Pipe the output into the next command: <code>python aligner.py --reference [reference genome fasta file] --input [unaligned sequences fastq file] | head</code></li>
 </ul>
+</div>
+</section>
+<section id="accessing-the-command-line-on-your-computer" class="slide level2">
+<h2>Accessing the Command Line on your computer</h2>
+<ul>
+<li><p>Macs: <code>/Applications/Utilities/Terminal.app</code></p></li>
+<li><p>Windows: Powershell or Windows Command Prompt gives a <em>different</em> flavor of the command line. To use the Unix command line, <a href="https://learn.microsoft.com/en-us/windows/wsl/install">install Windows Subsystem for Linux</a>.</p></li>
+</ul>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
@@ -738,7 +739,6 @@ options:
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': true,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -955,18 +955,7 @@ options:
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -998,11 +987,50 @@ options:
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1012,8 +1040,17 @@ options:
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1027,7 +1064,11 @@ options:
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
