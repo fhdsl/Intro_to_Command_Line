@@ -49,7 +49,7 @@ On our computer, the **directory tree** organizes files and directories in an (u
 
 Below is a typical directory tree schematic, with the root directory being `/` and home directory being `/home/runner`. We refer to a particular directory by describing its **directory path** separated by `/` slashes.
 
-![Posit Cloud directory tree](images/directory_tree.png){alt="Posit Cloud directory tree"}
+![Posit Cloud directory tree](images/directory_tree.png)
 
 To interact with files and programs in the file system in the GUI world, we moved up and down the directory tree via point and clicking on windows. In the CLI world we can use the following commands:
 

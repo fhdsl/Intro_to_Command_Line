@@ -12,6 +12,8 @@ output-location: fragment
 
 ![](images/CL-3.1%20(Final).png)
 
+Please [sign-up for an account at Posit Cloud](#0 "https://login.posit.cloud/register") and accept our classroom invitation here: <https://posit.cloud/spaces/777756/join?access_code=X20Q5p3F8J_2FH8hUPGn5w9Sz3pJ8eULqp3Kw0cz>
+
 ## Introductions
 
 . . .
@@ -20,7 +22,7 @@ output-location: fragment
 
 . . .
 
--   What is [DaSL](https://hutchdatascience.org/)?
+-   What is [DaSL](https://hutchdatascience.org/) / [OCDO](https://ocdo.fredhutch.org/) ?
 
 . . .
 
@@ -34,14 +36,11 @@ output-location: fragment
 
 . . .
 
--   Understand the purposes of Command Line Interface vs. Graphical User Interface
+-   Understand the purpose of Command Line Interface vs. Graphical User Interface
 
 . . .
 
 -   Be able to navigate a directory tree
-
-. . .
-
 -   Be able to create, delete, copy, and move files
 
 . . .
@@ -84,7 +83,7 @@ However, the way a computer interprets and executes instructions are based on te
 
 . . .
 
--   Use to high performance computing systems and the cloud
+-   Use to high performance cluster computing systems and the cloud
 
 ::: notes
 -   Scalable manipulation of text, files, and folders: if we want to move all files that have the words "tax returns" to a new folder, it would probably not scale easily via a mouse, but it could be done in one command in the Command Line.
@@ -98,9 +97,9 @@ However, the way a computer interprets and executes instructions are based on te
 
 We will be using Posit Cloud, a online coding interface for R, but it has a built-in Command Line.
 
--   Go to the project: <https://posit.cloud/spaces/622776/join?access_code=602ukbDJCZ0h366T6ktC3IDvbiWtZdmxKeSERdYq>
+-   Go to the project: <https://posit.cloud/spaces/777756/join?access_code=X20Q5p3F8J_2FH8hUPGn5w9Sz3pJ8eULqp3Kw0cz>
     -   Create an account or sign-in.
--   Open "[Intro_to_Command_Line_practice](https://posit.cloud/spaces/622776/content/9888837)"
+-   Open "Intro_to_Command_Line_practice"
 -   Click on the "Terminal" tab.
 
 ## Interacting with the command line, a perspective
@@ -234,9 +233,9 @@ A command's usage can have any of the following combination:
 
 . . .
 
--   Multiple input arguments
+## Multiple input arguments
 
-    -   `sh my_script.sh –i my_input.txt -o my_output.txt`
+`sh my_script.sh –i my_input.txt -o my_output.txt`
 
 ## What are the possible options and arguments for a command?
 
@@ -267,6 +266,70 @@ In the `project` folder, try out a bunch of ways to list files and directories u
 -   Can you show the size of each file?
 
 -   How can you use multiple options at once?
+
+## File permissions
+
+If we run `ls -l` (long option) at `/cloud/project`, we see the following:
+
+```         
+/cloud/project$ ls -l
+total 16
+drwxrwx--- 6 r2244204 rstudio-user 4096 Sep 25  2025 input_files
+drwxrwx--- 3 r2244204 rstudio-user 4096 Oct  1  2024 output_files
+-rw-rw-r-- 1 r2244204 rstudio-user  205 Apr 17 20:08 project.Rproj
+drwxrwx--- 2 r2244204 rstudio-user 4096 Sep 25  2025 software
+```
+
+What's all this information? We will focus on the first mysterious chunk of text.
+
+## File permissions
+
+What can you do with files?
+
+| Type    | Description                             | Abbreviation | Example                                |
+|---------------|--------------------|----------------------|---------------|
+| Read    | Level can only read contents of file    | `r`          | A list of users in a text file         |
+| Write   | Level can write to the file             | `w`          | Appending an entry to the end of a log |
+| Execute | Level can run the file as an executable | `x`          | samtools                               |
+
+. . .
+
+These types of actions have varying levels of permissions that can be set.
+
+| Level       | Description           |
+|-------------|-----------------------|
+| Owner-level | The owner of the file |
+| Group-level | The group of the file |
+| Everyone    | The rest of the world |
+
+
+## File permissions
+
+It's this first part that we want to examine:
+
+```         
+folder everyone_else
+|      |     
+-rw-rw----
+ |  |
+ you group
+```
+
+The 2nd to 4th letters define your own access to the files. The
+
+```         
+rw-
+```
+
+Means that you have **r**ead and **w**rite access. If we had the following:
+
+```         
+rwx
+```
+
+That would mean we have read, write, and e**x**ecute access.
+
+[More info here](https://www.redhat.com/en/blog/linux-file-permissions-explained).
 
 ## File manipulation
 
@@ -326,3 +389,15 @@ The `python aligner.py` command seems pretty messy - it just dumps an aligned se
 -   Macs: `/Applications/Utilities/Terminal.app`
 
 -   Windows: Powershell or Windows Command Prompt gives a *different* flavor of the command line. To use the Unix command line, [install Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install).
+
+## Continue learning from us!
+
+-   Next week: Intro to Fred Hutch Computing Cluster registration: <https://forms.gle/KEAExryWtC6mjaH8A>
+
+-   The following week: Bash for Bioinformatics registration: <https://forms.gle/4uepLpVXg2yE3xwT7>
+
+-   DaSL/OCDO Data House Calls: <https://ocdo.fredhutch.org/programs/dhc.html>
+
+## Exit survey
+
+<https://forms.gle/JHyidutjXqreTdWa6>
